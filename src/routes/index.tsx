@@ -4,6 +4,7 @@ import { ContactCTA } from "@/components/site/CTA";
 import { FAQ, faqJsonLd } from "@/components/site/FAQ";
 import { buildHead } from "@/lib/seo";
 import { jsonLdScript } from "@/components/site/JsonLd";
+import heroBg from "@/assets/hero-bg.jpg";
 import {
   business,
   currentTrials,
@@ -53,42 +54,48 @@ function Home() {
   return (
     <SiteLayout>
       {/* Hero */}
-      <section className="relative overflow-hidden border-b border-border bg-gradient-to-br from-slate-50 via-white to-sky-50">
-        <div className="mx-auto grid max-w-7xl gap-10 px-4 py-20 md:grid-cols-2 md:items-center md:py-28">
-          <div>
-            <div className="mb-4 inline-flex items-center rounded-full border border-border bg-white/80 px-3 py-1 text-xs font-medium text-muted-foreground">
+      <section className="relative overflow-hidden border-b border-border">
+        <div className="absolute inset-0">
+          <img src={heroBg} alt="" className="h-full w-full object-cover" width={1920} height={1080} />
+          <div className="absolute inset-0 bg-gradient-to-br from-primary/95 via-primary/85 to-primary/70" />
+          <div className="absolute inset-0 bg-black/40" />
+        </div>
+        <div className="relative mx-auto grid max-w-7xl gap-10 px-4 py-24 md:grid-cols-2 md:items-center md:py-32">
+          <div className="text-primary-foreground">
+            <div className="mb-5 inline-flex items-center rounded-full border border-white/20 bg-white/10 px-3 py-1 text-xs font-medium backdrop-blur">
               Physician-led · {business.city}, {business.regionShort}
             </div>
-            <h1 className="text-4xl font-semibold tracking-tight text-foreground md:text-6xl">
-              {business.name}
+            <h1 className="text-4xl font-semibold tracking-tight md:text-6xl">
+              Advancing medicine through <span className="text-secondary">clinical research</span>
             </h1>
-            <p className="mt-5 text-lg text-muted-foreground md:text-xl">
+            <p className="mt-5 max-w-xl text-lg opacity-90 md:text-xl">
               {business.tagline}
             </p>
-            <p className="mt-4 max-w-xl text-muted-foreground">
-              A physician-owned and professionally managed multi-specialty clinical
-              trials research center serving Greater Orlando and Central Florida.
+            <p className="mt-4 max-w-xl opacity-80">
+              A physician-owned and professionally managed multi-specialty clinical trials
+              research center serving Greater Orlando and Central Florida.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link
-                to="/services"
-                className="inline-flex items-center rounded-md bg-primary px-5 py-3 text-sm font-medium text-primary-foreground hover:bg-primary/90"
+                to="/clinical-trials"
+                className="inline-flex items-center rounded-md bg-secondary px-5 py-3 text-sm font-semibold text-secondary-foreground shadow-lg hover:opacity-90"
               >
-                Our Services
+                View Clinical Trials
               </Link>
               <Link
                 to="/contact"
-                className="inline-flex items-center rounded-md border border-input bg-background px-5 py-3 text-sm font-medium hover:bg-accent"
+                className="inline-flex items-center rounded-md border border-white/30 bg-white/10 px-5 py-3 text-sm font-semibold text-primary-foreground backdrop-blur hover:bg-white/20"
               >
                 Contact Us
               </Link>
             </div>
           </div>
-          <div className="relative">
+          <div className="relative hidden md:block">
+            <div className="absolute -inset-4 rounded-3xl bg-secondary/30 blur-2xl" />
             <img
               src={images.doctorPortrait}
               alt="Dr. Marvin Heuer, M.D."
-              className="w-full rounded-2xl border border-border object-cover shadow-xl"
+              className="relative w-full rounded-2xl border border-white/20 object-cover shadow-2xl"
             />
           </div>
         </div>
