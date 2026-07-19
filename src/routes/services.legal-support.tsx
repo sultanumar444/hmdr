@@ -18,7 +18,7 @@ export const Route = createFileRoute("/services/legal-support")({
 function LegalSupport() {
   return (
     <SiteLayout>
-      <Breadcrumbs items={[{ label: "Services", href: "/services" }, { label: "Legal Support" }]} />
+      <Breadcrumbs items={[{ label: "Services", to: "/services" }, { label: "Legal Support" }]} />
       <Section className="pt-6">
         <PageHeader
           eyebrow="Services"

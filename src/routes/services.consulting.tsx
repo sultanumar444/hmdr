@@ -30,7 +30,7 @@ const services = [
 function Consulting() {
   return (
     <SiteLayout>
-      <Breadcrumbs items={[{ label: "Services", href: "/services" }, { label: "Consulting" }]} />
+      <Breadcrumbs items={[{ label: "Services", to: "/services" }, { label: "Consulting" }]} />
       <Section className="pt-6">
         <PageHeader
           eyebrow="Services"

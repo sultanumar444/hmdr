@@ -66,7 +66,7 @@ const groups = [
 function Regulatory() {
   return (
     <SiteLayout>
-      <Breadcrumbs items={[{ label: "Services", href: "/services" }, { label: "Regulatory" }]} />
+      <Breadcrumbs items={[{ label: "Services", to: "/services" }, { label: "Regulatory" }]} />
       <Section className="pt-6">
         <PageHeader
           eyebrow="Services"
