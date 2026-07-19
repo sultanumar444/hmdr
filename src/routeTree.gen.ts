@@ -9,38 +9,491 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as TermsOfUseRouteImport } from './routes/terms-of-use'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as ResearchGlossaryRouteImport } from './routes/research-glossary'
+import { Route as ResearchExperienceRouteImport } from './routes/research-experience'
+import { Route as PrivacyPolicyRouteImport } from './routes/privacy-policy'
+import { Route as PatientResourcesRouteImport } from './routes/patient-resources'
+import { Route as OrlandoClinicalResearchRouteImport } from './routes/orlando-clinical-research'
+import { Route as MedicalDisclaimerRouteImport } from './routes/medical-disclaimer'
+import { Route as LocationsRouteImport } from './routes/locations'
+import { Route as ForSponsorsAndCrosRouteImport } from './routes/for-sponsors-and-cros'
+import { Route as ForHealthcareProfessionalsRouteImport } from './routes/for-healthcare-professionals'
+import { Route as ForAttorneysRouteImport } from './routes/for-attorneys'
+import { Route as ClinicalTrialsRouteImport } from './routes/clinical-trials'
+import { Route as BlogRouteImport } from './routes/blog'
+import { Route as AccessibilityRouteImport } from './routes/accessibility'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ResearchExperienceIndexRouteImport } from './routes/research-experience.index'
+import { Route as BlogIndexRouteImport } from './routes/blog.index'
+import { Route as ResearchExperienceCategoryRouteImport } from './routes/research-experience.$category'
+import { Route as LocationsOrlandoRouteImport } from './routes/locations.orlando'
+import { Route as ClinicalTrialsWhatToExpectRouteImport } from './routes/clinical-trials.what-to-expect'
+import { Route as ClinicalTrialsParticipantFaqRouteImport } from './routes/clinical-trials.participant-faq'
+import { Route as ClinicalTrialsHowClinicalTrialsWorkRouteImport } from './routes/clinical-trials.how-clinical-trials-work'
+import { Route as ClinicalTrialsHealthyVolunteerStudiesRouteImport } from './routes/clinical-trials.healthy-volunteer-studies'
+import { Route as ClinicalTrialsClinicalTrialSafetyRouteImport } from './routes/clinical-trials.clinical-trial-safety'
+import { Route as ClinicalTrialsClinicalTrialEligibilityRouteImport } from './routes/clinical-trials.clinical-trial-eligibility'
+import { Route as ClinicalTrialsClinicalTrialCompensationRouteImport } from './routes/clinical-trials.clinical-trial-compensation'
+import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
 
+const TermsOfUseRoute = TermsOfUseRouteImport.update({
+  id: '/terms-of-use',
+  path: '/terms-of-use',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ResearchGlossaryRoute = ResearchGlossaryRouteImport.update({
+  id: '/research-glossary',
+  path: '/research-glossary',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ResearchExperienceRoute = ResearchExperienceRouteImport.update({
+  id: '/research-experience',
+  path: '/research-experience',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PrivacyPolicyRoute = PrivacyPolicyRouteImport.update({
+  id: '/privacy-policy',
+  path: '/privacy-policy',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PatientResourcesRoute = PatientResourcesRouteImport.update({
+  id: '/patient-resources',
+  path: '/patient-resources',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OrlandoClinicalResearchRoute = OrlandoClinicalResearchRouteImport.update({
+  id: '/orlando-clinical-research',
+  path: '/orlando-clinical-research',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MedicalDisclaimerRoute = MedicalDisclaimerRouteImport.update({
+  id: '/medical-disclaimer',
+  path: '/medical-disclaimer',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LocationsRoute = LocationsRouteImport.update({
+  id: '/locations',
+  path: '/locations',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ForSponsorsAndCrosRoute = ForSponsorsAndCrosRouteImport.update({
+  id: '/for-sponsors-and-cros',
+  path: '/for-sponsors-and-cros',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ForHealthcareProfessionalsRoute =
+  ForHealthcareProfessionalsRouteImport.update({
+    id: '/for-healthcare-professionals',
+    path: '/for-healthcare-professionals',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ForAttorneysRoute = ForAttorneysRouteImport.update({
+  id: '/for-attorneys',
+  path: '/for-attorneys',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ClinicalTrialsRoute = ClinicalTrialsRouteImport.update({
+  id: '/clinical-trials',
+  path: '/clinical-trials',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BlogRoute = BlogRouteImport.update({
+  id: '/blog',
+  path: '/blog',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AccessibilityRoute = AccessibilityRouteImport.update({
+  id: '/accessibility',
+  path: '/accessibility',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ResearchExperienceIndexRoute = ResearchExperienceIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => ResearchExperienceRoute,
+} as any)
+const BlogIndexRoute = BlogIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => BlogRoute,
+} as any)
+const ResearchExperienceCategoryRoute =
+  ResearchExperienceCategoryRouteImport.update({
+    id: '/$category',
+    path: '/$category',
+    getParentRoute: () => ResearchExperienceRoute,
+  } as any)
+const LocationsOrlandoRoute = LocationsOrlandoRouteImport.update({
+  id: '/orlando',
+  path: '/orlando',
+  getParentRoute: () => LocationsRoute,
+} as any)
+const ClinicalTrialsWhatToExpectRoute =
+  ClinicalTrialsWhatToExpectRouteImport.update({
+    id: '/what-to-expect',
+    path: '/what-to-expect',
+    getParentRoute: () => ClinicalTrialsRoute,
+  } as any)
+const ClinicalTrialsParticipantFaqRoute =
+  ClinicalTrialsParticipantFaqRouteImport.update({
+    id: '/participant-faq',
+    path: '/participant-faq',
+    getParentRoute: () => ClinicalTrialsRoute,
+  } as any)
+const ClinicalTrialsHowClinicalTrialsWorkRoute =
+  ClinicalTrialsHowClinicalTrialsWorkRouteImport.update({
+    id: '/how-clinical-trials-work',
+    path: '/how-clinical-trials-work',
+    getParentRoute: () => ClinicalTrialsRoute,
+  } as any)
+const ClinicalTrialsHealthyVolunteerStudiesRoute =
+  ClinicalTrialsHealthyVolunteerStudiesRouteImport.update({
+    id: '/healthy-volunteer-studies',
+    path: '/healthy-volunteer-studies',
+    getParentRoute: () => ClinicalTrialsRoute,
+  } as any)
+const ClinicalTrialsClinicalTrialSafetyRoute =
+  ClinicalTrialsClinicalTrialSafetyRouteImport.update({
+    id: '/clinical-trial-safety',
+    path: '/clinical-trial-safety',
+    getParentRoute: () => ClinicalTrialsRoute,
+  } as any)
+const ClinicalTrialsClinicalTrialEligibilityRoute =
+  ClinicalTrialsClinicalTrialEligibilityRouteImport.update({
+    id: '/clinical-trial-eligibility',
+    path: '/clinical-trial-eligibility',
+    getParentRoute: () => ClinicalTrialsRoute,
+  } as any)
+const ClinicalTrialsClinicalTrialCompensationRoute =
+  ClinicalTrialsClinicalTrialCompensationRouteImport.update({
+    id: '/clinical-trial-compensation',
+    path: '/clinical-trial-compensation',
+    getParentRoute: () => ClinicalTrialsRoute,
+  } as any)
+const BlogSlugRoute = BlogSlugRouteImport.update({
+  id: '/$slug',
+  path: '/$slug',
+  getParentRoute: () => BlogRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/accessibility': typeof AccessibilityRoute
+  '/blog': typeof BlogRouteWithChildren
+  '/clinical-trials': typeof ClinicalTrialsRouteWithChildren
+  '/for-attorneys': typeof ForAttorneysRoute
+  '/for-healthcare-professionals': typeof ForHealthcareProfessionalsRoute
+  '/for-sponsors-and-cros': typeof ForSponsorsAndCrosRoute
+  '/locations': typeof LocationsRouteWithChildren
+  '/medical-disclaimer': typeof MedicalDisclaimerRoute
+  '/orlando-clinical-research': typeof OrlandoClinicalResearchRoute
+  '/patient-resources': typeof PatientResourcesRoute
+  '/privacy-policy': typeof PrivacyPolicyRoute
+  '/research-experience': typeof ResearchExperienceRouteWithChildren
+  '/research-glossary': typeof ResearchGlossaryRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/terms-of-use': typeof TermsOfUseRoute
+  '/blog/$slug': typeof BlogSlugRoute
+  '/clinical-trials/clinical-trial-compensation': typeof ClinicalTrialsClinicalTrialCompensationRoute
+  '/clinical-trials/clinical-trial-eligibility': typeof ClinicalTrialsClinicalTrialEligibilityRoute
+  '/clinical-trials/clinical-trial-safety': typeof ClinicalTrialsClinicalTrialSafetyRoute
+  '/clinical-trials/healthy-volunteer-studies': typeof ClinicalTrialsHealthyVolunteerStudiesRoute
+  '/clinical-trials/how-clinical-trials-work': typeof ClinicalTrialsHowClinicalTrialsWorkRoute
+  '/clinical-trials/participant-faq': typeof ClinicalTrialsParticipantFaqRoute
+  '/clinical-trials/what-to-expect': typeof ClinicalTrialsWhatToExpectRoute
+  '/locations/orlando': typeof LocationsOrlandoRoute
+  '/research-experience/$category': typeof ResearchExperienceCategoryRoute
+  '/blog/': typeof BlogIndexRoute
+  '/research-experience/': typeof ResearchExperienceIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/accessibility': typeof AccessibilityRoute
+  '/clinical-trials': typeof ClinicalTrialsRouteWithChildren
+  '/for-attorneys': typeof ForAttorneysRoute
+  '/for-healthcare-professionals': typeof ForHealthcareProfessionalsRoute
+  '/for-sponsors-and-cros': typeof ForSponsorsAndCrosRoute
+  '/locations': typeof LocationsRouteWithChildren
+  '/medical-disclaimer': typeof MedicalDisclaimerRoute
+  '/orlando-clinical-research': typeof OrlandoClinicalResearchRoute
+  '/patient-resources': typeof PatientResourcesRoute
+  '/privacy-policy': typeof PrivacyPolicyRoute
+  '/research-glossary': typeof ResearchGlossaryRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/terms-of-use': typeof TermsOfUseRoute
+  '/blog/$slug': typeof BlogSlugRoute
+  '/clinical-trials/clinical-trial-compensation': typeof ClinicalTrialsClinicalTrialCompensationRoute
+  '/clinical-trials/clinical-trial-eligibility': typeof ClinicalTrialsClinicalTrialEligibilityRoute
+  '/clinical-trials/clinical-trial-safety': typeof ClinicalTrialsClinicalTrialSafetyRoute
+  '/clinical-trials/healthy-volunteer-studies': typeof ClinicalTrialsHealthyVolunteerStudiesRoute
+  '/clinical-trials/how-clinical-trials-work': typeof ClinicalTrialsHowClinicalTrialsWorkRoute
+  '/clinical-trials/participant-faq': typeof ClinicalTrialsParticipantFaqRoute
+  '/clinical-trials/what-to-expect': typeof ClinicalTrialsWhatToExpectRoute
+  '/locations/orlando': typeof LocationsOrlandoRoute
+  '/research-experience/$category': typeof ResearchExperienceCategoryRoute
+  '/blog': typeof BlogIndexRoute
+  '/research-experience': typeof ResearchExperienceIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/accessibility': typeof AccessibilityRoute
+  '/blog': typeof BlogRouteWithChildren
+  '/clinical-trials': typeof ClinicalTrialsRouteWithChildren
+  '/for-attorneys': typeof ForAttorneysRoute
+  '/for-healthcare-professionals': typeof ForHealthcareProfessionalsRoute
+  '/for-sponsors-and-cros': typeof ForSponsorsAndCrosRoute
+  '/locations': typeof LocationsRouteWithChildren
+  '/medical-disclaimer': typeof MedicalDisclaimerRoute
+  '/orlando-clinical-research': typeof OrlandoClinicalResearchRoute
+  '/patient-resources': typeof PatientResourcesRoute
+  '/privacy-policy': typeof PrivacyPolicyRoute
+  '/research-experience': typeof ResearchExperienceRouteWithChildren
+  '/research-glossary': typeof ResearchGlossaryRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/terms-of-use': typeof TermsOfUseRoute
+  '/blog/$slug': typeof BlogSlugRoute
+  '/clinical-trials/clinical-trial-compensation': typeof ClinicalTrialsClinicalTrialCompensationRoute
+  '/clinical-trials/clinical-trial-eligibility': typeof ClinicalTrialsClinicalTrialEligibilityRoute
+  '/clinical-trials/clinical-trial-safety': typeof ClinicalTrialsClinicalTrialSafetyRoute
+  '/clinical-trials/healthy-volunteer-studies': typeof ClinicalTrialsHealthyVolunteerStudiesRoute
+  '/clinical-trials/how-clinical-trials-work': typeof ClinicalTrialsHowClinicalTrialsWorkRoute
+  '/clinical-trials/participant-faq': typeof ClinicalTrialsParticipantFaqRoute
+  '/clinical-trials/what-to-expect': typeof ClinicalTrialsWhatToExpectRoute
+  '/locations/orlando': typeof LocationsOrlandoRoute
+  '/research-experience/$category': typeof ResearchExperienceCategoryRoute
+  '/blog/': typeof BlogIndexRoute
+  '/research-experience/': typeof ResearchExperienceIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/accessibility'
+    | '/blog'
+    | '/clinical-trials'
+    | '/for-attorneys'
+    | '/for-healthcare-professionals'
+    | '/for-sponsors-and-cros'
+    | '/locations'
+    | '/medical-disclaimer'
+    | '/orlando-clinical-research'
+    | '/patient-resources'
+    | '/privacy-policy'
+    | '/research-experience'
+    | '/research-glossary'
+    | '/sitemap.xml'
+    | '/terms-of-use'
+    | '/blog/$slug'
+    | '/clinical-trials/clinical-trial-compensation'
+    | '/clinical-trials/clinical-trial-eligibility'
+    | '/clinical-trials/clinical-trial-safety'
+    | '/clinical-trials/healthy-volunteer-studies'
+    | '/clinical-trials/how-clinical-trials-work'
+    | '/clinical-trials/participant-faq'
+    | '/clinical-trials/what-to-expect'
+    | '/locations/orlando'
+    | '/research-experience/$category'
+    | '/blog/'
+    | '/research-experience/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/accessibility'
+    | '/clinical-trials'
+    | '/for-attorneys'
+    | '/for-healthcare-professionals'
+    | '/for-sponsors-and-cros'
+    | '/locations'
+    | '/medical-disclaimer'
+    | '/orlando-clinical-research'
+    | '/patient-resources'
+    | '/privacy-policy'
+    | '/research-glossary'
+    | '/sitemap.xml'
+    | '/terms-of-use'
+    | '/blog/$slug'
+    | '/clinical-trials/clinical-trial-compensation'
+    | '/clinical-trials/clinical-trial-eligibility'
+    | '/clinical-trials/clinical-trial-safety'
+    | '/clinical-trials/healthy-volunteer-studies'
+    | '/clinical-trials/how-clinical-trials-work'
+    | '/clinical-trials/participant-faq'
+    | '/clinical-trials/what-to-expect'
+    | '/locations/orlando'
+    | '/research-experience/$category'
+    | '/blog'
+    | '/research-experience'
+  id:
+    | '__root__'
+    | '/'
+    | '/accessibility'
+    | '/blog'
+    | '/clinical-trials'
+    | '/for-attorneys'
+    | '/for-healthcare-professionals'
+    | '/for-sponsors-and-cros'
+    | '/locations'
+    | '/medical-disclaimer'
+    | '/orlando-clinical-research'
+    | '/patient-resources'
+    | '/privacy-policy'
+    | '/research-experience'
+    | '/research-glossary'
+    | '/sitemap.xml'
+    | '/terms-of-use'
+    | '/blog/$slug'
+    | '/clinical-trials/clinical-trial-compensation'
+    | '/clinical-trials/clinical-trial-eligibility'
+    | '/clinical-trials/clinical-trial-safety'
+    | '/clinical-trials/healthy-volunteer-studies'
+    | '/clinical-trials/how-clinical-trials-work'
+    | '/clinical-trials/participant-faq'
+    | '/clinical-trials/what-to-expect'
+    | '/locations/orlando'
+    | '/research-experience/$category'
+    | '/blog/'
+    | '/research-experience/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AccessibilityRoute: typeof AccessibilityRoute
+  BlogRoute: typeof BlogRouteWithChildren
+  ClinicalTrialsRoute: typeof ClinicalTrialsRouteWithChildren
+  ForAttorneysRoute: typeof ForAttorneysRoute
+  ForHealthcareProfessionalsRoute: typeof ForHealthcareProfessionalsRoute
+  ForSponsorsAndCrosRoute: typeof ForSponsorsAndCrosRoute
+  LocationsRoute: typeof LocationsRouteWithChildren
+  MedicalDisclaimerRoute: typeof MedicalDisclaimerRoute
+  OrlandoClinicalResearchRoute: typeof OrlandoClinicalResearchRoute
+  PatientResourcesRoute: typeof PatientResourcesRoute
+  PrivacyPolicyRoute: typeof PrivacyPolicyRoute
+  ResearchExperienceRoute: typeof ResearchExperienceRouteWithChildren
+  ResearchGlossaryRoute: typeof ResearchGlossaryRoute
+  SitemapDotxmlRoute: typeof SitemapDotxmlRoute
+  TermsOfUseRoute: typeof TermsOfUseRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/terms-of-use': {
+      id: '/terms-of-use'
+      path: '/terms-of-use'
+      fullPath: '/terms-of-use'
+      preLoaderRoute: typeof TermsOfUseRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/research-glossary': {
+      id: '/research-glossary'
+      path: '/research-glossary'
+      fullPath: '/research-glossary'
+      preLoaderRoute: typeof ResearchGlossaryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/research-experience': {
+      id: '/research-experience'
+      path: '/research-experience'
+      fullPath: '/research-experience'
+      preLoaderRoute: typeof ResearchExperienceRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/privacy-policy': {
+      id: '/privacy-policy'
+      path: '/privacy-policy'
+      fullPath: '/privacy-policy'
+      preLoaderRoute: typeof PrivacyPolicyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/patient-resources': {
+      id: '/patient-resources'
+      path: '/patient-resources'
+      fullPath: '/patient-resources'
+      preLoaderRoute: typeof PatientResourcesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/orlando-clinical-research': {
+      id: '/orlando-clinical-research'
+      path: '/orlando-clinical-research'
+      fullPath: '/orlando-clinical-research'
+      preLoaderRoute: typeof OrlandoClinicalResearchRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/medical-disclaimer': {
+      id: '/medical-disclaimer'
+      path: '/medical-disclaimer'
+      fullPath: '/medical-disclaimer'
+      preLoaderRoute: typeof MedicalDisclaimerRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/locations': {
+      id: '/locations'
+      path: '/locations'
+      fullPath: '/locations'
+      preLoaderRoute: typeof LocationsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/for-sponsors-and-cros': {
+      id: '/for-sponsors-and-cros'
+      path: '/for-sponsors-and-cros'
+      fullPath: '/for-sponsors-and-cros'
+      preLoaderRoute: typeof ForSponsorsAndCrosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/for-healthcare-professionals': {
+      id: '/for-healthcare-professionals'
+      path: '/for-healthcare-professionals'
+      fullPath: '/for-healthcare-professionals'
+      preLoaderRoute: typeof ForHealthcareProfessionalsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/for-attorneys': {
+      id: '/for-attorneys'
+      path: '/for-attorneys'
+      fullPath: '/for-attorneys'
+      preLoaderRoute: typeof ForAttorneysRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/clinical-trials': {
+      id: '/clinical-trials'
+      path: '/clinical-trials'
+      fullPath: '/clinical-trials'
+      preLoaderRoute: typeof ClinicalTrialsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/blog': {
+      id: '/blog'
+      path: '/blog'
+      fullPath: '/blog'
+      preLoaderRoute: typeof BlogRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/accessibility': {
+      id: '/accessibility'
+      path: '/accessibility'
+      fullPath: '/accessibility'
+      preLoaderRoute: typeof AccessibilityRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -48,22 +501,177 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/research-experience/': {
+      id: '/research-experience/'
+      path: '/'
+      fullPath: '/research-experience/'
+      preLoaderRoute: typeof ResearchExperienceIndexRouteImport
+      parentRoute: typeof ResearchExperienceRoute
+    }
+    '/blog/': {
+      id: '/blog/'
+      path: '/'
+      fullPath: '/blog/'
+      preLoaderRoute: typeof BlogIndexRouteImport
+      parentRoute: typeof BlogRoute
+    }
+    '/research-experience/$category': {
+      id: '/research-experience/$category'
+      path: '/$category'
+      fullPath: '/research-experience/$category'
+      preLoaderRoute: typeof ResearchExperienceCategoryRouteImport
+      parentRoute: typeof ResearchExperienceRoute
+    }
+    '/locations/orlando': {
+      id: '/locations/orlando'
+      path: '/orlando'
+      fullPath: '/locations/orlando'
+      preLoaderRoute: typeof LocationsOrlandoRouteImport
+      parentRoute: typeof LocationsRoute
+    }
+    '/clinical-trials/what-to-expect': {
+      id: '/clinical-trials/what-to-expect'
+      path: '/what-to-expect'
+      fullPath: '/clinical-trials/what-to-expect'
+      preLoaderRoute: typeof ClinicalTrialsWhatToExpectRouteImport
+      parentRoute: typeof ClinicalTrialsRoute
+    }
+    '/clinical-trials/participant-faq': {
+      id: '/clinical-trials/participant-faq'
+      path: '/participant-faq'
+      fullPath: '/clinical-trials/participant-faq'
+      preLoaderRoute: typeof ClinicalTrialsParticipantFaqRouteImport
+      parentRoute: typeof ClinicalTrialsRoute
+    }
+    '/clinical-trials/how-clinical-trials-work': {
+      id: '/clinical-trials/how-clinical-trials-work'
+      path: '/how-clinical-trials-work'
+      fullPath: '/clinical-trials/how-clinical-trials-work'
+      preLoaderRoute: typeof ClinicalTrialsHowClinicalTrialsWorkRouteImport
+      parentRoute: typeof ClinicalTrialsRoute
+    }
+    '/clinical-trials/healthy-volunteer-studies': {
+      id: '/clinical-trials/healthy-volunteer-studies'
+      path: '/healthy-volunteer-studies'
+      fullPath: '/clinical-trials/healthy-volunteer-studies'
+      preLoaderRoute: typeof ClinicalTrialsHealthyVolunteerStudiesRouteImport
+      parentRoute: typeof ClinicalTrialsRoute
+    }
+    '/clinical-trials/clinical-trial-safety': {
+      id: '/clinical-trials/clinical-trial-safety'
+      path: '/clinical-trial-safety'
+      fullPath: '/clinical-trials/clinical-trial-safety'
+      preLoaderRoute: typeof ClinicalTrialsClinicalTrialSafetyRouteImport
+      parentRoute: typeof ClinicalTrialsRoute
+    }
+    '/clinical-trials/clinical-trial-eligibility': {
+      id: '/clinical-trials/clinical-trial-eligibility'
+      path: '/clinical-trial-eligibility'
+      fullPath: '/clinical-trials/clinical-trial-eligibility'
+      preLoaderRoute: typeof ClinicalTrialsClinicalTrialEligibilityRouteImport
+      parentRoute: typeof ClinicalTrialsRoute
+    }
+    '/clinical-trials/clinical-trial-compensation': {
+      id: '/clinical-trials/clinical-trial-compensation'
+      path: '/clinical-trial-compensation'
+      fullPath: '/clinical-trials/clinical-trial-compensation'
+      preLoaderRoute: typeof ClinicalTrialsClinicalTrialCompensationRouteImport
+      parentRoute: typeof ClinicalTrialsRoute
+    }
+    '/blog/$slug': {
+      id: '/blog/$slug'
+      path: '/$slug'
+      fullPath: '/blog/$slug'
+      preLoaderRoute: typeof BlogSlugRouteImport
+      parentRoute: typeof BlogRoute
+    }
   }
 }
 
+interface BlogRouteChildren {
+  BlogSlugRoute: typeof BlogSlugRoute
+  BlogIndexRoute: typeof BlogIndexRoute
+}
+
+const BlogRouteChildren: BlogRouteChildren = {
+  BlogSlugRoute: BlogSlugRoute,
+  BlogIndexRoute: BlogIndexRoute,
+}
+
+const BlogRouteWithChildren = BlogRoute._addFileChildren(BlogRouteChildren)
+
+interface ClinicalTrialsRouteChildren {
+  ClinicalTrialsClinicalTrialCompensationRoute: typeof ClinicalTrialsClinicalTrialCompensationRoute
+  ClinicalTrialsClinicalTrialEligibilityRoute: typeof ClinicalTrialsClinicalTrialEligibilityRoute
+  ClinicalTrialsClinicalTrialSafetyRoute: typeof ClinicalTrialsClinicalTrialSafetyRoute
+  ClinicalTrialsHealthyVolunteerStudiesRoute: typeof ClinicalTrialsHealthyVolunteerStudiesRoute
+  ClinicalTrialsHowClinicalTrialsWorkRoute: typeof ClinicalTrialsHowClinicalTrialsWorkRoute
+  ClinicalTrialsParticipantFaqRoute: typeof ClinicalTrialsParticipantFaqRoute
+  ClinicalTrialsWhatToExpectRoute: typeof ClinicalTrialsWhatToExpectRoute
+}
+
+const ClinicalTrialsRouteChildren: ClinicalTrialsRouteChildren = {
+  ClinicalTrialsClinicalTrialCompensationRoute:
+    ClinicalTrialsClinicalTrialCompensationRoute,
+  ClinicalTrialsClinicalTrialEligibilityRoute:
+    ClinicalTrialsClinicalTrialEligibilityRoute,
+  ClinicalTrialsClinicalTrialSafetyRoute:
+    ClinicalTrialsClinicalTrialSafetyRoute,
+  ClinicalTrialsHealthyVolunteerStudiesRoute:
+    ClinicalTrialsHealthyVolunteerStudiesRoute,
+  ClinicalTrialsHowClinicalTrialsWorkRoute:
+    ClinicalTrialsHowClinicalTrialsWorkRoute,
+  ClinicalTrialsParticipantFaqRoute: ClinicalTrialsParticipantFaqRoute,
+  ClinicalTrialsWhatToExpectRoute: ClinicalTrialsWhatToExpectRoute,
+}
+
+const ClinicalTrialsRouteWithChildren = ClinicalTrialsRoute._addFileChildren(
+  ClinicalTrialsRouteChildren,
+)
+
+interface LocationsRouteChildren {
+  LocationsOrlandoRoute: typeof LocationsOrlandoRoute
+}
+
+const LocationsRouteChildren: LocationsRouteChildren = {
+  LocationsOrlandoRoute: LocationsOrlandoRoute,
+}
+
+const LocationsRouteWithChildren = LocationsRoute._addFileChildren(
+  LocationsRouteChildren,
+)
+
+interface ResearchExperienceRouteChildren {
+  ResearchExperienceCategoryRoute: typeof ResearchExperienceCategoryRoute
+  ResearchExperienceIndexRoute: typeof ResearchExperienceIndexRoute
+}
+
+const ResearchExperienceRouteChildren: ResearchExperienceRouteChildren = {
+  ResearchExperienceCategoryRoute: ResearchExperienceCategoryRoute,
+  ResearchExperienceIndexRoute: ResearchExperienceIndexRoute,
+}
+
+const ResearchExperienceRouteWithChildren =
+  ResearchExperienceRoute._addFileChildren(ResearchExperienceRouteChildren)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AccessibilityRoute: AccessibilityRoute,
+  BlogRoute: BlogRouteWithChildren,
+  ClinicalTrialsRoute: ClinicalTrialsRouteWithChildren,
+  ForAttorneysRoute: ForAttorneysRoute,
+  ForHealthcareProfessionalsRoute: ForHealthcareProfessionalsRoute,
+  ForSponsorsAndCrosRoute: ForSponsorsAndCrosRoute,
+  LocationsRoute: LocationsRouteWithChildren,
+  MedicalDisclaimerRoute: MedicalDisclaimerRoute,
+  OrlandoClinicalResearchRoute: OrlandoClinicalResearchRoute,
+  PatientResourcesRoute: PatientResourcesRoute,
+  PrivacyPolicyRoute: PrivacyPolicyRoute,
+  ResearchExperienceRoute: ResearchExperienceRouteWithChildren,
+  ResearchGlossaryRoute: ResearchGlossaryRoute,
+  SitemapDotxmlRoute: SitemapDotxmlRoute,
+  TermsOfUseRoute: TermsOfUseRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}
