@@ -62,7 +62,7 @@ function Page() {
             <div>
               <h2 className="text-xl font-semibold">Examples of relevant research areas</h2>
               <ul className="mt-3 list-disc space-y-1 pl-6 text-muted-foreground">
-                {cat.areas.map((a) => <li key={a}>{a}</li>)}
+                {cat.areas.map((a: string) => <li key={a}>{a}</li>)}
               </ul>
             </div>
             <div>
