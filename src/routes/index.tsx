@@ -4,6 +4,7 @@ import { ContactCTA } from "@/components/site/CTA";
 import { FAQ, faqJsonLd } from "@/components/site/FAQ";
 import { buildHead } from "@/lib/seo";
 import { jsonLdScript } from "@/components/site/JsonLd";
+import heroBg from "@/assets/hero-bg.jpg";
 import {
   business,
   currentTrials,
