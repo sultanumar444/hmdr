@@ -72,7 +72,7 @@ function Page() {
       </Section>
       <Section>
         <article className="mx-auto max-w-3xl space-y-5 text-[15px] leading-relaxed text-foreground/90">
-          {post.body.map((p, i) => <p key={i}>{p}</p>)}
+          {post.body.map((para: string, i: number) => <p key={i}>{para}</p>)}
           <div className="rounded-lg border border-border bg-muted/40 p-4 text-sm text-muted-foreground">
             Medical disclaimer: This article is educational and is not medical advice. Please speak with your healthcare provider about decisions that affect your health.
           </div>
