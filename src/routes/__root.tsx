@@ -15,20 +15,18 @@ import { reportLovableError } from "../lib/lovable-error-reporting";
 function NotFoundComponent() {
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
-      <div className="max-w-md text-center">
+      <div className="max-w-lg text-center">
         <h1 className="text-7xl font-bold text-foreground">404</h1>
         <h2 className="mt-4 text-xl font-semibold text-foreground">Page not found</h2>
         <p className="mt-2 text-sm text-muted-foreground">
-          The page you're looking for doesn't exist or has been moved.
+          The page you're looking for doesn't exist or has been moved. Here are some places to try:
         </p>
-        <div className="mt-6">
-          <Link
-            to="/"
-            className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
-          >
-            Go home
-          </Link>
-        </div>
+        <ul className="mt-5 grid gap-2 text-sm sm:grid-cols-2">
+          <li><Link to="/" className="rounded-md border border-border bg-card px-3 py-2 hover:bg-accent block">Homepage</Link></li>
+          <li><Link to="/orlando-clinical-research" className="rounded-md border border-border bg-card px-3 py-2 hover:bg-accent block">Orlando clinical research</Link></li>
+          <li><Link to="/patient-resources" className="rounded-md border border-border bg-card px-3 py-2 hover:bg-accent block">Patient resources</Link></li>
+          <li><Link to="/locations/orlando" className="rounded-md border border-border bg-card px-3 py-2 hover:bg-accent block">Contact the team</Link></li>
+        </ul>
       </div>
     </div>
   );
