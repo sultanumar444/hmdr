@@ -29,7 +29,7 @@ function ProductPage() {
   const { product } = Route.useLoaderData();
   return (
     <SiteLayout>
-      <Breadcrumbs items={[{ label: "Products", href: "/products" }, { label: product.name }]} />
+      <Breadcrumbs items={[{ label: "Products", to: "/products" }, { label: product.name }]} />
       <Section className="pt-6">
         <PageHeader eyebrow="Product" title={product.name} intro={product.tagline} />
       </Section>
@@ -41,7 +41,7 @@ function ProductPage() {
       <Section>
         <h2 className="text-2xl font-semibold tracking-tight">Product highlights</h2>
         <ul className="mt-6 grid gap-3 text-sm md:grid-cols-2">
-          {product.highlights.map((h) => (
+          {product.highlights.map((h: string) => (
             <li key={h} className="rounded-lg border border-border bg-card p-4">✓ {h}</li>
           ))}
         </ul>
