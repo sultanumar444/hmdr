@@ -9,38 +9,90 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as OrlandoClinicalResearchRouteImport } from './routes/orlando-clinical-research'
+import { Route as LocationsRouteImport } from './routes/locations'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as LocationsOrlandoRouteImport } from './routes/locations.orlando'
 
+const OrlandoClinicalResearchRoute = OrlandoClinicalResearchRouteImport.update({
+  id: '/orlando-clinical-research',
+  path: '/orlando-clinical-research',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LocationsRoute = LocationsRouteImport.update({
+  id: '/locations',
+  path: '/locations',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const LocationsOrlandoRoute = LocationsOrlandoRouteImport.update({
+  id: '/orlando',
+  path: '/orlando',
+  getParentRoute: () => LocationsRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/locations': typeof LocationsRouteWithChildren
+  '/orlando-clinical-research': typeof OrlandoClinicalResearchRoute
+  '/locations/orlando': typeof LocationsOrlandoRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/locations': typeof LocationsRouteWithChildren
+  '/orlando-clinical-research': typeof OrlandoClinicalResearchRoute
+  '/locations/orlando': typeof LocationsOrlandoRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/locations': typeof LocationsRouteWithChildren
+  '/orlando-clinical-research': typeof OrlandoClinicalResearchRoute
+  '/locations/orlando': typeof LocationsOrlandoRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/locations'
+    | '/orlando-clinical-research'
+    | '/locations/orlando'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to: '/' | '/locations' | '/orlando-clinical-research' | '/locations/orlando'
+  id:
+    | '__root__'
+    | '/'
+    | '/locations'
+    | '/orlando-clinical-research'
+    | '/locations/orlando'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  LocationsRoute: typeof LocationsRouteWithChildren
+  OrlandoClinicalResearchRoute: typeof OrlandoClinicalResearchRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/orlando-clinical-research': {
+      id: '/orlando-clinical-research'
+      path: '/orlando-clinical-research'
+      fullPath: '/orlando-clinical-research'
+      preLoaderRoute: typeof OrlandoClinicalResearchRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/locations': {
+      id: '/locations'
+      path: '/locations'
+      fullPath: '/locations'
+      preLoaderRoute: typeof LocationsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -48,11 +100,32 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/locations/orlando': {
+      id: '/locations/orlando'
+      path: '/orlando'
+      fullPath: '/locations/orlando'
+      preLoaderRoute: typeof LocationsOrlandoRouteImport
+      parentRoute: typeof LocationsRoute
+    }
   }
 }
 
+interface LocationsRouteChildren {
+  LocationsOrlandoRoute: typeof LocationsOrlandoRoute
+}
+
+const LocationsRouteChildren: LocationsRouteChildren = {
+  LocationsOrlandoRoute: LocationsOrlandoRoute,
+}
+
+const LocationsRouteWithChildren = LocationsRoute._addFileChildren(
+  LocationsRouteChildren,
+)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  LocationsRoute: LocationsRouteWithChildren,
+  OrlandoClinicalResearchRoute: OrlandoClinicalResearchRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
