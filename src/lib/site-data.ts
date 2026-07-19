@@ -6,21 +6,129 @@ export const business = {
   city: "Orlando",
   region: "Florida",
   regionShort: "FL",
-  // Address, phone, hours, coordinates should be filled in when verified.
-  addressLine1: null as string | null,
+  addressLine1: "6001 Vineland Road, Suite 104",
   addressLine2: null as string | null,
-  cityStateZip: "Orlando, FL",
-  phone: null as string | null,
-  phoneHref: null as string | null,
-  email: null as string | null,
-  hours: null as string | null,
-  parking: null as string | null,
-  transit: null as string | null,
-  accessibility: null as string | null,
-  mapEmbedUrl: null as string | null,
-  physician: "Heuer M.D.",
+  cityStateZip: "Orlando, FL 32819",
+  phone: "(407) 574-5650",
+  phoneHref: "tel:+14075745650",
+  email: "info@heuermd.com" as string | null,
+  hours: "Monday – Friday · 9:00 AM – 5:00 PM",
+  parking: "On-site parking available for patients and visitors.",
+  transit: "Accessible from I-4 and the 408; near International Drive.",
+  accessibility: "Ground-floor entrance and accessible parking.",
+  mapEmbedUrl:
+    "https://www.google.com/maps?q=6001+Vineland+Road+Suite+104+Orlando+FL+32819&output=embed",
+  physician: "Marvin Heuer, M.D. FAAFP",
+  tagline: "has built their foundation on professional experience, premium quality and client trust.",
   updated: "2026-07-19",
 };
+
+// Hotlinked reference images from the legacy site (used with permission of owner).
+export const images = {
+  logo: "/hmd-logo.png",
+  doctorPortrait: "https://heuermd.com/wp-content/uploads/2015/07/DSC_1206-fix-1024x886.jpg",
+  medicalTeam: "https://heuermd.com/wp-content/uploads/2016/04/Heuer-MD-Medical-Team-min-1.jpg",
+  clinicalTrialHero: "https://heuermd.com/wp-content/uploads/2016/05/Heuer-MD-Clinical-Trial.jpg",
+  expertWitnessHero: "https://heuermd.com/wp-content/uploads/2017/07/Heuer-MD-Expert-Witness.jpg",
+  legalServices: "https://heuermd.com/wp-content/uploads/2017/07/Heuer-MD-Legal-Services.jpg",
+  consultingServices: "https://heuermd.com/wp-content/uploads/2017/07/Heuer-MD-Consulting-Services.jpg",
+  regulatoryServices: "https://heuermd.com/wp-content/uploads/2017/07/Heuer-MD-Regulatory-Services.jpg",
+  stemogen: "https://heuermd.com/wp-content/uploads/2017/11/box1__19_07.jpg-1250x704.jpeg",
+  vaccine: "https://heuermd.com/wp-content/uploads/2016/04/Heuer-MD-Vaccine.jpg",
+  dermatology: "https://heuermd.com/wp-content/uploads/2016/04/Heuer-MD-Dermatology.jpg",
+  endocrinology: "https://heuermd.com/wp-content/uploads/2016/04/Heuer-MD-Endocronology.jpg",
+  gastro: "https://heuermd.com/wp-content/uploads/2016/04/Heuer-MD-Gastro.jpg",
+};
+
+export const currentTrials = [
+  { name: "Asthma", image: "https://heuermd.com/wp-content/uploads/2018/09/Ashtma-woman-e1536949507155.jpg" },
+  { name: "Polymyositis / Dermatomyositis", image: "https://heuermd.com/wp-content/uploads/2023/09/PMDM-scaled.jpg" },
+  { name: "Gout", image: "https://heuermd.com/wp-content/uploads/2023/09/LG-GDCL010-Gout2-e1695954854391.jpg" },
+  { name: "Lupus", image: "https://heuermd.com/wp-content/uploads/2018/08/C.-diff-pic.jpg" },
+  { name: "Rheumatoid Arthritis", image: "https://heuermd.com/wp-content/uploads/2023/09/AdobeStock_159823520-scaled-e1695959926183.jpeg" },
+  { name: "Psoriatic Arthritis", image: "https://heuermd.com/wp-content/uploads/2019/04/PSA-pic2-1119x699.jpg" },
+  { name: "Chronic Obstructive Pulmonary Disease (COPD)", image: "https://heuermd.com/wp-content/uploads/2019/12/FB-Lungs-e1577479147360.jpg" },
+];
+
+export const completedTrials = [
+  "Alzheimer's","Asthma","Ankylosing Spondylitis","Atopic Dermatitis","Back Pain",
+  "C. diff (Clostridium Difficile)","Cholesterol","Common Cold","Constipation","COPD",
+  "Crohn's Disease","Dementia","Depression","Dermatomyositis","Eczema","Endometriosis",
+  "Epilepsy","Esophageal Ulcers","Female Contraceptive","Gastric Ulcers","Gout",
+  "Hormone Replacement Therapy","Hypertension","Immune Globulin (IVIG)","Irritable Bowel Syndrome (IBS)",
+  "Inflammatory Bowel Disease","Iron Deficiency Anemia","Libido","Lupus","Menopause","Migraine",
+  "Muscle Physiology","Multiple Sclerosis","Non Alcoholic Steatohepatitis (NASH)","Osteoporosis",
+  "Parkinson's Disease","Pneumonia","Psoriatic Arthritis","Restless Leg Syndrome","Rheumatoid Arthritis",
+  "Rubella","Rotavirus","Seizures","Sinusitis","Steatorrhea","Ulcerative Colitis",
+  "Urinary Incontinence","Urinary Tract Infection","Urticaria","Uterine Bleeding","Uterine Myoma",
+  "Type 2 Diabetes","Weight Loss",
+];
+
+export const partners = [
+  "Quorum","Quintiles","Seres","Schulman-IRB","Teva-Pharmaceutical-Industries","Acurian",
+  "abbvie","ChemiNutra","AstraZeneca","clinical-smart","Convance","Copernicus","DrugDev",
+  "Genentech","Evofem","GHA","Icon","INC-Research","infinite-digital","ISSN","Janssen",
+  "Kowa","Neuliven-Health","Merck","novo_nordisk","Parexel","Pfizer","ppd","Pharmacosmos","PRA-Health",
+].map((slug) => ({
+  name: slug.replace(/[-_]/g, " "),
+  image: `https://heuermd.com/wp-content/uploads/2017/11/${slug}.jpg`,
+}));
+
+export const products = [
+  {
+    slug: "pure-polar-omega-3",
+    name: "Pure Polar Omega 3",
+    tagline: "High-purity fish oil formulated for cardiovascular and cognitive support.",
+    description:
+      "Pure Polar Omega 3 delivers concentrated EPA and DHA from cold-water fish sources, molecularly distilled for purity. Formulated under Dr. Heuer's guidance to support heart, brain and joint health as part of a balanced diet.",
+    highlights: [
+      "Concentrated EPA and DHA per softgel",
+      "Molecularly distilled for purity",
+      "Sourced from cold-water fish oil",
+      "Third-party tested for contaminants",
+    ],
+  },
+  {
+    slug: "joint-ax",
+    name: "Joint AX — Feel the Relief",
+    tagline: "A joint-support supplement built on clinically studied ingredients.",
+    description:
+      "Joint AX combines glucosamine, chondroitin, MSM and botanical extracts to support joint comfort, flexibility and mobility. Formulated with dosages informed by decades of nutraceutical research experience.",
+    highlights: [
+      "Glucosamine + Chondroitin + MSM",
+      "Botanical anti-inflammatory support",
+      "Formulated for daily maintenance",
+      "Non-GMO, gluten-free",
+    ],
+  },
+  {
+    slug: "sport-ax",
+    name: "Sport AX — 100% Natural Supplement",
+    tagline: "A natural sports supplement designed for active adults.",
+    description:
+      "Sport AX is a naturally derived performance supplement designed to help active adults train, recover and stay consistent. Draws on Dr. Heuer's decades of experience formulating sports-nutrition products.",
+    highlights: [
+      "100% naturally derived ingredients",
+      "Supports training and recovery",
+      "No artificial colors or sweeteners",
+      "Free of banned substances",
+    ],
+  },
+];
+
+export const newsItems = [
+  {
+    slug: "dh-stemogen",
+    date: "November 2, 2017",
+    title: "DH STEMOGEN",
+    image: "https://heuermd.com/wp-content/uploads/2017/11/box1__19_07.jpg-1250x704.jpeg",
+    summary:
+      "One of the most exciting areas of medical research involves the therapeutic action, production, and adaptability of stem cells. Although research has been underway for many years, the initial predictions for the efficacy of human stem cell therapies have not fully been met.",
+  },
+];
+
+export const keyIndustries = ["Pharmaceutical","Dietary Supplements","Food and Beverage","Cosmetic and Personal Care"];
+export const regulatoryIndustries = ["Pharmaceutical","Cosmetics","Dietary Supplements","Food and Beverage"];
 
 export const areasServed = [
   "Downtown Orlando",
