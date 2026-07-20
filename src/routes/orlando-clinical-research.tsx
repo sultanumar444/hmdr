@@ -187,10 +187,23 @@ function OrlandoCR() {
         </div>
       </Section>
 
+      <RelatedLinks
+        heading="Learn more about participation"
+        links={[
+          { to: "/clinical-trials", label: "Current & Completed Trials", desc: "Full list of studies at Heuer M.D. Research." },
+          { to: "/clinical-trials/what-to-expect", label: "What to Expect", desc: "Step-by-step overview of the participant journey." },
+          { to: "/clinical-trials/clinical-trial-eligibility", label: "Eligibility Criteria", desc: "How criteria are set and why they matter." },
+          { to: "/clinical-trials/clinical-trial-compensation", label: "Compensation", desc: "How compensation typically works." },
+          { to: "/locations/orlando", label: "Orlando Location", desc: "Directions, hours and contact options." },
+          { to: "/research-glossary", label: "Research Glossary", desc: "Plain-language definitions of research terms." },
+        ]}
+      />
+
       <Section>
         <ContactCTA />
         <ReviewedLabel />
       </Section>
+
     </SiteLayout>
   );
 }
