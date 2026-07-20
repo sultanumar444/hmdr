@@ -3,7 +3,7 @@ import { SiteLayout, Section, PageHeader, Prose, RelatedLinks } from "@/componen
 import { Breadcrumbs } from "@/components/site/Breadcrumbs";
 import { ContactCTA } from "@/components/site/CTA";
 import { buildHead } from "@/lib/seo";
-import { business, images, keyIndustries, regulatoryIndustries } from "@/lib/site-data";
+import teamImg from "@/assets/team-collaboration.jpg";
 
 
 export const Route = createFileRoute("/about")({
