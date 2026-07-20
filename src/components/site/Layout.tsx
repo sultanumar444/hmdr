@@ -112,8 +112,8 @@ const nav: NavEntry[] = [
 function MegaPanel({ groups, feature }: { groups: MegaGroup[]; feature?: NonNullable<Extract<NavEntry, { mega: MegaGroup[] }>["feature"]> }) {
   return (
     <div className="invisible absolute left-0 right-0 top-full z-50 pt-3 opacity-0 transition-all duration-150 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
-      <div className="mx-auto max-w-7xl px-4">
-        <div className="rounded-xl border border-border bg-popover p-6 shadow-2xl">
+      <div className="rounded-xl border border-border bg-popover p-6 shadow-2xl">
+
           <div className={`grid gap-8 ${feature ? "md:grid-cols-4" : "md:grid-cols-3"}`}>
             {groups.map((g) => (
               <div key={g.heading}>
