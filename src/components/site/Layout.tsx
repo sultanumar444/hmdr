@@ -166,7 +166,7 @@ export function SiteHeader() {
         <nav className="hidden items-center gap-1 text-sm lg:flex">
           {nav.map((n) =>
             "mega" in n ? (
-              <div key={n.label} className="group relative">
+              <div key={n.label} className="group">
                 <button
                   type="button"
                   className="inline-flex items-center gap-1 rounded-md px-3 py-2 font-medium text-foreground/80 hover:text-primary"
