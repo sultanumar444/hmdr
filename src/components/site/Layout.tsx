@@ -111,40 +111,41 @@ const nav: NavEntry[] = [
 
 function MegaPanel({ groups, feature }: { groups: MegaGroup[]; feature?: NonNullable<Extract<NavEntry, { mega: MegaGroup[] }>["feature"]> }) {
   return (
-    <div className="invisible absolute left-1/2 top-full z-50 w-screen max-w-5xl -translate-x-1/2 pt-3 opacity-0 transition-all duration-150 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
-      <div className="mx-4 rounded-xl border border-border bg-popover p-6 shadow-2xl">
-        <div className={`grid gap-8 ${feature ? "md:grid-cols-4" : "md:grid-cols-3"}`}>
-          {groups.map((g) => (
-            <div key={g.heading}>
-              <div className="mb-3 text-xs font-semibold uppercase tracking-widest text-secondary">
-                {g.heading}
+    <div className="invisible absolute left-0 right-0 top-full z-50 pt-3 opacity-0 transition-all duration-150 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
+      <div className="rounded-xl border border-border bg-popover p-6 shadow-2xl">
+
+          <div className={`grid gap-8 ${feature ? "md:grid-cols-4" : "md:grid-cols-3"}`}>
+            {groups.map((g) => (
+              <div key={g.heading}>
+                <div className="mb-3 text-xs font-semibold uppercase tracking-widest text-secondary">
+                  {g.heading}
+                </div>
+                <ul className="space-y-2.5">
+                  {g.items.map((it) => (
+                    <li key={it.to}>
+                      <Link to={it.to} className="group/link block">
+                        <div className="text-sm font-medium text-foreground group-hover/link:text-secondary">
+                          {it.label}
+                        </div>
+                        {it.desc ? (
+                          <div className="mt-0.5 text-xs text-muted-foreground">{it.desc}</div>
+                        ) : null}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
               </div>
-              <ul className="space-y-2.5">
-                {g.items.map((it) => (
-                  <li key={it.to}>
-                    <Link to={it.to} className="group/link block">
-                      <div className="text-sm font-medium text-foreground group-hover/link:text-secondary">
-                        {it.label}
-                      </div>
-                      {it.desc ? (
-                        <div className="mt-0.5 text-xs text-muted-foreground">{it.desc}</div>
-                      ) : null}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
-          {feature ? (
-            <Link
-              to={feature.to}
-              className="rounded-lg bg-gradient-to-br from-primary to-secondary p-5 text-primary-foreground transition hover:opacity-95"
-            >
-              <div className="text-base font-semibold">{feature.title}</div>
-              <p className="mt-2 text-sm opacity-90">{feature.body}</p>
-              <div className="mt-4 text-sm font-medium">{feature.cta}</div>
-            </Link>
-          ) : null}
+            ))}
+            {feature ? (
+              <Link
+                to={feature.to}
+                className="rounded-lg bg-gradient-to-br from-primary to-secondary p-5 text-primary-foreground transition hover:opacity-95"
+              >
+                <div className="text-base font-semibold">{feature.title}</div>
+                <p className="mt-2 text-sm opacity-90">{feature.body}</p>
+                <div className="mt-4 text-sm font-medium">{feature.cta}</div>
+              </Link>
+            ) : null}
         </div>
       </div>
     </div>
@@ -155,7 +156,8 @@ export function SiteHeader() {
   const [open, setOpen] = useState(false);
   return (
     <header className="sticky top-0 z-40 border-b border-border bg-background/95 backdrop-blur">
-      <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3">
+      <div className="relative mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3">
+
         <Link to="/" className="flex items-center gap-3">
           <img src={images.logo} alt={`${business.name} logo`} className="h-16 w-auto md:h-20" />
           <span className="sr-only">{business.name}</span>
@@ -163,7 +165,7 @@ export function SiteHeader() {
         <nav className="hidden items-center gap-1 text-sm lg:flex">
           {nav.map((n) =>
             "mega" in n ? (
-              <div key={n.label} className="group relative">
+              <div key={n.label} className="group">
                 <button
                   type="button"
                   className="inline-flex items-center gap-1 rounded-md px-3 py-2 font-medium text-foreground/80 hover:text-primary"
