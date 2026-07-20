@@ -79,9 +79,13 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "description", content: "Physician-led clinical trials in Orlando and Central Florida, plus expert-witness and regulatory consulting for sponsors, CROs and attorneys." },
       { property: "og:site_name", content: "Heuer M.D. Research" },
       { property: "og:title", content: "Heuer M.D. Research | Clinical Trials in Orlando, FL" },
-      { property: "og:description", content: "Physician-led clinical trials in Orlando and Central Florida." },
+      { property: "og:description", content: "Physician-led clinical trials in Orlando and Central Florida, plus expert-witness and regulatory consulting for sponsors, CROs and attorneys." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Heuer M.D. Research | Clinical Trials in Orlando, FL" },
+      { name: "twitter:description", content: "Physician-led clinical trials in Orlando and Central Florida, plus expert-witness and regulatory consulting for sponsors, CROs and attorneys." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/85c19b74-e52c-44f6-a081-6ce1622d365f/id-preview-00abca00--a32bfe45-32fa-460b-8a72-6cdfba574016.lovable.app-1784540077489.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/85c19b74-e52c-44f6-a081-6ce1622d365f/id-preview-00abca00--a32bfe45-32fa-460b-8a72-6cdfba574016.lovable.app-1784540077489.png" },
     ],
     links: [
       {
