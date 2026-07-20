@@ -146,7 +146,6 @@ function MegaPanel({ groups, feature }: { groups: MegaGroup[]; feature?: NonNull
                 <div className="mt-4 text-sm font-medium">{feature.cta}</div>
               </Link>
             ) : null}
-          </div>
         </div>
       </div>
     </div>
