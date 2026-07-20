@@ -157,7 +157,8 @@ export function SiteHeader() {
   const [open, setOpen] = useState(false);
   return (
     <header className="sticky top-0 z-40 border-b border-border bg-background/95 backdrop-blur">
-      <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3">
+      <div className="relative mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3">
+
         <Link to="/" className="flex items-center gap-3">
           <img src={images.logo} alt={`${business.name} logo`} className="h-16 w-auto md:h-20" />
           <span className="sr-only">{business.name}</span>
