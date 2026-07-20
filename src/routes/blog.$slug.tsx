@@ -1,6 +1,7 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
-import { SiteLayout, Section } from "@/components/site/Layout";
-import { Breadcrumbs, breadcrumbJsonLd } from "@/components/site/Breadcrumbs";
+import { SiteLayout, Section, PageHeader } from "@/components/site/Layout";
+import { breadcrumbJsonLd } from "@/components/site/Breadcrumbs";
+
 import { ContactCTA, ReviewedLabel } from "@/components/site/CTA";
 import { buildHead } from "@/lib/seo";
 import { jsonLdScript } from "@/components/site/JsonLd";
@@ -56,20 +57,19 @@ function Page() {
 
   return (
     <SiteLayout>
-      <Breadcrumbs items={[{ label: "Blog", to: "/blog" }, { label: post.title }]} />
       <Section className="pt-6">
-        <div className="mx-auto max-w-3xl">
-          <div className="text-xs font-medium uppercase tracking-widest text-muted-foreground">{post.category}</div>
-          <h1 className="mt-3 text-3xl font-semibold tracking-tight md:text-4xl">{post.title}</h1>
-          <div className="mt-4 flex items-center gap-3 text-sm text-muted-foreground">
-            <span>{post.author}</span>
-            <span aria-hidden>·</span>
-            <span>Updated {post.updated}</span>
-            <span aria-hidden>·</span>
-            <span>{post.readTime}</span>
-          </div>
+        <PageHeader eyebrow={post.category} title={post.title} intro={post.summary} />
+      </Section>
+      <Section className="pt-0">
+        <div className="mx-auto flex max-w-3xl items-center gap-3 text-sm text-muted-foreground">
+          <span>{post.author}</span>
+          <span aria-hidden>·</span>
+          <span>Updated {post.updated}</span>
+          <span aria-hidden>·</span>
+          <span>{post.readTime}</span>
         </div>
       </Section>
+
       <Section>
         <article className="mx-auto max-w-3xl space-y-5 text-[15px] leading-relaxed text-foreground/90">
           {post.body.map((para: string, i: number) => <p key={i}>{para}</p>)}
