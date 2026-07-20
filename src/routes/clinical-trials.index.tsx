@@ -3,7 +3,7 @@ import { SiteLayout, Section, PageHeader, Prose, RelatedLinks } from "@/componen
 import { Breadcrumbs } from "@/components/site/Breadcrumbs";
 import { ContactCTA, InterestForm } from "@/components/site/CTA";
 import { buildHead } from "@/lib/seo";
-import { completedTrials, currentTrials, images, partners } from "@/lib/site-data";
+import { completedTrialDetails, currentTrials, images, partners } from "@/lib/site-data";
 
 
 export const Route = createFileRoute("/clinical-trials/")({
