@@ -1,9 +1,10 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { SiteLayout, Section, PageHeader, Prose } from "@/components/site/Layout";
+import { SiteLayout, Section, PageHeader, Prose, RelatedLinks } from "@/components/site/Layout";
 import { Breadcrumbs } from "@/components/site/Breadcrumbs";
 import { ContactCTA, InterestForm } from "@/components/site/CTA";
 import { buildHead } from "@/lib/seo";
 import { completedTrials, currentTrials, images, partners } from "@/lib/site-data";
+
 
 export const Route = createFileRoute("/clinical-trials/")({
   head: () => buildHead({
@@ -93,6 +94,30 @@ function ClinicalTrialsIndex() {
         </div>
       </Section>
 
+      <RelatedLinks
+        heading="Learn about clinical trial participation"
+        links={[
+          { to: "/clinical-trials/how-clinical-trials-work", label: "How Clinical Trials Work", desc: "Phases, protocols and oversight explained in plain language." },
+          { to: "/clinical-trials/clinical-trial-eligibility", label: "Eligibility Criteria", desc: "Who qualifies to join and why criteria matter for participant safety." },
+          { to: "/clinical-trials/what-to-expect", label: "What to Expect", desc: "A step-by-step overview of your visit journey." },
+          { to: "/clinical-trials/clinical-trial-safety", label: "Safety & Oversight", desc: "Informed consent, ethics boards and participant rights." },
+          { to: "/clinical-trials/clinical-trial-compensation", label: "Compensation", desc: "How compensation for time and travel typically works." },
+          { to: "/clinical-trials/participant-faq", label: "Participant FAQ", desc: "Common questions from potential participants." },
+        ]}
+      />
+
+      <RelatedLinks
+        heading="Research areas & practice"
+        links={[
+          { to: "/research-experience", label: "All Research Areas", desc: "Explore therapeutic areas we work across." },
+          { to: "/orlando-clinical-research", label: "Orlando Clinical Research", desc: "Local Central Florida clinical research information." },
+          { to: "/for-sponsors-and-cros", label: "For Sponsors & CROs", desc: "Site capabilities and study operations." },
+          { to: "/for-healthcare-professionals", label: "For Healthcare Professionals", desc: "Refer patients or explore collaboration." },
+          { to: "/patient-resources", label: "Patient Resources", desc: "Guides and checklists for participants." },
+          { to: "/research-glossary", label: "Research Glossary", desc: "Definitions for common clinical research terms." },
+        ]}
+      />
+
       <Section>
         <div className="grid gap-8 md:grid-cols-5">
           <div className="md:col-span-3"><ContactCTA /></div>
@@ -102,3 +127,4 @@ function ClinicalTrialsIndex() {
     </SiteLayout>
   );
 }
+
