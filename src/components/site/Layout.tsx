@@ -264,7 +264,7 @@ export function SiteFooter() {
     <footer className="mt-24 border-t border-border bg-primary text-primary-foreground">
       <div className="mx-auto grid max-w-7xl gap-8 px-4 py-12 md:grid-cols-4">
         <div>
-          <img src={images.logo} alt={business.name} className="mb-4 h-16 w-auto brightness-0 invert" />
+          <img src={images.logo} alt={business.name} className="mb-4 h-20 w-auto rounded bg-white p-2" />
           <p className="text-sm opacity-80">
             Physician-led clinical research and consulting in {business.city}, {business.regionShort}.
           </p>
