@@ -1,9 +1,10 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { SiteLayout, Section, PageHeader, Prose } from "@/components/site/Layout";
+import { SiteLayout, Section, PageHeader, Prose, RelatedLinks } from "@/components/site/Layout";
 import { Breadcrumbs } from "@/components/site/Breadcrumbs";
 import { ContactCTA, InterestForm } from "@/components/site/CTA";
 import { buildHead } from "@/lib/seo";
 import { images } from "@/lib/site-data";
+
 
 export const Route = createFileRoute("/expert-witness-services")({
   head: () => buildHead({
@@ -73,6 +74,18 @@ function ExpertWitnessPage() {
         </div>
       </Section>
 
+      <RelatedLinks
+        heading="Related professional services"
+        links={[
+          { to: "/services/legal-support", label: "Legal Support", desc: "General-counsel-caliber litigation support for the nutraceutical industry." },
+          { to: "/services/consulting", label: "Consulting Services", desc: "FDA / FTC / NARC / Health Canada regulatory consulting." },
+          { to: "/services/regulatory", label: "Regulatory Services", desc: "Full-range regulatory work for cosmetics, food, supplements and pharma." },
+          { to: "/for-attorneys", label: "For Attorneys", desc: "Case types, engagement process and case-consultation requests." },
+          { to: "/about", label: "About Dr. Heuer", desc: "40+ years medical experience and 25+ years clinical research leadership." },
+          { to: "/for-sponsors-and-cros", label: "For Sponsors & CROs", desc: "Clinical research site capabilities." },
+        ]}
+      />
+
       <Section>
         <div className="grid gap-8 md:grid-cols-5">
           <div className="md:col-span-3"><ContactCTA heading="Request an expert consultation" body="Speak with Dr. Heuer's team about your case." /></div>
@@ -82,3 +95,4 @@ function ExpertWitnessPage() {
     </SiteLayout>
   );
 }
+
