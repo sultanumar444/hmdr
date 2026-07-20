@@ -40,14 +40,167 @@ export const images = {
   gastro: "https://heuermd.com/wp-content/uploads/2016/04/Heuer-MD-Gastro.jpg",
 };
 
-export const currentTrials = [
-  { name: "Asthma", image: "https://heuermd.com/wp-content/uploads/2018/09/Ashtma-woman-e1536949507155.jpg" },
-  { name: "Polymyositis / Dermatomyositis", image: "https://heuermd.com/wp-content/uploads/2023/09/PMDM-scaled.jpg" },
-  { name: "Gout", image: "https://heuermd.com/wp-content/uploads/2023/09/LG-GDCL010-Gout2-e1695954854391.jpg" },
-  { name: "Lupus", image: "https://heuermd.com/wp-content/uploads/2018/08/C.-diff-pic.jpg" },
-  { name: "Rheumatoid Arthritis", image: "https://heuermd.com/wp-content/uploads/2023/09/AdobeStock_159823520-scaled-e1695959926183.jpeg" },
-  { name: "Psoriatic Arthritis", image: "https://heuermd.com/wp-content/uploads/2019/04/PSA-pic2-1119x699.jpg" },
-  { name: "Chronic Obstructive Pulmonary Disease (COPD)", image: "https://heuermd.com/wp-content/uploads/2019/12/FB-Lungs-e1577479147360.jpg" },
+export type TrialDetail = {
+  slug: string;
+  name: string;
+  image: string;
+  status: "recruiting" | "completed";
+  shortSummary: string;
+  about: string;
+  whoMayQualify: string[];
+  whatToExpect: string[];
+  compensationNote?: string;
+};
+
+export const currentTrials: TrialDetail[] = [
+  {
+    slug: "asthma",
+    name: "Asthma",
+    image: "https://heuermd.com/wp-content/uploads/2018/09/Ashtma-woman-e1536949507155.jpg",
+    status: "recruiting",
+    shortSummary: "Research studies for adults living with asthma, evaluating investigational respiratory therapies.",
+    about:
+      "Asthma is a chronic condition in which the airways narrow, swell and may produce extra mucus, making breathing difficult. Our Orlando research center participates in studies evaluating investigational treatments intended to help improve daily control of asthma symptoms and reduce flare-ups.",
+    whoMayQualify: [
+      "Adults with a physician-diagnosed history of asthma",
+      "Currently using a rescue and/or controller inhaler",
+      "Non-smokers or minimal tobacco history (study-specific)",
+      "Willing to attend scheduled study visits in Orlando, FL",
+    ],
+    whatToExpect: [
+      "Prescreening conversation to review your history",
+      "In-person screening visit with vitals and lung function testing",
+      "Study product visits at defined intervals per the protocol",
+      "Follow-up visits to review symptoms and safety",
+    ],
+    compensationNote: "Some studies may offer compensation for time and travel. Details vary by protocol.",
+  },
+  {
+    slug: "polymyositis-dermatomyositis",
+    name: "Polymyositis / Dermatomyositis",
+    image: "https://heuermd.com/wp-content/uploads/2023/09/PMDM-scaled.jpg",
+    status: "recruiting",
+    shortSummary: "Investigational studies for adults with polymyositis or dermatomyositis — rare inflammatory muscle diseases.",
+    about:
+      "Polymyositis and dermatomyositis are rare inflammatory conditions affecting muscles and, in some cases, skin. They can cause muscle weakness, fatigue and, in dermatomyositis, distinctive skin changes. Our research team participates in studies evaluating investigational therapies for these conditions.",
+    whoMayQualify: [
+      "Adults with a confirmed diagnosis of polymyositis or dermatomyositis",
+      "Experiencing muscle weakness or related symptoms",
+      "Meeting protocol-specific medication and health criteria",
+      "Able to travel to the Orlando research center",
+    ],
+    whatToExpect: [
+      "Detailed medical history and prescreening",
+      "Screening visit including muscle strength assessment and labs",
+      "Scheduled study visits with the investigator and coordinators",
+      "Ongoing monitoring for safety and response",
+    ],
+  },
+  {
+    slug: "gout",
+    name: "Gout",
+    image: "https://heuermd.com/wp-content/uploads/2023/09/LG-GDCL010-Gout2-e1695954854391.jpg",
+    status: "recruiting",
+    shortSummary: "Studies evaluating investigational treatments for adults living with chronic or recurrent gout.",
+    about:
+      "Gout is a form of inflammatory arthritis caused by elevated uric acid, leading to sudden, painful joint flare-ups — most commonly in the big toe. Studies at Heuer M.D. Research examine investigational approaches to managing uric acid levels and reducing flare frequency.",
+    whoMayQualify: [
+      "Adults with a physician-diagnosed history of gout",
+      "History of recurrent flare-ups or elevated uric acid",
+      "Meeting protocol-defined health criteria",
+      "Willing to attend Orlando study visits",
+    ],
+    whatToExpect: [
+      "Prescreening and review of gout history",
+      "Screening visit with labs (including uric acid)",
+      "Study visits per the protocol timeline",
+      "Safety and follow-up assessments",
+    ],
+  },
+  {
+    slug: "lupus",
+    name: "Lupus",
+    image: "https://heuermd.com/wp-content/uploads/2018/08/C.-diff-pic.jpg",
+    status: "recruiting",
+    shortSummary: "Clinical research for adults living with systemic lupus erythematosus (SLE).",
+    about:
+      "Lupus is a chronic autoimmune condition in which the immune system attacks healthy tissue, potentially affecting joints, skin, kidneys and other organs. We participate in studies evaluating investigational therapies aimed at helping manage lupus symptoms and disease activity.",
+    whoMayQualify: [
+      "Adults with a documented diagnosis of systemic lupus erythematosus",
+      "Active disease as defined by the study protocol",
+      "Currently on stable background therapy (study-specific)",
+      "Able to attend visits in Orlando, FL",
+    ],
+    whatToExpect: [
+      "Prescreening call to discuss history",
+      "In-person screening with labs and disease activity assessment",
+      "Scheduled study visits with investigator oversight",
+      "Ongoing safety monitoring throughout participation",
+    ],
+  },
+  {
+    slug: "rheumatoid-arthritis",
+    name: "Rheumatoid Arthritis",
+    image: "https://heuermd.com/wp-content/uploads/2023/09/AdobeStock_159823520-scaled-e1695959926183.jpeg",
+    status: "recruiting",
+    shortSummary: "Investigational studies for adults living with rheumatoid arthritis (RA).",
+    about:
+      "Rheumatoid arthritis (RA) is an autoimmune condition that causes inflammation of the joints, leading to pain, stiffness and, over time, joint damage. Our research site participates in studies evaluating investigational therapies for adults with moderate to severe RA.",
+    whoMayQualify: [
+      "Adults diagnosed with rheumatoid arthritis",
+      "Active joint symptoms as defined by the protocol",
+      "History of prior RA therapy (study-specific)",
+      "Willing to attend Orlando study visits",
+    ],
+    whatToExpect: [
+      "Prescreening to review your RA history and current medications",
+      "Screening visit with joint assessment and labs",
+      "Study product visits and follow-up per the protocol",
+      "Assessment of symptoms, function and safety over time",
+    ],
+  },
+  {
+    slug: "psoriatic-arthritis",
+    name: "Psoriatic Arthritis",
+    image: "https://heuermd.com/wp-content/uploads/2019/04/PSA-pic2-1119x699.jpg",
+    status: "recruiting",
+    shortSummary: "Studies for adults living with psoriatic arthritis (PsA) — joint disease associated with psoriasis.",
+    about:
+      "Psoriatic arthritis is a form of inflammatory arthritis that affects some people with psoriasis. It can cause joint pain, stiffness and swelling. Our team participates in studies evaluating investigational treatments for adults with PsA.",
+    whoMayQualify: [
+      "Adults with a documented diagnosis of psoriatic arthritis",
+      "Active joint symptoms per the protocol",
+      "Prior therapy history as defined by the study",
+      "Willing to travel to the Orlando research center",
+    ],
+    whatToExpect: [
+      "Prescreening call and medical history review",
+      "Screening visit with joint and skin assessments",
+      "Scheduled study visits with the investigator",
+      "Ongoing safety and symptom monitoring",
+    ],
+  },
+  {
+    slug: "copd",
+    name: "Chronic Obstructive Pulmonary Disease (COPD)",
+    image: "https://heuermd.com/wp-content/uploads/2019/12/FB-Lungs-e1577479147360.jpg",
+    status: "recruiting",
+    shortSummary: "Investigational research for adults living with chronic obstructive pulmonary disease.",
+    about:
+      "COPD is a progressive lung condition that makes it harder to breathe over time. It includes conditions such as emphysema and chronic bronchitis. Studies at our Orlando research center evaluate investigational therapies aimed at improving breathing and reducing exacerbations.",
+    whoMayQualify: [
+      "Adults with a physician-diagnosed history of COPD",
+      "Current or former smoker (study-specific)",
+      "Meeting lung-function criteria at screening",
+      "Willing to attend Orlando study visits",
+    ],
+    whatToExpect: [
+      "Prescreening review of COPD history",
+      "Screening visit with spirometry (lung function) and labs",
+      "Study visits at defined intervals per the protocol",
+      "Follow-up assessments for symptoms and safety",
+    ],
+  },
 ];
 
 export const completedTrials = [
@@ -63,6 +216,40 @@ export const completedTrials = [
   "Urinary Incontinence","Urinary Tract Infection","Urticaria","Uterine Bleeding","Uterine Myoma",
   "Type 2 Diabetes","Weight Loss",
 ];
+
+export function trialSlug(name: string): string {
+  return name
+    .toLowerCase()
+    .replace(/&/g, "and")
+    .replace(/[^\w\s-]/g, "")
+    .trim()
+    .replace(/\s+/g, "-");
+}
+
+export const completedTrialDetails: TrialDetail[] = completedTrials.map((name) => ({
+  slug: trialSlug(name),
+  name,
+  image: "https://heuermd.com/wp-content/uploads/2016/05/Heuer-MD-Clinical-Trial.jpg",
+  status: "completed" as const,
+  shortSummary: `Historical clinical research experience at Heuer M.D. Research in the area of ${name}.`,
+  about: `Heuer M.D. Research has previously conducted clinical trial research related to ${name}. Completed studies contribute to our team's therapeutic-area experience and to broader medical knowledge. Specific protocol details are confidential to the sponsor.`,
+  whoMayQualify: [
+    "This study is no longer enrolling participants",
+    "Future studies in this area may become available",
+    "Contact the research team to be notified of similar future opportunities",
+  ],
+  whatToExpect: [
+    "This entry is provided for reference to our historical experience",
+    "For active studies, please review our current clinical trials",
+  ],
+}));
+
+export function findTrial(slug: string): TrialDetail | undefined {
+  return (
+    currentTrials.find((t) => t.slug === slug) ||
+    completedTrialDetails.find((t) => t.slug === slug)
+  );
+}
 
 export const partners = [
   "Quorum","Quintiles","Seres","Schulman-IRB","Teva-Pharmaceutical-Industries","Acurian",

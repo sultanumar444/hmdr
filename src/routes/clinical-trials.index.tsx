@@ -3,7 +3,7 @@ import { SiteLayout, Section, PageHeader, Prose, RelatedLinks } from "@/componen
 import { Breadcrumbs } from "@/components/site/Breadcrumbs";
 import { ContactCTA, InterestForm } from "@/components/site/CTA";
 import { buildHead } from "@/lib/seo";
-import { completedTrials, currentTrials, images, partners } from "@/lib/site-data";
+import { completedTrialDetails, currentTrials, images, partners } from "@/lib/site-data";
 
 
 export const Route = createFileRoute("/clinical-trials/")({
@@ -34,23 +34,40 @@ function ClinicalTrialsIndex() {
         <p className="mt-2 text-muted-foreground">Select a study to learn more.</p>
         <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {currentTrials.map((t) => (
-            <div key={t.name} className="group overflow-hidden rounded-xl border border-border bg-card transition hover:border-foreground/20 hover:shadow-md">
+            <Link
+              key={t.slug}
+              to="/clinical-trials/studies/$slug"
+              params={{ slug: t.slug }}
+              className="group overflow-hidden rounded-xl border border-border bg-card transition hover:border-primary/40 hover:shadow-md"
+            >
               <div className="aspect-[4/3] w-full overflow-hidden">
                 <img src={t.image} alt={t.name} className="h-full w-full object-cover transition group-hover:scale-105" />
               </div>
               <div className="p-5">
                 <div className="font-semibold">{t.name}</div>
-                <Link to="/contact" className="mt-3 inline-block text-sm font-medium text-primary hover:underline">Ask about this study →</Link>
+                <p className="mt-2 line-clamp-2 text-sm text-muted-foreground">{t.shortSummary}</p>
+                <span className="mt-3 inline-block text-sm font-medium text-primary group-hover:underline">View study details →</span>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </Section>
 
       <Section>
         <h2 className="text-2xl font-semibold tracking-tight">Completed Clinical Trials</h2>
-        <ul className="mt-6 grid gap-x-6 gap-y-2 text-sm text-muted-foreground sm:grid-cols-2 md:grid-cols-3">
-          {completedTrials.map((t) => <li key={t}>• {t}</li>)}
+        <p className="mt-2 text-muted-foreground">Historical therapeutic-area experience. Select a topic to view a summary.</p>
+        <ul className="mt-6 grid gap-x-6 gap-y-2 text-sm sm:grid-cols-2 md:grid-cols-3">
+          {completedTrialDetails.map((t) => (
+            <li key={t.slug}>
+              <Link
+                to="/clinical-trials/studies/$slug"
+                params={{ slug: t.slug }}
+                className="text-muted-foreground hover:text-primary hover:underline"
+              >
+                • {t.name}
+              </Link>
+            </li>
+          ))}
         </ul>
       </Section>
 

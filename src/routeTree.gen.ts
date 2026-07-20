@@ -50,6 +50,7 @@ import { Route as ClinicalTrialsClinicalTrialSafetyRouteImport } from './routes/
 import { Route as ClinicalTrialsClinicalTrialEligibilityRouteImport } from './routes/clinical-trials.clinical-trial-eligibility'
 import { Route as ClinicalTrialsClinicalTrialCompensationRouteImport } from './routes/clinical-trials.clinical-trial-compensation'
 import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
+import { Route as ClinicalTrialsStudiesSlugRouteImport } from './routes/clinical-trials.studies.$slug'
 
 const TermsOfUseRoute = TermsOfUseRouteImport.update({
   id: '/terms-of-use',
@@ -265,6 +266,12 @@ const BlogSlugRoute = BlogSlugRouteImport.update({
   path: '/$slug',
   getParentRoute: () => BlogRoute,
 } as any)
+const ClinicalTrialsStudiesSlugRoute =
+  ClinicalTrialsStudiesSlugRouteImport.update({
+    id: '/studies/$slug',
+    path: '/studies/$slug',
+    getParentRoute: () => ClinicalTrialsRoute,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -308,6 +315,7 @@ export interface FileRoutesByFullPath {
   '/products/': typeof ProductsIndexRoute
   '/research-experience/': typeof ResearchExperienceIndexRoute
   '/services/': typeof ServicesIndexRoute
+  '/clinical-trials/studies/$slug': typeof ClinicalTrialsStudiesSlugRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -346,6 +354,7 @@ export interface FileRoutesByTo {
   '/products': typeof ProductsIndexRoute
   '/research-experience': typeof ResearchExperienceIndexRoute
   '/services': typeof ServicesIndexRoute
+  '/clinical-trials/studies/$slug': typeof ClinicalTrialsStudiesSlugRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -390,6 +399,7 @@ export interface FileRoutesById {
   '/products/': typeof ProductsIndexRoute
   '/research-experience/': typeof ResearchExperienceIndexRoute
   '/services/': typeof ServicesIndexRoute
+  '/clinical-trials/studies/$slug': typeof ClinicalTrialsStudiesSlugRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -435,6 +445,7 @@ export interface FileRouteTypes {
     | '/products/'
     | '/research-experience/'
     | '/services/'
+    | '/clinical-trials/studies/$slug'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -473,6 +484,7 @@ export interface FileRouteTypes {
     | '/products'
     | '/research-experience'
     | '/services'
+    | '/clinical-trials/studies/$slug'
   id:
     | '__root__'
     | '/'
@@ -516,6 +528,7 @@ export interface FileRouteTypes {
     | '/products/'
     | '/research-experience/'
     | '/services/'
+    | '/clinical-trials/studies/$slug'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -832,6 +845,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof BlogSlugRouteImport
       parentRoute: typeof BlogRoute
     }
+    '/clinical-trials/studies/$slug': {
+      id: '/clinical-trials/studies/$slug'
+      path: '/studies/$slug'
+      fullPath: '/clinical-trials/studies/$slug'
+      preLoaderRoute: typeof ClinicalTrialsStudiesSlugRouteImport
+      parentRoute: typeof ClinicalTrialsRoute
+    }
   }
 }
 
@@ -856,6 +876,7 @@ interface ClinicalTrialsRouteChildren {
   ClinicalTrialsParticipantFaqRoute: typeof ClinicalTrialsParticipantFaqRoute
   ClinicalTrialsWhatToExpectRoute: typeof ClinicalTrialsWhatToExpectRoute
   ClinicalTrialsIndexRoute: typeof ClinicalTrialsIndexRoute
+  ClinicalTrialsStudiesSlugRoute: typeof ClinicalTrialsStudiesSlugRoute
 }
 
 const ClinicalTrialsRouteChildren: ClinicalTrialsRouteChildren = {
@@ -872,6 +893,7 @@ const ClinicalTrialsRouteChildren: ClinicalTrialsRouteChildren = {
   ClinicalTrialsParticipantFaqRoute: ClinicalTrialsParticipantFaqRoute,
   ClinicalTrialsWhatToExpectRoute: ClinicalTrialsWhatToExpectRoute,
   ClinicalTrialsIndexRoute: ClinicalTrialsIndexRoute,
+  ClinicalTrialsStudiesSlugRoute: ClinicalTrialsStudiesSlugRoute,
 }
 
 const ClinicalTrialsRouteWithChildren = ClinicalTrialsRoute._addFileChildren(
