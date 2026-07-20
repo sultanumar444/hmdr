@@ -1,6 +1,8 @@
-import { Link } from "@tanstack/react-router";
+import { Link, useRouterState } from "@tanstack/react-router";
 import { useState, type ReactNode } from "react";
 import { business, images } from "@/lib/site-data";
+import pageHeroBg from "@/assets/page-hero-bg.jpg";
+
 
 type MegaItem = { to: string; label: string; desc?: string };
 type MegaGroup = { heading: string; items: MegaItem[] };
@@ -343,6 +345,48 @@ export function Prose({ children }: { children: ReactNode }) {
   );
 }
 
+const LABEL_OVERRIDES: Record<string, string> = {
+  "clinical-trials": "Clinical Trials",
+  "for-sponsors-and-cros": "Sponsors & CROs",
+  "for-attorneys": "For Attorneys",
+  "for-healthcare-professionals": "For Healthcare Professionals",
+  "orlando-clinical-research": "Orlando Clinical Research",
+  "expert-witness-services": "Expert Witness Services",
+  "research-experience": "Research Experience",
+  "research-glossary": "Research Glossary",
+  "patient-resources": "Patient Resources",
+  "medical-disclaimer": "Medical Disclaimer",
+  "privacy-policy": "Privacy Policy",
+  "terms-of-use": "Terms of Use",
+  "healthy-volunteer-studies": "Healthy Volunteer Studies",
+  "clinical-trial-eligibility": "Eligibility",
+  "clinical-trial-safety": "Safety & Oversight",
+  "clinical-trial-compensation": "Compensation",
+  "how-clinical-trials-work": "How Trials Work",
+  "what-to-expect": "What to Expect",
+  "participant-faq": "Participant FAQ",
+};
+
+function titleize(seg: string) {
+  if (LABEL_OVERRIDES[seg]) return LABEL_OVERRIDES[seg];
+  return seg
+    .split("-")
+    .map((w) => (w.length <= 3 ? w.toUpperCase() : w.charAt(0).toUpperCase() + w.slice(1)))
+    .join(" ");
+}
+
+function useAutoCrumbs() {
+  const pathname = useRouterState({ select: (s) => s.location.pathname });
+  const parts = pathname.split("/").filter(Boolean);
+  const crumbs: { label: string; to: string; last: boolean }[] = [];
+  let acc = "";
+  parts.forEach((p, i) => {
+    acc += `/${p}`;
+    crumbs.push({ label: titleize(decodeURIComponent(p)), to: acc, last: i === parts.length - 1 });
+  });
+  return crumbs;
+}
+
 export function PageHeader({
   eyebrow,
   title,
@@ -354,24 +398,82 @@ export function PageHeader({
   intro?: string;
   image?: string;
 }) {
+  const crumbs = useAutoCrumbs();
+  const bg = image ?? pageHeroBg;
+  const isHomepage = crumbs.length === 0;
   return (
-    <div className="mx-auto max-w-6xl">
-      <div className="grid gap-8 md:grid-cols-5 md:items-center">
-        <div className={image ? "md:col-span-3" : "md:col-span-5 max-w-3xl"}>
-          {eyebrow ? (
-            <div className="mb-3 text-xs font-medium uppercase tracking-widest text-secondary">
-              {eyebrow}
-            </div>
-          ) : null}
-          <h1 className="text-3xl font-semibold tracking-tight text-foreground md:text-4xl">{title}</h1>
-          {intro ? <p className="mt-4 text-lg text-muted-foreground">{intro}</p> : null}
-        </div>
-        {image ? (
-          <div className="md:col-span-2">
-            <img src={image} alt="" className="w-full rounded-xl border border-border object-cover shadow-sm" />
+    <div className="relative left-1/2 w-screen -ml-[50vw] -mt-6 -mb-12 overflow-hidden">
+      <img
+        src={bg}
+        alt=""
+        aria-hidden
+        loading="lazy"
+        className="absolute inset-0 h-full w-full object-cover"
+      />
+      <div className="absolute inset-0 bg-gradient-to-r from-primary/95 via-primary/85 to-primary/60" />
+      <div className="absolute inset-0 bg-black/55" />
+      <div className="relative mx-auto max-w-6xl px-4 py-16 md:py-24">
+        {!isHomepage ? (
+          <nav aria-label="Breadcrumb" className="mb-5 text-sm text-white/80">
+            <ol className="flex flex-wrap items-center gap-1.5">
+              <li>
+                <Link to="/" className="hover:text-white">Home</Link>
+              </li>
+              {crumbs.map((c) => (
+                <li key={c.to} className="flex items-center gap-1.5">
+                  <span aria-hidden className="text-white/50">›</span>
+                  {c.last ? (
+                    <span className="text-white">{c.label}</span>
+                  ) : (
+                    <Link to={c.to} className="hover:text-white">{c.label}</Link>
+                  )}
+                </li>
+              ))}
+            </ol>
+          </nav>
+        ) : null}
+        {eyebrow ? (
+          <div className="mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-secondary">
+            {eyebrow}
           </div>
+        ) : null}
+        <h1 className="max-w-4xl text-3xl font-semibold tracking-tight text-white md:text-5xl">
+          {title}
+        </h1>
+        {intro ? (
+          <p className="mt-4 max-w-3xl text-base text-white/85 md:text-lg">{intro}</p>
         ) : null}
       </div>
     </div>
   );
 }
+
+export function RelatedLinks({
+  heading = "Continue exploring",
+  links,
+}: {
+  heading?: string;
+  links: { to: string; label: string; desc?: string; params?: Record<string, string> }[];
+}) {
+  if (!links || links.length === 0) return null;
+  return (
+    <Section>
+      <h2 className="text-2xl font-semibold tracking-tight">{heading}</h2>
+      <div className="mt-6 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+        {links.map((l) => (
+          <Link
+            key={l.to + JSON.stringify(l.params ?? {})}
+            to={l.to as any}
+            params={l.params as any}
+            className="group rounded-xl border border-border bg-card p-5 transition hover:border-primary/40 hover:shadow-md"
+          >
+            <div className="font-semibold text-foreground group-hover:text-primary">{l.label}</div>
+            {l.desc ? <p className="mt-2 text-sm text-muted-foreground">{l.desc}</p> : null}
+            <div className="mt-3 text-sm font-medium text-primary">Learn more →</div>
+          </Link>
+        ))}
+      </div>
+    </Section>
+  );
+}
+

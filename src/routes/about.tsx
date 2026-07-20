@@ -1,9 +1,12 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { SiteLayout, Section, PageHeader, Prose } from "@/components/site/Layout";
+import { SiteLayout, Section, PageHeader, Prose, RelatedLinks } from "@/components/site/Layout";
 import { Breadcrumbs } from "@/components/site/Breadcrumbs";
 import { ContactCTA } from "@/components/site/CTA";
 import { buildHead } from "@/lib/seo";
 import { business, images, keyIndustries, regulatoryIndustries } from "@/lib/site-data";
+import teamImg from "@/assets/team-collaboration.jpg";
+
+
 
 export const Route = createFileRoute("/about")({
   head: () => buildHead({
@@ -41,7 +44,10 @@ function AboutPage() {
       </Section>
 
       <Section>
-        <Prose>
+        <div className="grid gap-10 md:grid-cols-2 md:items-center">
+          <img src={teamImg} alt="Heuer M.D. Research clinical team" loading="lazy" width={1600} height={1000} className="rounded-2xl border border-border object-cover shadow-md" />
+          <Prose>
+
           <p>
             Marvin Heuer is an internationally recognized research physician with over 40 years of experience
             in the medical field and 25 years of experience in domestic and international clinical research.
@@ -71,7 +77,9 @@ function AboutPage() {
             the Marquis Who's Who series.
           </p>
         </Prose>
+        </div>
       </Section>
+
 
       <Section>
         <h2 className="text-2xl font-semibold tracking-tight">Areas of research experience</h2>
@@ -110,7 +118,20 @@ function AboutPage() {
         </div>
       </Section>
 
+      <RelatedLinks
+        heading="Explore the practice"
+        links={[
+          { to: "/clinical-trials", label: "Clinical Trials", desc: "Current and completed studies." },
+          { to: "/expert-witness-services", label: "Expert Witness Services", desc: "Testimony and litigation support." },
+          { to: "/services/consulting", label: "Consulting Services", desc: "FDA / FTC regulatory consulting." },
+          { to: "/services/regulatory", label: "Regulatory Services", desc: "Cosmetics, food, supplements and pharma." },
+          { to: "/products", label: "Products", desc: "Nutraceuticals formulated under Dr. Heuer's guidance." },
+          { to: "/locations/orlando", label: "Orlando Location", desc: "Directions, hours and how to reach the team." },
+        ]}
+      />
+
       <Section><ContactCTA /></Section>
     </SiteLayout>
   );
 }
+
