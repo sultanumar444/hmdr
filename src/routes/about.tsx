@@ -44,7 +44,10 @@ function AboutPage() {
       </Section>
 
       <Section>
-        <Prose>
+        <div className="grid gap-10 md:grid-cols-2 md:items-center">
+          <img src={teamImg} alt="Heuer M.D. Research clinical team" loading="lazy" width={1600} height={1000} className="rounded-2xl border border-border object-cover shadow-md" />
+          <Prose>
+
           <p>
             Marvin Heuer is an internationally recognized research physician with over 40 years of experience
             in the medical field and 25 years of experience in domestic and international clinical research.
