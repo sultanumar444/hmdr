@@ -1,9 +1,10 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { SiteLayout, Section, PageHeader } from "@/components/site/Layout";
+import { SiteLayout, Section, PageHeader, RelatedLinks } from "@/components/site/Layout";
 import { Breadcrumbs } from "@/components/site/Breadcrumbs";
 import { ContactCTA } from "@/components/site/CTA";
 import { buildHead } from "@/lib/seo";
 import { images } from "@/lib/site-data";
+
 
 export const Route = createFileRoute("/services/")({
   head: () => buildHead({
@@ -48,7 +49,20 @@ function ServicesHub() {
         </div>
       </Section>
 
+      <RelatedLinks
+        heading="Also explore"
+        links={[
+          { to: "/expert-witness-services", label: "Expert Witness Services", desc: "Testimony, medical-record review and litigation support." },
+          { to: "/for-attorneys", label: "For Attorneys", desc: "Case types, engagement process and how to request a consultation." },
+          { to: "/for-sponsors-and-cros", label: "For Sponsors & CROs", desc: "Physician-led site capabilities in Orlando." },
+          { to: "/clinical-trials", label: "Clinical Trials", desc: "Currently recruiting studies and clinical research overview." },
+          { to: "/products", label: "Products", desc: "Nutraceuticals formulated under Dr. Heuer's guidance." },
+          { to: "/about", label: "About Dr. Heuer", desc: "Physician-led leadership with international clinical research experience." },
+        ]}
+      />
+
       <Section><ContactCTA /></Section>
     </SiteLayout>
   );
 }
+
