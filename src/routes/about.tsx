@@ -1,9 +1,10 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { SiteLayout, Section, PageHeader, Prose } from "@/components/site/Layout";
+import { SiteLayout, Section, PageHeader, Prose, RelatedLinks } from "@/components/site/Layout";
 import { Breadcrumbs } from "@/components/site/Breadcrumbs";
 import { ContactCTA } from "@/components/site/CTA";
 import { buildHead } from "@/lib/seo";
 import { business, images, keyIndustries, regulatoryIndustries } from "@/lib/site-data";
+
 
 export const Route = createFileRoute("/about")({
   head: () => buildHead({
@@ -110,7 +111,20 @@ function AboutPage() {
         </div>
       </Section>
 
+      <RelatedLinks
+        heading="Explore the practice"
+        links={[
+          { to: "/clinical-trials", label: "Clinical Trials", desc: "Current and completed studies." },
+          { to: "/expert-witness-services", label: "Expert Witness Services", desc: "Testimony and litigation support." },
+          { to: "/services/consulting", label: "Consulting Services", desc: "FDA / FTC regulatory consulting." },
+          { to: "/services/regulatory", label: "Regulatory Services", desc: "Cosmetics, food, supplements and pharma." },
+          { to: "/products", label: "Products", desc: "Nutraceuticals formulated under Dr. Heuer's guidance." },
+          { to: "/locations/orlando", label: "Orlando Location", desc: "Directions, hours and how to reach the team." },
+        ]}
+      />
+
       <Section><ContactCTA /></Section>
     </SiteLayout>
   );
 }
+
