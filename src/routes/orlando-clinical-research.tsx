@@ -1,11 +1,13 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { SiteLayout, Section, PageHeader } from "@/components/site/Layout";
+import { SiteLayout, Section, PageHeader, RelatedLinks } from "@/components/site/Layout";
 import { Breadcrumbs, breadcrumbJsonLd } from "@/components/site/Breadcrumbs";
 import { ContactCTA, EmptyStudies, InterestForm, ReviewedLabel } from "@/components/site/CTA";
 import { FAQ, faqJsonLd } from "@/components/site/FAQ";
 import { buildHead } from "@/lib/seo";
 import { jsonLdScript } from "@/components/site/JsonLd";
 import { areasServed, business, researchCategories, studies } from "@/lib/site-data";
+import orlandoImg from "@/assets/orlando-office.jpg";
+
 
 const faqs = [
   { q: "Where is Heuer M.D. Research located in Orlando?", a: "The research center is based in Orlando, Florida. Detailed directions are available on the Orlando location page." },
@@ -48,6 +50,22 @@ function OrlandoCR() {
       </Section>
 
       <Section>
+        <div className="grid gap-10 md:grid-cols-2 md:items-center">
+          <img src={orlandoImg} alt="Heuer M.D. Research Orlando office" loading="lazy" width={1600} height={1000} className="rounded-2xl border border-border object-cover shadow-md" />
+          <div>
+            <div className="text-xs font-medium uppercase tracking-widest text-secondary">Central Florida</div>
+            <h2 className="mt-2 text-2xl font-semibold tracking-tight">A physician-led clinical research center in Orlando</h2>
+            <p className="mt-3 text-muted-foreground">
+              Our Orlando site is a purpose-built clinical research center serving Greater Orlando, Winter Park, Kissimmee, Lake Mary, and the wider Central Florida region. We recruit participants for pharmaceutical, dietary-supplement and consumer-health research across a wide range of therapeutic areas.
+            </p>
+            <p className="mt-3 text-muted-foreground">
+              Every study is conducted under an ethics-committee-reviewed protocol with informed consent. Study-related visits and procedures are provided at no cost to participants.
+            </p>
+          </div>
+        </div>
+      </Section>
+
+      <Section>
         <h2 className="text-2xl font-semibold tracking-tight">Currently recruiting studies</h2>
         <p className="mt-2 max-w-2xl text-muted-foreground">
           Studies listed below are open to new participants. Enrollment for any specific study is not guaranteed.
@@ -56,6 +74,7 @@ function OrlandoCR() {
           {studies.length === 0 ? <EmptyStudies /> : null}
         </div>
       </Section>
+
 
       <Section>
         <div className="grid gap-8 md:grid-cols-2">
