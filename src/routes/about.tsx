@@ -77,7 +77,9 @@ function AboutPage() {
             the Marquis Who's Who series.
           </p>
         </Prose>
+        </div>
       </Section>
+
 
       <Section>
         <h2 className="text-2xl font-semibold tracking-tight">Areas of research experience</h2>
