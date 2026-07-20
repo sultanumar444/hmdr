@@ -78,7 +78,7 @@ function StudyDetailPage() {
             <section>
               <h2 className="text-2xl font-semibold tracking-tight text-foreground">Who may qualify</h2>
               <ul className="mt-3 list-disc space-y-1 pl-6">
-                {trial.whoMayQualify.map((c) => <li key={c}>{c}</li>)}
+                {trial.whoMayQualify.map((c: string) => <li key={c}>{c}</li>)}
               </ul>
               <p className="mt-3 text-sm text-muted-foreground">
                 Final eligibility is determined during prescreening and the in-person screening visit. Enrollment
@@ -89,7 +89,7 @@ function StudyDetailPage() {
             <section>
               <h2 className="text-2xl font-semibold tracking-tight text-foreground">What to expect</h2>
               <ol className="mt-3 list-decimal space-y-1 pl-6">
-                {trial.whatToExpect.map((s) => <li key={s}>{s}</li>)}
+                {trial.whatToExpect.map((s: string) => <li key={s}>{s}</li>)}
               </ol>
             </section>
 
