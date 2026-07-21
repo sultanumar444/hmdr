@@ -25,6 +25,7 @@ import { Route as ForSponsorsAndCrosRouteImport } from './routes/for-sponsors-an
 import { Route as ForHealthcareProfessionalsRouteImport } from './routes/for-healthcare-professionals'
 import { Route as ForAttorneysRouteImport } from './routes/for-attorneys'
 import { Route as ExpertWitnessServicesRouteImport } from './routes/expert-witness-services'
+import { Route as CurrentStudiesRouteImport } from './routes/current-studies'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as ClinicalTrialsRouteImport } from './routes/clinical-trials'
 import { Route as BlogRouteImport } from './routes/blog'
@@ -131,6 +132,11 @@ const ForAttorneysRoute = ForAttorneysRouteImport.update({
 const ExpertWitnessServicesRoute = ExpertWitnessServicesRouteImport.update({
   id: '/expert-witness-services',
   path: '/expert-witness-services',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CurrentStudiesRoute = CurrentStudiesRouteImport.update({
+  id: '/current-studies',
+  path: '/current-studies',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ContactRoute = ContactRouteImport.update({
@@ -280,6 +286,7 @@ export interface FileRoutesByFullPath {
   '/blog': typeof BlogRouteWithChildren
   '/clinical-trials': typeof ClinicalTrialsRouteWithChildren
   '/contact': typeof ContactRoute
+  '/current-studies': typeof CurrentStudiesRoute
   '/expert-witness-services': typeof ExpertWitnessServicesRoute
   '/for-attorneys': typeof ForAttorneysRoute
   '/for-healthcare-professionals': typeof ForHealthcareProfessionalsRoute
@@ -322,6 +329,7 @@ export interface FileRoutesByTo {
   '/about': typeof AboutRoute
   '/accessibility': typeof AccessibilityRoute
   '/contact': typeof ContactRoute
+  '/current-studies': typeof CurrentStudiesRoute
   '/expert-witness-services': typeof ExpertWitnessServicesRoute
   '/for-attorneys': typeof ForAttorneysRoute
   '/for-healthcare-professionals': typeof ForHealthcareProfessionalsRoute
@@ -364,6 +372,7 @@ export interface FileRoutesById {
   '/blog': typeof BlogRouteWithChildren
   '/clinical-trials': typeof ClinicalTrialsRouteWithChildren
   '/contact': typeof ContactRoute
+  '/current-studies': typeof CurrentStudiesRoute
   '/expert-witness-services': typeof ExpertWitnessServicesRoute
   '/for-attorneys': typeof ForAttorneysRoute
   '/for-healthcare-professionals': typeof ForHealthcareProfessionalsRoute
@@ -410,6 +419,7 @@ export interface FileRouteTypes {
     | '/blog'
     | '/clinical-trials'
     | '/contact'
+    | '/current-studies'
     | '/expert-witness-services'
     | '/for-attorneys'
     | '/for-healthcare-professionals'
@@ -452,6 +462,7 @@ export interface FileRouteTypes {
     | '/about'
     | '/accessibility'
     | '/contact'
+    | '/current-studies'
     | '/expert-witness-services'
     | '/for-attorneys'
     | '/for-healthcare-professionals'
@@ -493,6 +504,7 @@ export interface FileRouteTypes {
     | '/blog'
     | '/clinical-trials'
     | '/contact'
+    | '/current-studies'
     | '/expert-witness-services'
     | '/for-attorneys'
     | '/for-healthcare-professionals'
@@ -538,6 +550,7 @@ export interface RootRouteChildren {
   BlogRoute: typeof BlogRouteWithChildren
   ClinicalTrialsRoute: typeof ClinicalTrialsRouteWithChildren
   ContactRoute: typeof ContactRoute
+  CurrentStudiesRoute: typeof CurrentStudiesRoute
   ExpertWitnessServicesRoute: typeof ExpertWitnessServicesRoute
   ForAttorneysRoute: typeof ForAttorneysRoute
   ForHealthcareProfessionalsRoute: typeof ForHealthcareProfessionalsRoute
@@ -668,6 +681,13 @@ declare module '@tanstack/react-router' {
       path: '/expert-witness-services'
       fullPath: '/expert-witness-services'
       preLoaderRoute: typeof ExpertWitnessServicesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/current-studies': {
+      id: '/current-studies'
+      path: '/current-studies'
+      fullPath: '/current-studies'
+      preLoaderRoute: typeof CurrentStudiesRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/contact': {
@@ -964,6 +984,7 @@ const rootRouteChildren: RootRouteChildren = {
   BlogRoute: BlogRouteWithChildren,
   ClinicalTrialsRoute: ClinicalTrialsRouteWithChildren,
   ContactRoute: ContactRoute,
+  CurrentStudiesRoute: CurrentStudiesRoute,
   ExpertWitnessServicesRoute: ExpertWitnessServicesRoute,
   ForAttorneysRoute: ForAttorneysRoute,
   ForHealthcareProfessionalsRoute: ForHealthcareProfessionalsRoute,
