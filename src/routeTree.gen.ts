@@ -17,6 +17,7 @@ import { Route as ResearchExperienceRouteImport } from './routes/research-experi
 import { Route as ProductsRouteImport } from './routes/products'
 import { Route as PrivacyPolicyRouteImport } from './routes/privacy-policy'
 import { Route as PatientResourcesRouteImport } from './routes/patient-resources'
+import { Route as OurInvestigatorsRouteImport } from './routes/our-investigators'
 import { Route as OrlandoClinicalResearchRouteImport } from './routes/orlando-clinical-research'
 import { Route as NewsRouteImport } from './routes/news'
 import { Route as MedicalDisclaimerRouteImport } from './routes/medical-disclaimer'
@@ -25,6 +26,7 @@ import { Route as ForSponsorsAndCrosRouteImport } from './routes/for-sponsors-an
 import { Route as ForHealthcareProfessionalsRouteImport } from './routes/for-healthcare-professionals'
 import { Route as ForAttorneysRouteImport } from './routes/for-attorneys'
 import { Route as ExpertWitnessServicesRouteImport } from './routes/expert-witness-services'
+import { Route as CurrentStudiesRouteImport } from './routes/current-studies'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as ClinicalTrialsRouteImport } from './routes/clinical-trials'
 import { Route as BlogRouteImport } from './routes/blog'
@@ -92,6 +94,11 @@ const PatientResourcesRoute = PatientResourcesRouteImport.update({
   path: '/patient-resources',
   getParentRoute: () => rootRouteImport,
 } as any)
+const OurInvestigatorsRoute = OurInvestigatorsRouteImport.update({
+  id: '/our-investigators',
+  path: '/our-investigators',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const OrlandoClinicalResearchRoute = OrlandoClinicalResearchRouteImport.update({
   id: '/orlando-clinical-research',
   path: '/orlando-clinical-research',
@@ -131,6 +138,11 @@ const ForAttorneysRoute = ForAttorneysRouteImport.update({
 const ExpertWitnessServicesRoute = ExpertWitnessServicesRouteImport.update({
   id: '/expert-witness-services',
   path: '/expert-witness-services',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CurrentStudiesRoute = CurrentStudiesRouteImport.update({
+  id: '/current-studies',
+  path: '/current-studies',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ContactRoute = ContactRouteImport.update({
@@ -280,6 +292,7 @@ export interface FileRoutesByFullPath {
   '/blog': typeof BlogRouteWithChildren
   '/clinical-trials': typeof ClinicalTrialsRouteWithChildren
   '/contact': typeof ContactRoute
+  '/current-studies': typeof CurrentStudiesRoute
   '/expert-witness-services': typeof ExpertWitnessServicesRoute
   '/for-attorneys': typeof ForAttorneysRoute
   '/for-healthcare-professionals': typeof ForHealthcareProfessionalsRoute
@@ -288,6 +301,7 @@ export interface FileRoutesByFullPath {
   '/medical-disclaimer': typeof MedicalDisclaimerRoute
   '/news': typeof NewsRoute
   '/orlando-clinical-research': typeof OrlandoClinicalResearchRoute
+  '/our-investigators': typeof OurInvestigatorsRoute
   '/patient-resources': typeof PatientResourcesRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/products': typeof ProductsRouteWithChildren
@@ -322,6 +336,7 @@ export interface FileRoutesByTo {
   '/about': typeof AboutRoute
   '/accessibility': typeof AccessibilityRoute
   '/contact': typeof ContactRoute
+  '/current-studies': typeof CurrentStudiesRoute
   '/expert-witness-services': typeof ExpertWitnessServicesRoute
   '/for-attorneys': typeof ForAttorneysRoute
   '/for-healthcare-professionals': typeof ForHealthcareProfessionalsRoute
@@ -330,6 +345,7 @@ export interface FileRoutesByTo {
   '/medical-disclaimer': typeof MedicalDisclaimerRoute
   '/news': typeof NewsRoute
   '/orlando-clinical-research': typeof OrlandoClinicalResearchRoute
+  '/our-investigators': typeof OurInvestigatorsRoute
   '/patient-resources': typeof PatientResourcesRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/research-glossary': typeof ResearchGlossaryRoute
@@ -364,6 +380,7 @@ export interface FileRoutesById {
   '/blog': typeof BlogRouteWithChildren
   '/clinical-trials': typeof ClinicalTrialsRouteWithChildren
   '/contact': typeof ContactRoute
+  '/current-studies': typeof CurrentStudiesRoute
   '/expert-witness-services': typeof ExpertWitnessServicesRoute
   '/for-attorneys': typeof ForAttorneysRoute
   '/for-healthcare-professionals': typeof ForHealthcareProfessionalsRoute
@@ -372,6 +389,7 @@ export interface FileRoutesById {
   '/medical-disclaimer': typeof MedicalDisclaimerRoute
   '/news': typeof NewsRoute
   '/orlando-clinical-research': typeof OrlandoClinicalResearchRoute
+  '/our-investigators': typeof OurInvestigatorsRoute
   '/patient-resources': typeof PatientResourcesRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/products': typeof ProductsRouteWithChildren
@@ -410,6 +428,7 @@ export interface FileRouteTypes {
     | '/blog'
     | '/clinical-trials'
     | '/contact'
+    | '/current-studies'
     | '/expert-witness-services'
     | '/for-attorneys'
     | '/for-healthcare-professionals'
@@ -418,6 +437,7 @@ export interface FileRouteTypes {
     | '/medical-disclaimer'
     | '/news'
     | '/orlando-clinical-research'
+    | '/our-investigators'
     | '/patient-resources'
     | '/privacy-policy'
     | '/products'
@@ -452,6 +472,7 @@ export interface FileRouteTypes {
     | '/about'
     | '/accessibility'
     | '/contact'
+    | '/current-studies'
     | '/expert-witness-services'
     | '/for-attorneys'
     | '/for-healthcare-professionals'
@@ -460,6 +481,7 @@ export interface FileRouteTypes {
     | '/medical-disclaimer'
     | '/news'
     | '/orlando-clinical-research'
+    | '/our-investigators'
     | '/patient-resources'
     | '/privacy-policy'
     | '/research-glossary'
@@ -493,6 +515,7 @@ export interface FileRouteTypes {
     | '/blog'
     | '/clinical-trials'
     | '/contact'
+    | '/current-studies'
     | '/expert-witness-services'
     | '/for-attorneys'
     | '/for-healthcare-professionals'
@@ -501,6 +524,7 @@ export interface FileRouteTypes {
     | '/medical-disclaimer'
     | '/news'
     | '/orlando-clinical-research'
+    | '/our-investigators'
     | '/patient-resources'
     | '/privacy-policy'
     | '/products'
@@ -538,6 +562,7 @@ export interface RootRouteChildren {
   BlogRoute: typeof BlogRouteWithChildren
   ClinicalTrialsRoute: typeof ClinicalTrialsRouteWithChildren
   ContactRoute: typeof ContactRoute
+  CurrentStudiesRoute: typeof CurrentStudiesRoute
   ExpertWitnessServicesRoute: typeof ExpertWitnessServicesRoute
   ForAttorneysRoute: typeof ForAttorneysRoute
   ForHealthcareProfessionalsRoute: typeof ForHealthcareProfessionalsRoute
@@ -546,6 +571,7 @@ export interface RootRouteChildren {
   MedicalDisclaimerRoute: typeof MedicalDisclaimerRoute
   NewsRoute: typeof NewsRoute
   OrlandoClinicalResearchRoute: typeof OrlandoClinicalResearchRoute
+  OurInvestigatorsRoute: typeof OurInvestigatorsRoute
   PatientResourcesRoute: typeof PatientResourcesRoute
   PrivacyPolicyRoute: typeof PrivacyPolicyRoute
   ProductsRoute: typeof ProductsRouteWithChildren
@@ -614,6 +640,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PatientResourcesRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/our-investigators': {
+      id: '/our-investigators'
+      path: '/our-investigators'
+      fullPath: '/our-investigators'
+      preLoaderRoute: typeof OurInvestigatorsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/orlando-clinical-research': {
       id: '/orlando-clinical-research'
       path: '/orlando-clinical-research'
@@ -668,6 +701,13 @@ declare module '@tanstack/react-router' {
       path: '/expert-witness-services'
       fullPath: '/expert-witness-services'
       preLoaderRoute: typeof ExpertWitnessServicesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/current-studies': {
+      id: '/current-studies'
+      path: '/current-studies'
+      fullPath: '/current-studies'
+      preLoaderRoute: typeof CurrentStudiesRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/contact': {
@@ -964,6 +1004,7 @@ const rootRouteChildren: RootRouteChildren = {
   BlogRoute: BlogRouteWithChildren,
   ClinicalTrialsRoute: ClinicalTrialsRouteWithChildren,
   ContactRoute: ContactRoute,
+  CurrentStudiesRoute: CurrentStudiesRoute,
   ExpertWitnessServicesRoute: ExpertWitnessServicesRoute,
   ForAttorneysRoute: ForAttorneysRoute,
   ForHealthcareProfessionalsRoute: ForHealthcareProfessionalsRoute,
@@ -972,6 +1013,7 @@ const rootRouteChildren: RootRouteChildren = {
   MedicalDisclaimerRoute: MedicalDisclaimerRoute,
   NewsRoute: NewsRoute,
   OrlandoClinicalResearchRoute: OrlandoClinicalResearchRoute,
+  OurInvestigatorsRoute: OurInvestigatorsRoute,
   PatientResourcesRoute: PatientResourcesRoute,
   PrivacyPolicyRoute: PrivacyPolicyRoute,
   ProductsRoute: ProductsRouteWithChildren,
