@@ -11,102 +11,15 @@ type NavEntry =
   | { label: string; mega: MegaGroup[]; feature?: { title: string; body: string; to: string; cta: string } };
 
 const nav: NavEntry[] = [
-  { to: "/about", label: "About" },
-  {
-    label: "Clinical Trials",
-    mega: [
-      {
-        heading: "Participate",
-        items: [
-          { to: "/clinical-trials", label: "All Studies", desc: "Currently recruiting and completed" },
-          { to: "/clinical-trials/clinical-trial-eligibility", label: "Eligibility", desc: "Who qualifies to join" },
-          { to: "/clinical-trials/what-to-expect", label: "What to Expect", desc: "Visit timeline & process" },
-          { to: "/clinical-trials/participant-faq", label: "Participant FAQ" },
-        ],
-      },
-      {
-        heading: "Learn",
-        items: [
-          { to: "/clinical-trials/how-clinical-trials-work", label: "How Trials Work" },
-          { to: "/clinical-trials/clinical-trial-safety", label: "Safety & Oversight" },
-          { to: "/clinical-trials/clinical-trial-compensation", label: "Compensation" },
-          { to: "/clinical-trials/healthy-volunteer-studies", label: "Healthy Volunteers" },
-        ],
-      },
-      {
-        heading: "Local",
-        items: [
-          { to: "/orlando-clinical-research", label: "Orlando Studies" },
-          { to: "/locations/orlando", label: "Orlando Location" },
-          { to: "/research-experience", label: "Therapeutic Areas" },
-          { to: "/patient-resources", label: "Patient Resources" },
-        ],
-      },
-    ],
-    feature: {
-      title: "Join a study today",
-      body: "See currently recruiting trials at our Orlando center.",
-      to: "/clinical-trials",
-      cta: "View studies →",
-    },
-  },
-  {
-    label: "Services",
-    mega: [
-      {
-        heading: "Professional",
-        items: [
-          { to: "/expert-witness-services", label: "Expert Witness", desc: "Testimony & litigation support" },
-          { to: "/services/legal-support", label: "Legal Support" },
-          { to: "/services/consulting", label: "Consulting" },
-          { to: "/services/regulatory", label: "Regulatory Affairs" },
-        ],
-      },
-      {
-        heading: "For Partners",
-        items: [
-          { to: "/for-sponsors-and-cros", label: "Sponsors & CROs" },
-          { to: "/for-attorneys", label: "Attorneys" },
-          { to: "/for-healthcare-professionals", label: "Healthcare Professionals" },
-        ],
-      },
-    ],
-    feature: {
-      title: "Work with Dr. Heuer",
-      body: "40+ years of medical & regulatory expertise.",
-      to: "/contact",
-      cta: "Start a conversation →",
-    },
-  },
-  {
-    label: "Products",
-    mega: [
-      {
-        heading: "Nutraceuticals",
-        items: [
-          { to: "/products", label: "All Products" },
-          { to: "/products/pure-polar-omega-3", label: "Pure Polar Omega 3" },
-          { to: "/products/joint-ax", label: "Joint AX" },
-          { to: "/products/sport-ax", label: "Sport AX" },
-        ],
-      },
-    ],
-  },
-  {
-    label: "Resources",
-    mega: [
-      {
-        heading: "Education",
-        items: [
-          { to: "/blog", label: "Blog" },
-          { to: "/news", label: "News" },
-          { to: "/research-glossary", label: "Research Glossary" },
-          { to: "/patient-resources", label: "Patient Resources" },
-        ],
-      },
-    ],
-  },
-  { to: "/contact", label: "Contact" },
+  { to: "/", label: "Home" },
+  { to: "/about", label: "About Us" },
+  { to: "/clinical-trials", label: "Clinical Trials" },
+  { to: "/current-studies", label: "Current Studies" },
+  { to: "/our-investigators", label: "Our Investigators" },
+  { to: "/patient-resources", label: "Patient Resources" },
+  { to: "/news", label: "Research News" },
+  { to: "/for-sponsors-and-cros", label: "Sponsors & CROs" },
+  { to: "/contact", label: "Contact Us" },
 ];
 
 function MegaPanel({ groups, feature }: { groups: MegaGroup[]; feature?: NonNullable<Extract<NavEntry, { mega: MegaGroup[] }>["feature"]> }) {
