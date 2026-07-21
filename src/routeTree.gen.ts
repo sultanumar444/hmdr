@@ -17,6 +17,7 @@ import { Route as ResearchExperienceRouteImport } from './routes/research-experi
 import { Route as ProductsRouteImport } from './routes/products'
 import { Route as PrivacyPolicyRouteImport } from './routes/privacy-policy'
 import { Route as PatientResourcesRouteImport } from './routes/patient-resources'
+import { Route as OurInvestigatorsRouteImport } from './routes/our-investigators'
 import { Route as OrlandoClinicalResearchRouteImport } from './routes/orlando-clinical-research'
 import { Route as NewsRouteImport } from './routes/news'
 import { Route as MedicalDisclaimerRouteImport } from './routes/medical-disclaimer'
@@ -91,6 +92,11 @@ const PrivacyPolicyRoute = PrivacyPolicyRouteImport.update({
 const PatientResourcesRoute = PatientResourcesRouteImport.update({
   id: '/patient-resources',
   path: '/patient-resources',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OurInvestigatorsRoute = OurInvestigatorsRouteImport.update({
+  id: '/our-investigators',
+  path: '/our-investigators',
   getParentRoute: () => rootRouteImport,
 } as any)
 const OrlandoClinicalResearchRoute = OrlandoClinicalResearchRouteImport.update({
@@ -295,6 +301,7 @@ export interface FileRoutesByFullPath {
   '/medical-disclaimer': typeof MedicalDisclaimerRoute
   '/news': typeof NewsRoute
   '/orlando-clinical-research': typeof OrlandoClinicalResearchRoute
+  '/our-investigators': typeof OurInvestigatorsRoute
   '/patient-resources': typeof PatientResourcesRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/products': typeof ProductsRouteWithChildren
@@ -338,6 +345,7 @@ export interface FileRoutesByTo {
   '/medical-disclaimer': typeof MedicalDisclaimerRoute
   '/news': typeof NewsRoute
   '/orlando-clinical-research': typeof OrlandoClinicalResearchRoute
+  '/our-investigators': typeof OurInvestigatorsRoute
   '/patient-resources': typeof PatientResourcesRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/research-glossary': typeof ResearchGlossaryRoute
@@ -381,6 +389,7 @@ export interface FileRoutesById {
   '/medical-disclaimer': typeof MedicalDisclaimerRoute
   '/news': typeof NewsRoute
   '/orlando-clinical-research': typeof OrlandoClinicalResearchRoute
+  '/our-investigators': typeof OurInvestigatorsRoute
   '/patient-resources': typeof PatientResourcesRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/products': typeof ProductsRouteWithChildren
@@ -428,6 +437,7 @@ export interface FileRouteTypes {
     | '/medical-disclaimer'
     | '/news'
     | '/orlando-clinical-research'
+    | '/our-investigators'
     | '/patient-resources'
     | '/privacy-policy'
     | '/products'
@@ -471,6 +481,7 @@ export interface FileRouteTypes {
     | '/medical-disclaimer'
     | '/news'
     | '/orlando-clinical-research'
+    | '/our-investigators'
     | '/patient-resources'
     | '/privacy-policy'
     | '/research-glossary'
@@ -513,6 +524,7 @@ export interface FileRouteTypes {
     | '/medical-disclaimer'
     | '/news'
     | '/orlando-clinical-research'
+    | '/our-investigators'
     | '/patient-resources'
     | '/privacy-policy'
     | '/products'
@@ -559,6 +571,7 @@ export interface RootRouteChildren {
   MedicalDisclaimerRoute: typeof MedicalDisclaimerRoute
   NewsRoute: typeof NewsRoute
   OrlandoClinicalResearchRoute: typeof OrlandoClinicalResearchRoute
+  OurInvestigatorsRoute: typeof OurInvestigatorsRoute
   PatientResourcesRoute: typeof PatientResourcesRoute
   PrivacyPolicyRoute: typeof PrivacyPolicyRoute
   ProductsRoute: typeof ProductsRouteWithChildren
@@ -625,6 +638,13 @@ declare module '@tanstack/react-router' {
       path: '/patient-resources'
       fullPath: '/patient-resources'
       preLoaderRoute: typeof PatientResourcesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/our-investigators': {
+      id: '/our-investigators'
+      path: '/our-investigators'
+      fullPath: '/our-investigators'
+      preLoaderRoute: typeof OurInvestigatorsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/orlando-clinical-research': {
@@ -993,6 +1013,7 @@ const rootRouteChildren: RootRouteChildren = {
   MedicalDisclaimerRoute: MedicalDisclaimerRoute,
   NewsRoute: NewsRoute,
   OrlandoClinicalResearchRoute: OrlandoClinicalResearchRoute,
+  OurInvestigatorsRoute: OurInvestigatorsRoute,
   PatientResourcesRoute: PatientResourcesRoute,
   PrivacyPolicyRoute: PrivacyPolicyRoute,
   ProductsRoute: ProductsRouteWithChildren,
