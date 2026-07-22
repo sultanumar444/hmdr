@@ -172,7 +172,7 @@ export function SiteHeader() {
           <Link
             to="/contact"
             data-cta="contact-click"
-            className="rounded-md bg-secondary px-4 py-2 text-sm font-semibold text-secondary-foreground shadow-sm hover:opacity-90"
+            className="whitespace-nowrap rounded-md bg-secondary px-4 py-2 text-sm font-semibold text-secondary-foreground shadow-sm hover:opacity-90"
           >
             Request appointment
           </Link>
