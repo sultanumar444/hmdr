@@ -12,14 +12,31 @@ type NavEntry =
 
 const nav: NavEntry[] = [
   { to: "/", label: "Home" },
-  { to: "/about", label: "About Us" },
+  {
+    label: "About",
+    mega: [
+      {
+        heading: "About HMD",
+        items: [
+          { to: "/about", label: "About", desc: "Dr. Heuer and the HMD Research team." },
+          { to: "/news", label: "Research News", desc: "Latest studies, publications and updates." },
+        ],
+      },
+    ],
+  },
   { to: "/clinical-trials", label: "Clinical Trials" },
   { to: "/current-studies", label: "Current Studies" },
   { to: "/our-investigators", label: "Our Investigators" },
   { to: "/patient-resources", label: "Patient Resources" },
-  { to: "/news", label: "Research News" },
   { to: "/for-sponsors-and-cros", label: "Sponsors & CROs" },
   { to: "/contact", label: "Contact Us" },
+];
+
+const languages = [
+  { code: "en", label: "English" },
+  { code: "es", label: "Español" },
+  { code: "pt", label: "Português" },
+  { code: "fr", label: "Français" },
 ];
 
 function MegaPanel({ groups, feature }: { groups: MegaGroup[]; feature?: NonNullable<Extract<NavEntry, { mega: MegaGroup[] }>["feature"]> }) {
