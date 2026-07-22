@@ -113,9 +113,9 @@ export function SiteHeader() {
           {nav.map((n) =>
             "mega" in n ? (
               <div key={n.label} className="group">
-                <button
+              <button
                   type="button"
-                  className="inline-flex items-center gap-1 rounded-md px-3 py-2 font-medium text-foreground/80 hover:text-primary"
+                  className="inline-flex items-center gap-1 whitespace-nowrap rounded-md px-3 py-2 font-medium text-foreground/80 hover:text-primary"
                 >
                   {n.label}
                   <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -128,12 +128,14 @@ export function SiteHeader() {
               <Link
                 key={n.to}
                 to={n.to}
-                className="rounded-md px-3 py-2 font-medium text-foreground/80 transition-colors hover:text-primary"
-                activeProps={{ className: "rounded-md px-3 py-2 font-medium text-primary" }}
+                className="whitespace-nowrap rounded-md px-3 py-2 font-medium text-foreground/80 transition-colors hover:text-primary"
+                activeProps={{ className: "whitespace-nowrap rounded-md px-3 py-2 font-medium text-primary" }}
               >
                 {n.label}
               </Link>
             )
+          )}
+
           )}
         </nav>
         <div className="flex items-center gap-2">
