@@ -170,13 +170,6 @@ export function SiteHeader() {
               </ul>
             </div>
           </div>
-          <a
-            href={business.phoneHref!}
-            data-cta="phone-click"
-            className="hidden rounded-md border border-input px-3 py-1.5 text-sm font-medium hover:bg-accent md:inline-flex"
-          >
-            {business.phone}
-          </a>
           <Link
             to="/contact"
             data-cta="contact-click"
