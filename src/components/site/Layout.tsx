@@ -29,6 +29,7 @@ const nav: NavEntry[] = [
   { to: "/our-investigators", label: "Our Investigators" },
   { to: "/patient-resources", label: "Patient Resources" },
   { to: "/for-sponsors-and-cros", label: "Sponsors & CROs" },
+  { to: "/contact", label: "Contact Us" },
 ];
 
 const languages = [
