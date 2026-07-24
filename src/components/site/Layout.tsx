@@ -84,76 +84,107 @@ export function SiteHeader() {
   const [open, setOpen] = useState(false);
   return (
     <header className="sticky top-0 z-40 border-b border-border bg-background/95 backdrop-blur">
-      <div className="border-b border-border/60 bg-primary text-primary-foreground">
-        <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-2 text-xs">
-          <Link to="/contact" className="inline-flex items-center gap-1.5 font-medium hover:opacity-80">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M4 4h16v16H4z" />
-              <path d="M4 4l8 8 8-8" />
-            </svg>
-            Contact Us
+      {/* Top bar: logo + address + phone + CTA */}
+      <div className="border-b border-border/60 bg-background">
+        <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-4 px-4 py-3">
+          <Link to="/" className="flex items-center gap-3">
+            <img src={images.logo} alt={`${business.name} logo`} className="h-16 w-auto md:h-20" />
+            <span className="sr-only">{business.name}</span>
           </Link>
-          <a href={business.phoneHref!} data-cta="phone-click" className="inline-flex items-center gap-1.5 font-medium hover:opacity-80">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+
+          <div className="hidden items-center gap-6 md:flex">
+            <div className="flex items-start gap-2 text-sm">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="mt-0.5 text-secondary">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                <circle cx="12" cy="10" r="3" />
+              </svg>
+              <div className="leading-tight">
+                <div className="font-medium text-foreground">{business.addressLine1}</div>
+                <div className="text-muted-foreground">{business.cityStateZip}</div>
+              </div>
+            </div>
+
+            <div className="flex items-start gap-2 text-sm">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="mt-0.5 text-secondary">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+              </svg>
+              <div className="leading-tight">
+                <a href={business.phoneHref!} data-cta="phone-click" className="font-semibold text-foreground hover:text-primary">
+                  {business.phone}
+                </a>
+                <div className="text-muted-foreground">{business.hours.split("·")[0].trim()}</div>
+              </div>
+            </div>
+
+            <Link
+              to="/contact"
+              data-cta="contact-click"
+              className="whitespace-nowrap rounded-md bg-secondary px-4 py-2.5 text-sm font-semibold text-secondary-foreground shadow-sm hover:opacity-90"
+            >
+              Request appointment
+            </Link>
+          </div>
+
+          <button
+            aria-label="Menu"
+            onClick={() => setOpen(!open)}
+            className="rounded-md border border-input p-2 lg:hidden"
+          >
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <path d="M3 6h18M3 12h18M3 18h18" />
             </svg>
-            Call {business.phone}
-          </a>
+          </button>
         </div>
       </div>
-      <div className="relative mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3">
 
-
-        <Link to="/" className="flex items-center gap-3">
-          <img src={images.logo} alt={`${business.name} logo`} className="h-16 w-auto md:h-20" />
-          <span className="sr-only">{business.name}</span>
-        </Link>
-        <nav className="hidden items-center gap-1 text-sm lg:flex">
-          {nav.map((n) =>
-            "mega" in n ? (
-              <div key={n.label} className="group">
-              <button
-                  type="button"
-                  className="inline-flex items-center gap-1 whitespace-nowrap rounded-md px-3 py-2 font-medium text-foreground/80 hover:text-primary"
+      {/* Menu bar */}
+      <div className="bg-primary text-primary-foreground">
+        <div className="relative mx-auto flex max-w-7xl items-center justify-between gap-4 px-4">
+          <nav className="hidden items-center gap-1 text-sm lg:flex">
+            {nav.map((n) =>
+              "mega" in n ? (
+                <div key={n.label} className="group">
+                  <button
+                    type="button"
+                    className="inline-flex items-center gap-1 whitespace-nowrap px-3 py-3 font-medium text-primary-foreground/90 hover:text-secondary"
+                  >
+                    {n.label}
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                      <path d="M6 9l6 6 6-6" />
+                    </svg>
+                  </button>
+                  <MegaPanel groups={n.mega} feature={n.feature} />
+                </div>
+              ) : (
+                <Link
+                  key={n.to}
+                  to={n.to}
+                  className="whitespace-nowrap px-3 py-3 font-medium text-primary-foreground/90 transition-colors hover:text-secondary"
+                  activeProps={{ className: "whitespace-nowrap px-3 py-3 font-medium text-secondary" }}
                 >
                   {n.label}
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                    <path d="M6 9l6 6 6-6" />
-                  </svg>
-                </button>
-                <MegaPanel groups={n.mega} feature={n.feature} />
-              </div>
-            ) : (
-              <Link
-                key={n.to}
-                to={n.to}
-                className="whitespace-nowrap rounded-md px-3 py-2 font-medium text-foreground/80 transition-colors hover:text-primary"
-                activeProps={{ className: "whitespace-nowrap rounded-md px-3 py-2 font-medium text-primary" }}
-              >
-                {n.label}
-              </Link>
-            )
-          )}
+                </Link>
+              )
+            )}
+          </nav>
 
-        </nav>
-        <div className="flex items-center gap-2">
-          <div className="group relative hidden md:block">
+          <div className="group relative ml-auto hidden md:block">
             <button
               type="button"
               aria-label="Select language"
-              className="inline-flex items-center gap-1.5 rounded-md border border-input px-2.5 py-1.5 text-sm font-medium text-foreground/80 hover:text-primary"
+              className="inline-flex items-center gap-1.5 px-3 py-3 text-sm font-medium text-primary-foreground/90 hover:text-secondary"
             >
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <circle cx="12" cy="12" r="10" />
                 <path d="M2 12h20" />
                 <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
               </svg>
-              <span className="hidden lg:inline">EN</span>
+              <span>EN</span>
               <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                 <path d="M6 9l6 6 6-6" />
               </svg>
             </button>
-            <div className="invisible absolute right-0 top-full z-50 min-w-[10rem] pt-2 opacity-0 transition-all duration-150 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
+            <div className="invisible absolute right-0 top-full z-50 min-w-[10rem] pt-1 opacity-0 transition-all duration-150 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
               <ul className="rounded-lg border border-border bg-popover p-1 shadow-xl">
                 {languages.map((l) => (
                   <li key={l.code}>
@@ -169,26 +200,22 @@ export function SiteHeader() {
               </ul>
             </div>
           </div>
-          <Link
-            to="/contact"
-            data-cta="contact-click"
-            className="whitespace-nowrap rounded-md bg-secondary px-4 py-2 text-sm font-semibold text-secondary-foreground shadow-sm hover:opacity-90"
-          >
-            Request appointment
-          </Link>
-          <button
-            aria-label="Menu"
-            onClick={() => setOpen(!open)}
-            className="rounded-md border border-input p-2 lg:hidden"
-          >
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              <path d="M3 6h18M3 12h18M3 18h18" />
-            </svg>
-          </button>
         </div>
       </div>
+
       {open ? (
         <div className="border-t border-border bg-background lg:hidden">
+          <div className="mx-auto flex flex-col gap-2 border-b border-border/60 px-4 py-3 text-sm md:hidden">
+            <div className="text-foreground">{business.addressLine1}, {business.cityStateZip}</div>
+            <a href={business.phoneHref!} className="font-semibold text-primary">{business.phone}</a>
+            <Link
+              to="/contact"
+              onClick={() => setOpen(false)}
+              className="mt-1 inline-block rounded-md bg-secondary px-4 py-2 text-center text-sm font-semibold text-secondary-foreground"
+            >
+              Request appointment
+            </Link>
+          </div>
           <nav className="mx-auto flex max-w-7xl flex-col px-4 py-2 text-sm">
             {nav.map((n) =>
               "mega" in n ? (
