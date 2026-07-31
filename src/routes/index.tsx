@@ -5,12 +5,12 @@ import { FAQ, faqJsonLd } from "@/components/site/FAQ";
 import { buildHead } from "@/lib/seo";
 import { jsonLdScript } from "@/components/site/JsonLd";
 import heroBg from "@/assets/hero-bg.jpg";
+import { PartnerMarquee } from "@/components/site/PartnerMarquee";
+import { IndustryNewsTicker } from "@/components/site/IndustryNews";
 import {
   business,
   currentTrials,
   images,
-  keyIndustries,
-  partners,
   researchCategories,
 } from "@/lib/site-data";
 
@@ -42,7 +42,7 @@ export const Route = createFileRoute("/")({
     ...buildHead({
       title: `${business.name} | Clinical Trials in Orlando, FL`,
       description:
-        "Physician-led clinical trials, expert-witness testimony, and regulatory & consulting services from HMD Research in Orlando, Florida.",
+        "Physician-led clinical trials in Orlando, Florida. HMD Research recruits volunteers across Greater Orlando and Central Florida for multi-specialty studies.",
       path: "/",
     }),
     scripts: [jsonLdScript(orgJsonLd), jsonLdScript(faqJsonLd(homeFaqs))],
@@ -101,18 +101,20 @@ function Home() {
         </div>
       </section>
 
+      <IndustryNewsTicker />
+
       {/* Transforming healthcare */}
       <Section className="text-center">
         <h2 className="text-3xl font-semibold tracking-tight md:text-4xl">Transforming healthcare</h2>
         <p className="mt-3 text-muted-foreground">Stay up to date with recent research and medical news</p>
         <div className="mt-10 grid gap-6 md:grid-cols-3 md:text-left">
           <Link to="/news" className="group overflow-hidden rounded-xl border border-border bg-card transition hover:border-foreground/20 hover:shadow-md">
-            <img src={images.stemogen} alt="DH Stemogen" className="h-48 w-full object-cover" />
+            <img src={images.clinicalTrialHero} alt="Clinical research news" className="h-48 w-full object-cover" />
             <div className="p-6">
-              <div className="text-xs text-muted-foreground">November 2, 2017</div>
-              <div className="mt-2 text-lg font-semibold group-hover:text-foreground">DH STEMOGEN</div>
+              <div className="text-xs text-muted-foreground">Research News</div>
+              <div className="mt-2 text-lg font-semibold group-hover:text-foreground">Industry & regulatory headlines</div>
               <p className="mt-2 text-sm text-muted-foreground line-clamp-3">
-                One of the most exciting areas of medical research involves the therapeutic action, production, and adaptability of stem cells.
+                A continuously updated feed of FDA, NIH and ClinicalTrials.gov headlines relevant to clinical research.
               </p>
             </div>
           </Link>
@@ -281,44 +283,26 @@ function Home() {
 
       {/* Partners */}
       <Section>
-        <h2 className="text-center text-xl font-semibold tracking-tight uppercase text-muted-foreground">Our Partners</h2>
-        <div className="mt-8 grid grid-cols-3 gap-6 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8">
-          {partners.slice(0, 24).map((p) => (
-            <div key={p.name} className="flex items-center justify-center rounded-lg border border-border bg-white p-3">
-              <img src={p.image} alt={p.name} className="max-h-12 w-auto object-contain opacity-80 grayscale transition hover:opacity-100 hover:grayscale-0" loading="lazy" />
-            </div>
-          ))}
-        </div>
+        <PartnerMarquee />
       </Section>
 
-      {/* Key industries */}
+      {/* Why choose our clinic */}
       <Section>
         <div className="rounded-2xl border border-border bg-card p-8 md:p-12">
           <div className="grid gap-8 md:grid-cols-2">
             <div>
-              <h2 className="text-2xl font-semibold tracking-tight">Why choose our clinic</h2>
+              <h2 className="text-2xl font-semibold tracking-tight">Why choose our research center</h2>
               <p className="mt-3 text-muted-foreground">
                 Led by an internationally accomplished medical research physician, our study center is
                 dedicated to the advancement of medical knowledge for current and future medical treatments.
               </p>
             </div>
-            <div className="grid grid-cols-2 gap-4 text-sm">
-              <div>
-                <div className="mb-2 font-semibold">Key Industries Served</div>
-                <ul className="space-y-1 text-muted-foreground">
-                  {keyIndustries.map((k) => <li key={k}>• {k}</li>)}
-                </ul>
-              </div>
-              <div>
-                <div className="mb-2 font-semibold">Areas of Focus</div>
-                <ul className="space-y-1 text-muted-foreground">
-                  <li>• Clinical Trials</li>
-                  <li>• Expert Witness</li>
-                  <li>• Regulatory</li>
-                  <li>• Consulting</li>
-                </ul>
-              </div>
-            </div>
+            <ul className="grid gap-3 text-sm text-muted-foreground sm:grid-cols-2">
+              <li className="rounded-lg border border-border bg-background p-4">Physician-led, multi-specialty trial site in Orlando</li>
+              <li className="rounded-lg border border-border bg-background p-4">Experienced, ethically trained research coordinators</li>
+              <li className="rounded-lg border border-border bg-background p-4">Study care and visits at no cost to qualified participants</li>
+              <li className="rounded-lg border border-border bg-background p-4">Clear informed consent and ongoing safety monitoring</li>
+            </ul>
           </div>
         </div>
       </Section>
