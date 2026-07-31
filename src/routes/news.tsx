@@ -3,7 +3,7 @@ import { SiteLayout, Section, PageHeader } from "@/components/site/Layout";
 import { Breadcrumbs } from "@/components/site/Breadcrumbs";
 import { ContactCTA } from "@/components/site/CTA";
 import { buildHead } from "@/lib/seo";
-import { newsItems, blogPosts } from "@/lib/site-data";
+import { newsItems, blogPosts, images } from "@/lib/site-data";
 import { IndustryNewsFeed } from "@/components/site/IndustryNews";
 
 export const Route = createFileRoute("/news")({
@@ -14,6 +14,15 @@ export const Route = createFileRoute("/news")({
   }),
   component: NewsPage,
 });
+
+const blogImages = [
+  images.clinicalTrialHero,
+  images.medicalTeam,
+  images.vaccine,
+  images.dermatology,
+  images.endocrinology,
+  images.gastro,
+];
 
 function NewsPage() {
   const recentBlog = blogPosts.slice(0, 6);
@@ -49,11 +58,21 @@ function NewsPage() {
       <Section>
         <h2 className="text-2xl font-semibold tracking-tight">From the blog</h2>
         <div className="mt-6 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-          {recentBlog.map((p) => (
-            <Link key={p.slug} to="/blog/$slug" params={{ slug: p.slug }} className="rounded-xl border border-border bg-card p-5 transition hover:border-foreground/20">
-              <div className="text-xs text-muted-foreground">{p.category} · {p.readTime}</div>
-              <div className="mt-2 font-semibold">{p.title}</div>
-              <p className="mt-2 text-sm text-muted-foreground line-clamp-3">{p.summary}</p>
+          {recentBlog.map((p, i) => (
+            <Link key={p.slug} to="/blog/$slug" params={{ slug: p.slug }} className="group overflow-hidden rounded-xl border border-border bg-card transition hover:border-primary/40 hover:shadow-md">
+              <div className="aspect-[16/9] w-full overflow-hidden">
+                <img
+                  src={blogImages[i % blogImages.length]}
+                  alt={p.title}
+                  loading="lazy"
+                  className="h-full w-full object-cover transition group-hover:scale-105"
+                />
+              </div>
+              <div className="p-5">
+                <div className="text-xs text-muted-foreground">{p.category} · {p.readTime}</div>
+                <div className="mt-2 font-semibold">{p.title}</div>
+                <p className="mt-2 text-sm text-muted-foreground line-clamp-3">{p.summary}</p>
+              </div>
             </Link>
           ))}
         </div>
