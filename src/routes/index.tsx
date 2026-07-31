@@ -188,7 +188,7 @@ function Home() {
           </Link>
         </div>
         <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {currentTrials.map((t) => (
+          {currentTrials.slice(0, 3).map((t) => (
             <Link to="/clinical-trials" key={t.name} className="group overflow-hidden rounded-xl border border-border bg-card transition hover:border-foreground/20 hover:shadow-md">
               <div className="aspect-[4/3] w-full overflow-hidden">
                 <img src={t.image} alt={t.name} className="h-full w-full object-cover transition group-hover:scale-105" />

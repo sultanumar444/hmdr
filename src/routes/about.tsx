@@ -305,17 +305,7 @@ function AboutPage() {
         </div>
       </Section>
 
-      <RelatedLinks
-        heading="Explore HMD Research"
-        links={[
-          { to: "/clinical-trials", label: "Clinical Trials", desc: "How trials work and what we run." },
-          { to: "/current-studies", label: "Current Studies", desc: "Studies now enrolling in Orlando." },
-          { to: "/our-investigators", label: "Our Investigators", desc: "The physicians and research staff." },
-          { to: "/patient-resources", label: "Patient Resources", desc: "Guides for trial participants." },
-          { to: "/locations/orlando", label: "Orlando Location", desc: "Directions, hours and how to reach the team." },
-          { to: "/news", label: "Research News", desc: "Industry and regulatory headlines." },
-        ]}
-      />
+
 
       <Section><ContactCTA /></Section>
     </SiteLayout>
