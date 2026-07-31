@@ -68,7 +68,7 @@ function Page() {
             <div>
               <h2 className="text-xl font-semibold">Physician and team experience</h2>
               <p className="mt-3 text-muted-foreground">
-                The Heuer M.D. Research team has clinical and product-research experience in {cat.name.toLowerCase()}. Prior experience is described here for context and does not imply active recruitment in every area.
+                The HMD Research team has clinical and product-research experience in {cat.name.toLowerCase()}. Prior experience is described here for context and does not imply active recruitment in every area.
               </p>
             </div>
             <div>

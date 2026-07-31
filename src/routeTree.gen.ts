@@ -11,7 +11,6 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as TermsOfUseRouteImport } from './routes/terms-of-use'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
-import { Route as ServicesRouteImport } from './routes/services'
 import { Route as ResearchGlossaryRouteImport } from './routes/research-glossary'
 import { Route as ResearchExperienceRouteImport } from './routes/research-experience'
 import { Route as ProductsRouteImport } from './routes/products'
@@ -33,14 +32,10 @@ import { Route as BlogRouteImport } from './routes/blog'
 import { Route as AccessibilityRouteImport } from './routes/accessibility'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
-import { Route as ServicesIndexRouteImport } from './routes/services.index'
 import { Route as ResearchExperienceIndexRouteImport } from './routes/research-experience.index'
 import { Route as ProductsIndexRouteImport } from './routes/products.index'
 import { Route as ClinicalTrialsIndexRouteImport } from './routes/clinical-trials.index'
 import { Route as BlogIndexRouteImport } from './routes/blog.index'
-import { Route as ServicesRegulatoryRouteImport } from './routes/services.regulatory'
-import { Route as ServicesLegalSupportRouteImport } from './routes/services.legal-support'
-import { Route as ServicesConsultingRouteImport } from './routes/services.consulting'
 import { Route as ResearchExperienceCategoryRouteImport } from './routes/research-experience.$category'
 import { Route as ProductsSlugRouteImport } from './routes/products.$slug'
 import { Route as LocationsOrlandoRouteImport } from './routes/locations.orlando'
@@ -62,11 +57,6 @@ const TermsOfUseRoute = TermsOfUseRouteImport.update({
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   id: '/sitemap.xml',
   path: '/sitemap.xml',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ServicesRoute = ServicesRouteImport.update({
-  id: '/services',
-  path: '/services',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ResearchGlossaryRoute = ResearchGlossaryRouteImport.update({
@@ -175,11 +165,6 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ServicesIndexRoute = ServicesIndexRouteImport.update({
-  id: '/',
-  path: '/',
-  getParentRoute: () => ServicesRoute,
-} as any)
 const ResearchExperienceIndexRoute = ResearchExperienceIndexRouteImport.update({
   id: '/',
   path: '/',
@@ -199,21 +184,6 @@ const BlogIndexRoute = BlogIndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => BlogRoute,
-} as any)
-const ServicesRegulatoryRoute = ServicesRegulatoryRouteImport.update({
-  id: '/regulatory',
-  path: '/regulatory',
-  getParentRoute: () => ServicesRoute,
-} as any)
-const ServicesLegalSupportRoute = ServicesLegalSupportRouteImport.update({
-  id: '/legal-support',
-  path: '/legal-support',
-  getParentRoute: () => ServicesRoute,
-} as any)
-const ServicesConsultingRoute = ServicesConsultingRouteImport.update({
-  id: '/consulting',
-  path: '/consulting',
-  getParentRoute: () => ServicesRoute,
 } as any)
 const ResearchExperienceCategoryRoute =
   ResearchExperienceCategoryRouteImport.update({
@@ -307,7 +277,6 @@ export interface FileRoutesByFullPath {
   '/products': typeof ProductsRouteWithChildren
   '/research-experience': typeof ResearchExperienceRouteWithChildren
   '/research-glossary': typeof ResearchGlossaryRoute
-  '/services': typeof ServicesRouteWithChildren
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/terms-of-use': typeof TermsOfUseRoute
   '/blog/$slug': typeof BlogSlugRoute
@@ -321,14 +290,10 @@ export interface FileRoutesByFullPath {
   '/locations/orlando': typeof LocationsOrlandoRoute
   '/products/$slug': typeof ProductsSlugRoute
   '/research-experience/$category': typeof ResearchExperienceCategoryRoute
-  '/services/consulting': typeof ServicesConsultingRoute
-  '/services/legal-support': typeof ServicesLegalSupportRoute
-  '/services/regulatory': typeof ServicesRegulatoryRoute
   '/blog/': typeof BlogIndexRoute
   '/clinical-trials/': typeof ClinicalTrialsIndexRoute
   '/products/': typeof ProductsIndexRoute
   '/research-experience/': typeof ResearchExperienceIndexRoute
-  '/services/': typeof ServicesIndexRoute
   '/clinical-trials/studies/$slug': typeof ClinicalTrialsStudiesSlugRoute
 }
 export interface FileRoutesByTo {
@@ -362,14 +327,10 @@ export interface FileRoutesByTo {
   '/locations/orlando': typeof LocationsOrlandoRoute
   '/products/$slug': typeof ProductsSlugRoute
   '/research-experience/$category': typeof ResearchExperienceCategoryRoute
-  '/services/consulting': typeof ServicesConsultingRoute
-  '/services/legal-support': typeof ServicesLegalSupportRoute
-  '/services/regulatory': typeof ServicesRegulatoryRoute
   '/blog': typeof BlogIndexRoute
   '/clinical-trials': typeof ClinicalTrialsIndexRoute
   '/products': typeof ProductsIndexRoute
   '/research-experience': typeof ResearchExperienceIndexRoute
-  '/services': typeof ServicesIndexRoute
   '/clinical-trials/studies/$slug': typeof ClinicalTrialsStudiesSlugRoute
 }
 export interface FileRoutesById {
@@ -395,7 +356,6 @@ export interface FileRoutesById {
   '/products': typeof ProductsRouteWithChildren
   '/research-experience': typeof ResearchExperienceRouteWithChildren
   '/research-glossary': typeof ResearchGlossaryRoute
-  '/services': typeof ServicesRouteWithChildren
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/terms-of-use': typeof TermsOfUseRoute
   '/blog/$slug': typeof BlogSlugRoute
@@ -409,14 +369,10 @@ export interface FileRoutesById {
   '/locations/orlando': typeof LocationsOrlandoRoute
   '/products/$slug': typeof ProductsSlugRoute
   '/research-experience/$category': typeof ResearchExperienceCategoryRoute
-  '/services/consulting': typeof ServicesConsultingRoute
-  '/services/legal-support': typeof ServicesLegalSupportRoute
-  '/services/regulatory': typeof ServicesRegulatoryRoute
   '/blog/': typeof BlogIndexRoute
   '/clinical-trials/': typeof ClinicalTrialsIndexRoute
   '/products/': typeof ProductsIndexRoute
   '/research-experience/': typeof ResearchExperienceIndexRoute
-  '/services/': typeof ServicesIndexRoute
   '/clinical-trials/studies/$slug': typeof ClinicalTrialsStudiesSlugRoute
 }
 export interface FileRouteTypes {
@@ -443,7 +399,6 @@ export interface FileRouteTypes {
     | '/products'
     | '/research-experience'
     | '/research-glossary'
-    | '/services'
     | '/sitemap.xml'
     | '/terms-of-use'
     | '/blog/$slug'
@@ -457,14 +412,10 @@ export interface FileRouteTypes {
     | '/locations/orlando'
     | '/products/$slug'
     | '/research-experience/$category'
-    | '/services/consulting'
-    | '/services/legal-support'
-    | '/services/regulatory'
     | '/blog/'
     | '/clinical-trials/'
     | '/products/'
     | '/research-experience/'
-    | '/services/'
     | '/clinical-trials/studies/$slug'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -498,14 +449,10 @@ export interface FileRouteTypes {
     | '/locations/orlando'
     | '/products/$slug'
     | '/research-experience/$category'
-    | '/services/consulting'
-    | '/services/legal-support'
-    | '/services/regulatory'
     | '/blog'
     | '/clinical-trials'
     | '/products'
     | '/research-experience'
-    | '/services'
     | '/clinical-trials/studies/$slug'
   id:
     | '__root__'
@@ -530,7 +477,6 @@ export interface FileRouteTypes {
     | '/products'
     | '/research-experience'
     | '/research-glossary'
-    | '/services'
     | '/sitemap.xml'
     | '/terms-of-use'
     | '/blog/$slug'
@@ -544,14 +490,10 @@ export interface FileRouteTypes {
     | '/locations/orlando'
     | '/products/$slug'
     | '/research-experience/$category'
-    | '/services/consulting'
-    | '/services/legal-support'
-    | '/services/regulatory'
     | '/blog/'
     | '/clinical-trials/'
     | '/products/'
     | '/research-experience/'
-    | '/services/'
     | '/clinical-trials/studies/$slug'
   fileRoutesById: FileRoutesById
 }
@@ -577,7 +519,6 @@ export interface RootRouteChildren {
   ProductsRoute: typeof ProductsRouteWithChildren
   ResearchExperienceRoute: typeof ResearchExperienceRouteWithChildren
   ResearchGlossaryRoute: typeof ResearchGlossaryRoute
-  ServicesRoute: typeof ServicesRouteWithChildren
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   TermsOfUseRoute: typeof TermsOfUseRoute
 }
@@ -596,13 +537,6 @@ declare module '@tanstack/react-router' {
       path: '/sitemap.xml'
       fullPath: '/sitemap.xml'
       preLoaderRoute: typeof SitemapDotxmlRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/services': {
-      id: '/services'
-      path: '/services'
-      fullPath: '/services'
-      preLoaderRoute: typeof ServicesRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/research-glossary': {
@@ -752,13 +686,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/services/': {
-      id: '/services/'
-      path: '/'
-      fullPath: '/services/'
-      preLoaderRoute: typeof ServicesIndexRouteImport
-      parentRoute: typeof ServicesRoute
-    }
     '/research-experience/': {
       id: '/research-experience/'
       path: '/'
@@ -786,27 +713,6 @@ declare module '@tanstack/react-router' {
       fullPath: '/blog/'
       preLoaderRoute: typeof BlogIndexRouteImport
       parentRoute: typeof BlogRoute
-    }
-    '/services/regulatory': {
-      id: '/services/regulatory'
-      path: '/regulatory'
-      fullPath: '/services/regulatory'
-      preLoaderRoute: typeof ServicesRegulatoryRouteImport
-      parentRoute: typeof ServicesRoute
-    }
-    '/services/legal-support': {
-      id: '/services/legal-support'
-      path: '/legal-support'
-      fullPath: '/services/legal-support'
-      preLoaderRoute: typeof ServicesLegalSupportRouteImport
-      parentRoute: typeof ServicesRoute
-    }
-    '/services/consulting': {
-      id: '/services/consulting'
-      path: '/consulting'
-      fullPath: '/services/consulting'
-      preLoaderRoute: typeof ServicesConsultingRouteImport
-      parentRoute: typeof ServicesRoute
     }
     '/research-experience/$category': {
       id: '/research-experience/$category'
@@ -979,24 +885,6 @@ const ResearchExperienceRouteChildren: ResearchExperienceRouteChildren = {
 const ResearchExperienceRouteWithChildren =
   ResearchExperienceRoute._addFileChildren(ResearchExperienceRouteChildren)
 
-interface ServicesRouteChildren {
-  ServicesConsultingRoute: typeof ServicesConsultingRoute
-  ServicesLegalSupportRoute: typeof ServicesLegalSupportRoute
-  ServicesRegulatoryRoute: typeof ServicesRegulatoryRoute
-  ServicesIndexRoute: typeof ServicesIndexRoute
-}
-
-const ServicesRouteChildren: ServicesRouteChildren = {
-  ServicesConsultingRoute: ServicesConsultingRoute,
-  ServicesLegalSupportRoute: ServicesLegalSupportRoute,
-  ServicesRegulatoryRoute: ServicesRegulatoryRoute,
-  ServicesIndexRoute: ServicesIndexRoute,
-}
-
-const ServicesRouteWithChildren = ServicesRoute._addFileChildren(
-  ServicesRouteChildren,
-)
-
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
@@ -1019,7 +907,6 @@ const rootRouteChildren: RootRouteChildren = {
   ProductsRoute: ProductsRouteWithChildren,
   ResearchExperienceRoute: ResearchExperienceRouteWithChildren,
   ResearchGlossaryRoute: ResearchGlossaryRoute,
-  ServicesRoute: ServicesRouteWithChildren,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   TermsOfUseRoute: TermsOfUseRoute,
 }

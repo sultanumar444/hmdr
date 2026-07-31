@@ -11,7 +11,7 @@ export const Route = createFileRoute("/for-sponsors-and-cros")({
   head: () => ({
     ...buildHead({
       title: "For Sponsors & CROs | Clinical Research Site Capabilities",
-      description: "Site capabilities, therapeutic experience, participant recruitment and study operations at Heuer M.D. Research.",
+      description: "Site capabilities, therapeutic experience, participant recruitment and study operations at HMD Research.",
       path,
     }),
     scripts: [jsonLdScript(breadcrumbJsonLd([

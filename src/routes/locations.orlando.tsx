@@ -22,7 +22,7 @@ const localBusinessLd = {
 };
 
 const faqs = [
-  { q: "Where is Heuer M.D. Research located in Orlando?", a: "The research center is located in Orlando, Florida. A verified street address will appear on this page once confirmed." },
+  { q: "Where is HMD Research located in Orlando?", a: "The research center is located in Orlando, Florida. A verified street address will appear on this page once confirmed." },
   { q: "Is parking available at the research location?", a: "Parking details will be listed here once verified. Please contact the team if you have accessibility or arrival questions in the meantime." },
   { q: "Are evening or weekend appointments available?", a: "Availability varies by study. Some visits may be scheduled outside standard hours — please ask the research team about a specific study." },
   { q: "How do I contact the Orlando research team?", a: "You can send a message using the form on this page. Once phone details are verified they will appear here as a click-to-call link." },

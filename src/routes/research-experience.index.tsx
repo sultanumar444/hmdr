@@ -30,7 +30,7 @@ function Page() {
       <Section className="pt-6">
         <PageHeader
           title="Research Experience"
-          intro="Areas where the Heuer M.D. Research team has clinical or product-research experience. Select a category for more detail."
+          intro="Areas where the HMD Research team has clinical or product-research experience. Select a category for more detail."
         />
       </Section>
       <Section>

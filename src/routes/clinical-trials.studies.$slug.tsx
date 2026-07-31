@@ -14,7 +14,7 @@ export const Route = createFileRoute("/clinical-trials/studies/$slug")({
     if (!loaderData) {
       return {
         meta: [
-          { title: "Study Not Found | Heuer M.D. Research" },
+          { title: "Study Not Found | HMD Research" },
           { name: "robots", content: "noindex" },
         ],
       };
@@ -103,7 +103,7 @@ function StudyDetailPage() {
             <section>
               <h2 className="text-2xl font-semibold tracking-tight text-foreground">Location</h2>
               <p className="mt-3">
-                All study visits take place at Heuer M.D. Research, 6001 Vineland Road, Suite 104, Orlando, FL 32819.
+                All study visits take place at HMD Research, 6001 Vineland Road, Suite 104, Orlando, FL 32819.
               </p>
             </section>
           </article>

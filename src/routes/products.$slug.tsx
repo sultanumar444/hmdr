@@ -14,7 +14,7 @@ export const Route = createFileRoute("/products/$slug")({
   head: ({ loaderData, params }) => {
     if (!loaderData) return buildHead({ title: "Product not found", description: "Product not found.", path: `/products/${params.slug}`, noindex: true });
     return buildHead({
-      title: `${loaderData.product.name} | Heuer M.D. Research`,
+      title: `${loaderData.product.name} | HMD Research`,
       description: loaderData.product.tagline,
       path: `/products/${params.slug}`,
     });

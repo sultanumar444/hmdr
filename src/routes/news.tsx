@@ -4,11 +4,12 @@ import { Breadcrumbs } from "@/components/site/Breadcrumbs";
 import { ContactCTA } from "@/components/site/CTA";
 import { buildHead } from "@/lib/seo";
 import { newsItems, blogPosts } from "@/lib/site-data";
+import { IndustryNewsFeed } from "@/components/site/IndustryNews";
 
 export const Route = createFileRoute("/news")({
   head: () => buildHead({
-    title: "News | Heuer M.D. Research",
-    description: "Recent research news, industry insights and updates from Heuer M.D. Research.",
+    title: "News | HMD Research",
+    description: "Recent research news, industry insights and updates from HMD Research.",
     path: "/news",
   }),
   component: NewsPage,
@@ -24,6 +25,11 @@ function NewsPage() {
       </Section>
 
       <Section>
+        <IndustryNewsFeed />
+      </Section>
+
+      {newsItems.length > 0 && (
+      <Section>
         <h2 className="text-2xl font-semibold tracking-tight">Featured stories</h2>
         <div className="mt-6 grid gap-6 md:grid-cols-2">
           {newsItems.map((n) => (
@@ -38,6 +44,7 @@ function NewsPage() {
           ))}
         </div>
       </Section>
+      )}
 
       <Section>
         <h2 className="text-2xl font-semibold tracking-tight">From the blog</h2>

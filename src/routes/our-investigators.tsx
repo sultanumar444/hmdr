@@ -113,7 +113,7 @@ function InvestigatorsPage() {
       {/* Research team */}
       <Section>
         <div className="grid gap-10 md:grid-cols-2 md:items-center">
-          <img src={teamImg} alt="Heuer M.D. Research clinical team" className="rounded-2xl border border-border shadow-sm" />
+          <img src={teamImg} alt="HMD Research clinical team" className="rounded-2xl border border-border shadow-sm" />
           <div>
             <div className="text-xs font-semibold uppercase tracking-widest text-secondary">Research Staff</div>
             <h2 className="mt-2 text-2xl font-semibold tracking-tight">Experienced Clinical Research Coordinators</h2>
@@ -151,7 +151,7 @@ function InvestigatorsPage() {
       <Section>
         <RelatedLinks
           links={[
-            { to: "/about", label: "About Heuer M.D. Research", desc: "Our mission and research center." },
+            { to: "/about", label: "About HMD Research", desc: "Our mission and research center." },
             { to: "/research-experience", label: "Research experience", desc: "Therapeutic-area depth by category." },
             { to: "/for-sponsors-and-cros", label: "For Sponsors & CROs", desc: "Partner with our investigator team." },
           ]}

@@ -288,13 +288,13 @@ export function SiteFooter() {
           </ul>
         </div>
         <div>
-          <div className="mb-2 text-sm font-semibold">Services</div>
+          <div className="mb-2 text-sm font-semibold">Participate</div>
           <ul className="space-y-1.5 text-sm opacity-80">
-            <li><Link to="/expert-witness-services" className="hover:opacity-100">Expert Witness</Link></li>
-            <li><Link to="/services/legal-support" className="hover:opacity-100">Legal Support</Link></li>
-            <li><Link to="/services/consulting" className="hover:opacity-100">Consulting</Link></li>
-            <li><Link to="/services/regulatory" className="hover:opacity-100">Regulatory</Link></li>
-            <li><Link to="/products" className="hover:opacity-100">Products</Link></li>
+            <li><Link to="/current-studies" className="hover:opacity-100">Current Studies</Link></li>
+            <li><Link to="/clinical-trials/what-to-expect" className="hover:opacity-100">What to Expect</Link></li>
+            <li><Link to="/clinical-trials/clinical-trial-eligibility" className="hover:opacity-100">Eligibility</Link></li>
+            <li><Link to="/clinical-trials/participant-faq" className="hover:opacity-100">Participant FAQ</Link></li>
+            <li><Link to="/our-investigators" className="hover:opacity-100">Our Investigators</Link></li>
           </ul>
         </div>
         <div>

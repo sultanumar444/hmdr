@@ -10,7 +10,7 @@ import orlandoImg from "@/assets/orlando-office.jpg";
 
 
 const faqs = [
-  { q: "Where is Heuer M.D. Research located in Orlando?", a: "The research center is based in Orlando, Florida. Detailed directions are available on the Orlando location page." },
+  { q: "Where is HMD Research located in Orlando?", a: "The research center is based in Orlando, Florida. Detailed directions are available on the Orlando location page." },
   { q: "How can I find clinical trials near me in Orlando?", a: "You can review currently recruiting studies on this page or contact the team directly. New opportunities are added as they open." },
   { q: "Are clinical trials available to residents outside Orlando?", a: "Yes. Participants regularly travel from surrounding Central Florida communities. Some studies have distance-based requirements — the research team can review specifics with you." },
   { q: "Do I need a physician referral?", a: "A referral is not usually required. You can contact the research team directly to ask about a study." },
@@ -51,7 +51,7 @@ function OrlandoCR() {
 
       <Section>
         <div className="grid gap-10 md:grid-cols-2 md:items-center">
-          <img src={orlandoImg} alt="Heuer M.D. Research Orlando office" loading="lazy" width={1600} height={1000} className="rounded-2xl border border-border object-cover shadow-md" />
+          <img src={orlandoImg} alt="HMD Research Orlando office" loading="lazy" width={1600} height={1000} className="rounded-2xl border border-border object-cover shadow-md" />
           <div>
             <div className="text-xs font-medium uppercase tracking-widest text-secondary">Central Florida</div>
             <h2 className="mt-2 text-2xl font-semibold tracking-tight">A physician-led clinical research center in Orlando</h2>
@@ -190,7 +190,7 @@ function OrlandoCR() {
       <RelatedLinks
         heading="Learn more about participation"
         links={[
-          { to: "/clinical-trials", label: "Current & Completed Trials", desc: "Full list of studies at Heuer M.D. Research." },
+          { to: "/clinical-trials", label: "Current & Completed Trials", desc: "Full list of studies at HMD Research." },
           { to: "/clinical-trials/what-to-expect", label: "What to Expect", desc: "Step-by-step overview of the participant journey." },
           { to: "/clinical-trials/clinical-trial-eligibility", label: "Eligibility Criteria", desc: "How criteria are set and why they matter." },
           { to: "/clinical-trials/clinical-trial-compensation", label: "Compensation", desc: "How compensation typically works." },
