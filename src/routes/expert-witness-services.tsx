@@ -10,7 +10,7 @@ import legalExpertImg from "@/assets/legal-expert.jpg";
 
 export const Route = createFileRoute("/expert-witness-services")({
   head: () => buildHead({
-    title: "Expert Witness Services | Heuer M.D. Research",
+    title: "Expert Witness Services | HMD Research",
     description:
       "Dr. Marvin Heuer provides medical expert witness services for the pharmaceutical, dietary supplement, and nutraceutical industries.",
     path: "/expert-witness-services",

@@ -32,7 +32,7 @@ const orgJsonLd = {
 };
 
 const homeFaqs = [
-  { q: "Where is Heuer M.D. Research located?", a: `${business.name} is located at ${business.addressLine1}, ${business.cityStateZip}.` },
+  { q: "Where is HMD Research located?", a: `${business.name} is located at ${business.addressLine1}, ${business.cityStateZip}.` },
   { q: "How do I find a clinical trial in Orlando?", a: "Review currently recruiting studies on our Clinical Trials page or call (407) 574-5650 to speak with the research team." },
   { q: "Is compensation offered for participation?", a: "Some studies may offer compensation for time and travel. It varies by study and is not guaranteed." },
 ];
@@ -42,7 +42,7 @@ export const Route = createFileRoute("/")({
     ...buildHead({
       title: `${business.name} | Clinical Trials in Orlando, FL`,
       description:
-        "Physician-led clinical trials, expert-witness testimony, and regulatory & consulting services from Heuer M.D. Research in Orlando, Florida.",
+        "Physician-led clinical trials, expert-witness testimony, and regulatory & consulting services from HMD Research in Orlando, Florida.",
       path: "/",
     }),
     scripts: [jsonLdScript(orgJsonLd), jsonLdScript(faqJsonLd(homeFaqs))],
@@ -127,7 +127,7 @@ function Home() {
             </div>
           </Link>
           <Link to="/research-experience" className="group overflow-hidden rounded-xl border border-border bg-card transition hover:border-foreground/20 hover:shadow-md">
-            <img src={images.medicalTeam} alt="Heuer MD Medical Team" className="h-48 w-full object-cover" />
+            <img src={images.medicalTeam} alt="HMD Research medical team" className="h-48 w-full object-cover" />
             <div className="p-6">
               <div className="text-xs text-muted-foreground">Research</div>
               <div className="mt-2 text-lg font-semibold group-hover:text-foreground">Decades of research experience</div>
@@ -232,7 +232,7 @@ function Home() {
       {/* Team image + About */}
       <Section>
         <div className="grid gap-10 md:grid-cols-2 md:items-center">
-          <img src={images.medicalTeam} alt="Heuer MD Medical Team" className="rounded-2xl border border-border shadow-md" />
+          <img src={images.medicalTeam} alt="HMD Research medical team" className="rounded-2xl border border-border shadow-md" />
           <div>
             <div className="text-xs font-medium uppercase tracking-widest text-muted-foreground">About Us</div>
             <h2 className="mt-3 text-3xl font-semibold tracking-tight">

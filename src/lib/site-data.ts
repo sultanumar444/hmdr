@@ -2,7 +2,7 @@
 // so pages can render clear "to be confirmed" states rather than fabricated info.
 
 export const business = {
-  name: "Heuer M.D. Research",
+  name: "HMD Research",
   city: "Orlando",
   region: "Florida",
   regionShort: "FL",
@@ -103,7 +103,7 @@ export const currentTrials: TrialDetail[] = [
     status: "recruiting",
     shortSummary: "Studies evaluating investigational treatments for adults living with chronic or recurrent gout.",
     about:
-      "Gout is a form of inflammatory arthritis caused by elevated uric acid, leading to sudden, painful joint flare-ups — most commonly in the big toe. Studies at Heuer M.D. Research examine investigational approaches to managing uric acid levels and reducing flare frequency.",
+      "Gout is a form of inflammatory arthritis caused by elevated uric acid, leading to sudden, painful joint flare-ups — most commonly in the big toe. Studies at HMD Research examine investigational approaches to managing uric acid levels and reducing flare frequency.",
     whoMayQualify: [
       "Adults with a physician-diagnosed history of gout",
       "History of recurrent flare-ups or elevated uric acid",
@@ -231,8 +231,8 @@ export const completedTrialDetails: TrialDetail[] = completedTrials.map((name) =
   name,
   image: "https://heuermd.com/wp-content/uploads/2016/05/Heuer-MD-Clinical-Trial.jpg",
   status: "completed" as const,
-  shortSummary: `Historical clinical research experience at Heuer M.D. Research in the area of ${name}.`,
-  about: `Heuer M.D. Research has previously conducted clinical trial research related to ${name}. Completed studies contribute to our team's therapeutic-area experience and to broader medical knowledge. Specific protocol details are confidential to the sponsor.`,
+  shortSummary: `Historical clinical research experience at HMD Research in the area of ${name}.`,
+  about: `HMD Research has previously conducted clinical trial research related to ${name}. Completed studies contribute to our team's therapeutic-area experience and to broader medical knowledge. Specific protocol details are confidential to the sponsor.`,
   whoMayQualify: [
     "This study is no longer enrolling participants",
     "Future studies in this area may become available",
@@ -452,12 +452,12 @@ export const blogPosts: BlogPost[] = [
     category: "Orlando Research News",
     summary:
       "A practical guide for Central Florida residents on where to look for clinical trials and what to consider before applying.",
-    author: "Heuer M.D. Research Team",
+    author: "HMD Research Team",
     updated: "2026-07-10",
     readTime: "5 min",
     body: [
       "Finding a clinical trial in Orlando starts with understanding what you are looking for. Some people are searching because of a specific health condition, while others are healthy volunteers curious about research participation. Both are valid starting points.",
-      "Public registries like ClinicalTrials.gov list studies by condition, location and recruiting status. Local research centers, including Heuer M.D. Research, also publish currently recruiting studies on their websites. Speaking with your primary care physician is another way to learn whether a nearby study might be a reasonable fit.",
+      "Public registries like ClinicalTrials.gov list studies by condition, location and recruiting status. Local research centers, including HMD Research, also publish currently recruiting studies on their websites. Speaking with your primary care physician is another way to learn whether a nearby study might be a reasonable fit.",
       "Before applying, review the study summary, understand what participation involves, and note any age or health requirements. Enrollment is never guaranteed — a prescreening conversation helps determine whether a study is appropriate for you.",
     ],
   },
@@ -467,7 +467,7 @@ export const blogPosts: BlogPost[] = [
     category: "Participant Guides",
     summary:
       "A friendly overview of what typically happens at a first screening visit, from paperwork to informed consent.",
-    author: "Heuer M.D. Research Team",
+    author: "HMD Research Team",
     updated: "2026-06-28",
     readTime: "4 min",
     body: [
@@ -482,7 +482,7 @@ export const blogPosts: BlogPost[] = [
     category: "Participant Guides",
     summary:
       "Insurance requirements vary by study. Here is a plain-language overview of how coverage usually fits in.",
-    author: "Heuer M.D. Research Team",
+    author: "HMD Research Team",
     updated: "2026-06-15",
     readTime: "3 min",
     body: [
@@ -497,7 +497,7 @@ export const blogPosts: BlogPost[] = [
     category: "Clinical Trial Education",
     summary:
       "How costs, compensation and study-related procedures usually work for people considering a clinical trial.",
-    author: "Heuer M.D. Research Team",
+    author: "HMD Research Team",
     updated: "2026-06-05",
     readTime: "4 min",
     body: [
@@ -511,7 +511,7 @@ export const blogPosts: BlogPost[] = [
     category: "Clinical Trial Education",
     summary:
       "Compensation varies by study. Here is what participants can generally expect and questions worth asking.",
-    author: "Heuer M.D. Research Team",
+    author: "HMD Research Team",
     updated: "2026-05-22",
     readTime: "4 min",
     body: [
@@ -525,7 +525,7 @@ export const blogPosts: BlogPost[] = [
     title: "Questions to Ask Before Joining a Research Study",
     category: "Participant Guides",
     summary: "A checklist of thoughtful questions to bring to your screening visit.",
-    author: "Heuer M.D. Research Team",
+    author: "HMD Research Team",
     updated: "2026-05-10",
     readTime: "5 min",
     body: [
@@ -544,7 +544,7 @@ export const blogPosts: BlogPost[] = [
     category: "Clinical Trial Education",
     summary:
       "Informed consent is a conversation, not just a signature. Here is how it works and why it matters.",
-    author: "Heuer M.D. Research Team",
+    author: "HMD Research Team",
     updated: "2026-04-28",
     readTime: "4 min",
     body: [
@@ -559,7 +559,7 @@ export const blogPosts: BlogPost[] = [
     category: "Clinical Trial Education",
     summary:
       "Study duration varies. Here is how to think about time commitment before you enroll.",
-    author: "Heuer M.D. Research Team",
+    author: "HMD Research Team",
     updated: "2026-04-14",
     readTime: "3 min",
     body: [
@@ -572,7 +572,7 @@ export const blogPosts: BlogPost[] = [
     title: "Can You Leave a Clinical Trial After Joining?",
     category: "Clinical Trial Education",
     summary: "Participation is voluntary. Here is how withdrawal typically works.",
-    author: "Heuer M.D. Research Team",
+    author: "HMD Research Team",
     updated: "2026-04-02",
     readTime: "3 min",
     body: [
@@ -586,7 +586,7 @@ export const blogPosts: BlogPost[] = [
     category: "Clinical Trial Education",
     summary:
       "Clinical research and clinical care share some overlap but have different goals. Here is how they differ.",
-    author: "Heuer M.D. Research Team",
+    author: "HMD Research Team",
     updated: "2026-03-20",
     readTime: "4 min",
     body: [
@@ -600,12 +600,12 @@ export const blogPosts: BlogPost[] = [
     category: "Orlando Research News",
     summary:
       "Local ways for Central Florida residents to hear about studies that are actively enrolling.",
-    author: "Heuer M.D. Research Team",
+    author: "HMD Research Team",
     updated: "2026-03-05",
     readTime: "4 min",
     body: [
       "Orlando residents can find recruiting studies through public registries, local research center websites and their own healthcare providers. Signing up to be notified about future opportunities is also common.",
-      "Heuer M.D. Research publishes currently recruiting studies on its website when they are open to new participants and welcomes questions from local residents.",
+      "HMD Research publishes currently recruiting studies on its website when they are open to new participants and welcomes questions from local residents.",
     ],
   },
   {
@@ -614,7 +614,7 @@ export const blogPosts: BlogPost[] = [
     category: "Clinical Trial Education",
     summary:
       "Why some studies require specific ages, health histories or medications — and why that is not a judgment on you.",
-    author: "Heuer M.D. Research Team",
+    author: "HMD Research Team",
     updated: "2026-02-18",
     readTime: "4 min",
     body: [
@@ -628,7 +628,7 @@ export const blogPosts: BlogPost[] = [
     category: "Expert Witness Insights",
     summary:
       "A practical guide for legal teams evaluating medical experts for product-claims, labeling and regulatory matters.",
-    author: "Heuer M.D. Research Team",
+    author: "HMD Research Team",
     updated: "2026-02-03",
     readTime: "6 min",
     body: [
@@ -642,7 +642,7 @@ export const blogPosts: BlogPost[] = [
     category: "Regulatory Insights",
     summary:
       "An overview of how supplement claims are evaluated and why substantiation matters.",
-    author: "Heuer M.D. Research Team",
+    author: "HMD Research Team",
     updated: "2026-01-22",
     readTime: "6 min",
     body: [
@@ -656,7 +656,7 @@ export const blogPosts: BlogPost[] = [
     category: "Regulatory Insights",
     summary:
       "Substantiation protects consumers and companies alike. Here is what a defensible approach looks like.",
-    author: "Heuer M.D. Research Team",
+    author: "HMD Research Team",
     updated: "2026-01-08",
     readTime: "5 min",
     body: [

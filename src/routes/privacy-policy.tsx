@@ -9,7 +9,7 @@ export const Route = createFileRoute("/privacy-policy")({
   head: () => ({
     ...buildHead({
       title: "Privacy Policy",
-      description: "How Heuer M.D. Research handles information collected through this website.",
+      description: "How HMD Research handles information collected through this website.",
       path,
     }),
     scripts: buildArticleHeadScripts(crumbUrls),
@@ -27,7 +27,7 @@ export const Route = createFileRoute("/privacy-policy")({
       <h2 className="text-xl font-semibold">Cookies</h2>
       <p>The website may use cookies for basic functionality. No analytics or advertising trackers are enabled by default.</p>
       <h2 className="text-xl font-semibold">Contact</h2>
-      <p>Contact the Heuer M.D. Research team through the Orlando location page with any privacy questions.</p>
+      <p>Contact the HMD Research team through the Orlando location page with any privacy questions.</p>
     </ArticlePage>
   ),
 });

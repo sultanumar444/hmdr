@@ -8,7 +8,7 @@ import { jsonLdScript } from "@/components/site/JsonLd";
 import { business } from "@/lib/site-data";
 
 const faqs = [
-  { q: "Where is Heuer M.D. Research located?", a: `${business.addressLine1}, ${business.cityStateZip}.` },
+  { q: "Where is HMD Research located?", a: `${business.addressLine1}, ${business.cityStateZip}.` },
   { q: "What are your office hours?", a: business.hours! },
   { q: "How do I schedule an appointment?", a: `Call ${business.phone} or complete the form on this page. A member of the team will follow up during business hours.` },
 ];
@@ -17,7 +17,7 @@ export const Route = createFileRoute("/contact")({
   head: () => ({
     ...buildHead({
       title: `Contact | ${business.name}`,
-      description: `Contact Heuer M.D. Research at ${business.addressLine1}, ${business.cityStateZip}. Phone ${business.phone}.`,
+      description: `Contact HMD Research at ${business.addressLine1}, ${business.cityStateZip}. Phone ${business.phone}.`,
       path: "/contact",
     }),
     scripts: [jsonLdScript(faqJsonLd(faqs))],
@@ -51,7 +51,7 @@ function ContactPage() {
         <div className="grid gap-8 md:grid-cols-2">
           <div className="overflow-hidden rounded-xl border border-border">
             <iframe
-              title="Heuer M.D. Research map"
+              title="HMD Research map"
               src={business.mapEmbedUrl!}
               width="100%"
               height="450"

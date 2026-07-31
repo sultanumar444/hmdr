@@ -45,7 +45,7 @@ function AboutPage() {
 
       <Section>
         <div className="grid gap-10 md:grid-cols-2 md:items-center">
-          <img src={teamImg} alt="Heuer M.D. Research clinical team" loading="lazy" width={1600} height={1000} className="rounded-2xl border border-border object-cover shadow-md" />
+          <img src={teamImg} alt="HMD Research clinical team" loading="lazy" width={1600} height={1000} className="rounded-2xl border border-border object-cover shadow-md" />
           <Prose>
 
           <p>

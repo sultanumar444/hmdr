@@ -7,8 +7,8 @@ import { newsItems, blogPosts } from "@/lib/site-data";
 
 export const Route = createFileRoute("/news")({
   head: () => buildHead({
-    title: "News | Heuer M.D. Research",
-    description: "Recent research news, industry insights and updates from Heuer M.D. Research.",
+    title: "News | HMD Research",
+    description: "Recent research news, industry insights and updates from HMD Research.",
     path: "/news",
   }),
   component: NewsPage,

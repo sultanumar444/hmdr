@@ -7,7 +7,7 @@ import { products } from "@/lib/site-data";
 
 export const Route = createFileRoute("/products/")({
   head: () => buildHead({
-    title: "Products | Heuer M.D. Research",
+    title: "Products | HMD Research",
     description:
       "Dietary supplement and nutraceutical products developed under the guidance of Dr. Marvin Heuer.",
     path: "/products",

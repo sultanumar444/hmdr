@@ -9,7 +9,7 @@ export const Route = createFileRoute("/terms-of-use")({
   head: () => ({
     ...buildHead({
       title: "Terms of Use",
-      description: "Terms governing the use of the Heuer M.D. Research website.",
+      description: "Terms governing the use of the HMD Research website.",
       path,
     }),
     scripts: buildArticleHeadScripts(crumbUrls),

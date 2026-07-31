@@ -8,9 +8,9 @@ import { completedTrialDetails, currentTrials, images, partners } from "@/lib/si
 
 export const Route = createFileRoute("/clinical-trials/")({
   head: () => buildHead({
-    title: "Clinical Research Trials | Heuer M.D. Research",
+    title: "Clinical Research Trials | HMD Research",
     description:
-      "Current and past clinical trials at Heuer M.D. Research in Orlando, FL. Learn about types of clinical trials, phases, and why to participate.",
+      "Current and past clinical trials at HMD Research in Orlando, FL. Learn about types of clinical trials, phases, and why to participate.",
     path: "/clinical-trials",
   }),
   component: ClinicalTrialsIndex,
@@ -24,7 +24,7 @@ function ClinicalTrialsIndex() {
         <PageHeader
           eyebrow="Research"
           title="Clinical Research Trials"
-          intro="Heuer M.D. Research conducts clinical trial research with the purpose of advancing modern medicine."
+          intro="HMD Research conducts clinical trial research with the purpose of advancing modern medicine."
           image={images.clinicalTrialHero}
         />
       </Section>
@@ -73,8 +73,8 @@ function ClinicalTrialsIndex() {
 
       <Section>
         <Prose>
-          <h2 className="text-2xl font-semibold tracking-tight text-foreground">Heuer M.D. Research: Clinical Trials</h2>
-          <p><em>"Heuer M.D. Research conducts Clinical Trial Research with the purpose of advancing modern medicine."</em></p>
+          <h2 className="text-2xl font-semibold tracking-tight text-foreground">HMD Research: Clinical Trials</h2>
+          <p><em>"HMD Research conducts Clinical Trial Research with the purpose of advancing modern medicine."</em></p>
           <p>
             Clinical trials are supervised research studies conducted to collect and analyze data based on a
             pre-defined plan or protocol. These trials have played a vital role in our society due to their

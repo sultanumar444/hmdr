@@ -12,7 +12,7 @@ export const Route = createFileRoute("/blog/")({
   head: () => ({
     ...buildHead({
       title: "Clinical Research Blog | Orlando Clinical Trials Insights",
-      description: "Practical articles on clinical trials, participation, regulatory topics and expert-witness insights from the Heuer M.D. Research team.",
+      description: "Practical articles on clinical trials, participation, regulatory topics and expert-witness insights from the HMD Research team.",
       path,
     }),
     scripts: [jsonLdScript(breadcrumbJsonLd([
@@ -35,7 +35,7 @@ function Page() {
       <Section className="pt-6">
         <PageHeader
           title="Blog"
-          intro="Articles from the Heuer M.D. Research team on clinical trial participation, regulatory topics and expert-witness insights."
+          intro="Articles from the HMD Research team on clinical trial participation, regulatory topics and expert-witness insights."
         />
       </Section>
       <Section>
