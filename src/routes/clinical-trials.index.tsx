@@ -107,32 +107,11 @@ function ClinicalTrialsIndex() {
         </div>
       </Section>
 
-      <Section>
-        <div className="text-center md:text-left">
-          <h2 className="text-2xl font-semibold tracking-tight md:text-3xl">Types of Clinical Trials</h2>
-          <p className="mt-2 text-muted-foreground">Different study designs answer different research questions.</p>
-        </div>
-        <div className="mt-6 grid gap-6 md:grid-cols-2">
-          <div className="rounded-xl border border-border bg-card p-6 transition hover:border-primary/30 hover:shadow-sm">
-            <div className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-secondary/15 text-secondary">
-              <Eye className="h-6 w-6" />
-            </div>
-            <h3 className="mt-4 text-lg font-semibold">Open Label Trials</h3>
-            <p className="mt-2 text-muted-foreground leading-relaxed">
-              All information related to treatment is disclosed to both researcher and patient. No placebos or control treatments are used.
-            </p>
-          </div>
-          <div className="rounded-xl border border-border bg-card p-6 transition hover:border-primary/30 hover:shadow-sm">
-            <div className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-secondary/15 text-secondary">
-              <Users className="h-6 w-6" />
-            </div>
-            <h3 className="mt-4 text-lg font-semibold">Controlled Trials</h3>
-            <p className="mt-2 text-muted-foreground leading-relaxed">
-              Participants are divided into two groups — one receives the proposed treatment while the control group receives a placebo. Often conducted as double-blind studies.
-            </p>
-          </div>
-        </div>
-      </Section>
+      <TrialHighlights
+        heading="Understanding Clinical Trials"
+        intro="Different study designs answer different research questions. Explore the essentials of trial participation."
+      />
+
 
       <Section>
         <div className="text-center md:text-left">
