@@ -7,6 +7,8 @@ import { jsonLdScript } from "@/components/site/JsonLd";
 import heroBg from "@/assets/hero-bg.jpg";
 import { PartnerMarquee } from "@/components/site/PartnerMarquee";
 import { IndustryNewsTicker } from "@/components/site/IndustryNews";
+import { TrialHighlights } from "@/components/site/TrialHighlights";
+
 import {
   business,
   currentTrials,
