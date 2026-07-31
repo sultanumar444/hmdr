@@ -96,16 +96,16 @@ function AboutPage() {
       </Section>
 
       <Section>
-        <div className="grid gap-10 md:grid-cols-2">
-          <div>
-            <h2 className="text-2xl font-semibold tracking-tight">{business.name}</h2>
-            <p className="mt-3 text-muted-foreground">
-              We are a medical research center dedicated to the advancement of medical knowledge for current
-              and future medical treatments. We are committed to the importance of clinical trial research
-              and clinical trial participation and promoting the positive contribution they provide to society.
-            </p>
-          </div>
+        <div className="max-w-3xl">
+          <h2 className="text-2xl font-semibold tracking-tight">{business.name}</h2>
+          <p className="mt-3 text-muted-foreground">
+            We are a medical research center dedicated to the advancement of medical knowledge for current
+            and future medical treatments. We are committed to the importance of clinical trial research
+            and clinical trial participation and promoting the positive contribution they provide to society.
+          </p>
+        </div>
       </Section>
+
 
       <RelatedLinks
         heading="Explore the practice"
