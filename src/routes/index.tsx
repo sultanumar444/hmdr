@@ -153,28 +153,8 @@ function Home() {
       </Section>
 
       {/* Clinical Trials feature grid */}
-      <Section>
-        <h2 className="text-3xl font-semibold tracking-tight text-center">Clinical Trials</h2>
-        <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {[
-            { title: "Open Label Clinical Trials", body: "In Open Label Trials, all information related to the treatment is disclosed to both researcher and patient. There are no placebos or control treatments." },
-            { title: "Controlled Clinical Trials", body: "Participants are divided into two groups: one receives the proposed treatment while the control group receives a placebo. Often conducted double-blind." },
-            { title: "Phases of Clinical Research", body: "In order for a new drug or medical device to be introduced into the market, it must undergo a total of four phases of clinical trials." },
-            { title: "Advancing Modern Medicine", body: "Participants play a crucial role in what may be revolutionary research that could impact the well-being of millions of people." },
-            { title: "Why Participate?", body: "With the wide range of medical needs, body types and temperaments out there, reasons to participate vary depending on the individual." },
-            { title: "Pioneering Treatments", body: "When you qualify for a clinical study, you gain access to medical care from experts on your particular condition at no cost to you." },
-          ].map((c) => (
-            <div key={c.title} className="rounded-xl border border-border bg-card p-6">
-              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-primary/10 text-primary">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2v20M2 12h20" /></svg>
-              </div>
-              <h3 className="text-lg font-semibold">{c.title}</h3>
-              <p className="mt-2 text-sm text-muted-foreground">{c.body}</p>
-              <Link to="/clinical-trials" className="mt-3 inline-block text-sm font-medium text-primary hover:underline">Read More →</Link>
-            </div>
-          ))}
-        </div>
-      </Section>
+      <TrialHighlights />
+
 
       {/* Current studies */}
       <Section>
