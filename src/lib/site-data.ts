@@ -33,7 +33,6 @@ export const images = {
   legalServices: "https://heuermd.com/wp-content/uploads/2017/07/Heuer-MD-Legal-Services.jpg",
   consultingServices: "https://heuermd.com/wp-content/uploads/2017/07/Heuer-MD-Consulting-Services.jpg",
   regulatoryServices: "https://heuermd.com/wp-content/uploads/2017/07/Heuer-MD-Regulatory-Services.jpg",
-  stemogen: "https://heuermd.com/wp-content/uploads/2017/11/box1__19_07.jpg-1250x704.jpeg",
   vaccine: "https://heuermd.com/wp-content/uploads/2016/04/Heuer-MD-Vaccine.jpg",
   dermatology: "https://heuermd.com/wp-content/uploads/2016/04/Heuer-MD-Dermatology.jpg",
   endocrinology: "https://heuermd.com/wp-content/uploads/2016/04/Heuer-MD-Endocronology.jpg",
@@ -303,19 +302,8 @@ export const products = [
   },
 ];
 
-export const newsItems = [
-  {
-    slug: "dh-stemogen",
-    date: "November 2, 2017",
-    title: "DH STEMOGEN",
-    image: "https://heuermd.com/wp-content/uploads/2017/11/box1__19_07.jpg-1250x704.jpeg",
-    summary:
-      "One of the most exciting areas of medical research involves the therapeutic action, production, and adaptability of stem cells. Although research has been underway for many years, the initial predictions for the efficacy of human stem cell therapies have not fully been met.",
-  },
-];
+export const newsItems: Array<{ slug: string; date: string; title: string; image: string; summary: string }> = [];
 
-export const keyIndustries = ["Pharmaceutical","Dietary Supplements","Food and Beverage","Cosmetic and Personal Care"];
-export const regulatoryIndustries = ["Pharmaceutical","Cosmetics","Dietary Supplements","Food and Beverage"];
 
 export const areasServed = [
   "Downtown Orlando",
