@@ -5,7 +5,8 @@ import { ContactCTA, InterestForm } from "@/components/site/CTA";
 import { buildHead } from "@/lib/seo";
 import { currentTrials, images } from "@/lib/site-data";
 import { PartnerMarquee } from "@/components/site/PartnerMarquee";
-import { FlaskConical, Users, Eye, ShieldCheck, HeartPulse, ClipboardCheck, Microscope } from "lucide-react";
+import { TrialHighlights } from "@/components/site/TrialHighlights";
+import { FlaskConical, ShieldCheck, HeartPulse, ClipboardCheck, Microscope } from "lucide-react";
 
 export const Route = createFileRoute("/clinical-trials/")({
   head: () => buildHead({
