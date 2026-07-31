@@ -95,9 +95,7 @@ function ExpertWitnessPage() {
       <RelatedLinks
         heading="Related professional services"
         links={[
-          { to: "/services/legal-support", label: "Legal Support", desc: "General-counsel-caliber litigation support for the nutraceutical industry." },
-          { to: "/services/consulting", label: "Consulting Services", desc: "FDA / FTC / NARC / Health Canada regulatory consulting." },
-          { to: "/services/regulatory", label: "Regulatory Services", desc: "Full-range regulatory work for cosmetics, food, supplements and pharma." },
+          { to: "/clinical-trials", label: "Clinical Trials", desc: "Current and completed studies at the Orlando center." },
           { to: "/for-attorneys", label: "For Attorneys", desc: "Case types, engagement process and case-consultation requests." },
           { to: "/about", label: "About Dr. Heuer", desc: "40+ years medical experience and 25+ years clinical research leadership." },
           { to: "/for-sponsors-and-cros", label: "For Sponsors & CROs", desc: "Clinical research site capabilities." },

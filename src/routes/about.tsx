@@ -3,7 +3,7 @@ import { SiteLayout, Section, PageHeader, Prose, RelatedLinks } from "@/componen
 import { Breadcrumbs } from "@/components/site/Breadcrumbs";
 import { ContactCTA } from "@/components/site/CTA";
 import { buildHead } from "@/lib/seo";
-import { business, images, keyIndustries, regulatoryIndustries } from "@/lib/site-data";
+import { business, images } from "@/lib/site-data";
 import teamImg from "@/assets/team-collaboration.jpg";
 
 
@@ -105,27 +105,15 @@ function AboutPage() {
               and clinical trial participation and promoting the positive contribution they provide to society.
             </p>
           </div>
-          <div className="grid grid-cols-2 gap-4 text-sm">
-            <div>
-              <div className="mb-2 font-semibold">Key Industries Served</div>
-              <ul className="space-y-1 text-muted-foreground">{keyIndustries.map((k)=><li key={k}>• {k}</li>)}</ul>
-            </div>
-            <div>
-              <div className="mb-2 font-semibold">Regulatory Services</div>
-              <ul className="space-y-1 text-muted-foreground">{regulatoryIndustries.map((k)=><li key={k}>• {k}</li>)}</ul>
-            </div>
-          </div>
-        </div>
       </Section>
 
       <RelatedLinks
         heading="Explore the practice"
         links={[
           { to: "/clinical-trials", label: "Clinical Trials", desc: "Current and completed studies." },
-          { to: "/expert-witness-services", label: "Expert Witness Services", desc: "Testimony and litigation support." },
-          { to: "/services/consulting", label: "Consulting Services", desc: "FDA / FTC regulatory consulting." },
-          { to: "/services/regulatory", label: "Regulatory Services", desc: "Cosmetics, food, supplements and pharma." },
-          { to: "/products", label: "Products", desc: "Nutraceuticals formulated under Dr. Heuer's guidance." },
+          { to: "/current-studies", label: "Current Studies", desc: "Studies now enrolling in Orlando." },
+          { to: "/our-investigators", label: "Our Investigators", desc: "The physician and research staff." },
+          { to: "/patient-resources", label: "Patient Resources", desc: "Guides for trial participants." },
           { to: "/locations/orlando", label: "Orlando Location", desc: "Directions, hours and how to reach the team." },
         ]}
       />
