@@ -1,9 +1,10 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { SiteLayout, Section, PageHeader, Prose, RelatedLinks } from "@/components/site/Layout";
+import { SiteLayout, Section, PageHeader, Prose } from "@/components/site/Layout";
 import { Breadcrumbs } from "@/components/site/Breadcrumbs";
 import { ContactCTA, InterestForm } from "@/components/site/CTA";
 import { buildHead } from "@/lib/seo";
-import { completedTrialDetails, currentTrials, images, partners } from "@/lib/site-data";
+import { currentTrials, images } from "@/lib/site-data";
+import { PartnerMarquee } from "@/components/site/PartnerMarquee";
 
 
 export const Route = createFileRoute("/clinical-trials/")({
@@ -54,24 +55,6 @@ function ClinicalTrialsIndex() {
       </Section>
 
       <Section>
-        <h2 className="text-2xl font-semibold tracking-tight">Completed Clinical Trials</h2>
-        <p className="mt-2 text-muted-foreground">Historical therapeutic-area experience. Select a topic to view a summary.</p>
-        <ul className="mt-6 grid gap-x-6 gap-y-2 text-sm sm:grid-cols-2 md:grid-cols-3">
-          {completedTrialDetails.map((t) => (
-            <li key={t.slug}>
-              <Link
-                to="/clinical-trials/studies/$slug"
-                params={{ slug: t.slug }}
-                className="text-muted-foreground hover:text-primary hover:underline"
-              >
-                • {t.name}
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </Section>
-
-      <Section>
         <Prose>
           <h2 className="text-2xl font-semibold tracking-tight text-foreground">HMD Research: Clinical Trials</h2>
           <p><em>"HMD Research conducts Clinical Trial Research with the purpose of advancing modern medicine."</em></p>
@@ -100,40 +83,7 @@ function ClinicalTrialsIndex() {
         </Prose>
       </Section>
 
-      <Section>
-        <h2 className="text-center text-xl font-semibold tracking-tight uppercase text-muted-foreground">Our Partners</h2>
-        <div className="mt-8 grid grid-cols-3 gap-6 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8">
-          {partners.map((p) => (
-            <div key={p.name} className="flex items-center justify-center rounded-lg border border-border bg-white p-3">
-              <img src={p.image} alt={p.name} loading="lazy" className="max-h-12 w-auto object-contain opacity-80 grayscale transition hover:opacity-100 hover:grayscale-0" />
-            </div>
-          ))}
-        </div>
-      </Section>
-
-      <RelatedLinks
-        heading="Learn about clinical trial participation"
-        links={[
-          { to: "/clinical-trials/how-clinical-trials-work", label: "How Clinical Trials Work", desc: "Phases, protocols and oversight explained in plain language." },
-          { to: "/clinical-trials/clinical-trial-eligibility", label: "Eligibility Criteria", desc: "Who qualifies to join and why criteria matter for participant safety." },
-          { to: "/clinical-trials/what-to-expect", label: "What to Expect", desc: "A step-by-step overview of your visit journey." },
-          { to: "/clinical-trials/clinical-trial-safety", label: "Safety & Oversight", desc: "Informed consent, ethics boards and participant rights." },
-          { to: "/clinical-trials/clinical-trial-compensation", label: "Compensation", desc: "How compensation for time and travel typically works." },
-          { to: "/clinical-trials/participant-faq", label: "Participant FAQ", desc: "Common questions from potential participants." },
-        ]}
-      />
-
-      <RelatedLinks
-        heading="Research areas & practice"
-        links={[
-          { to: "/research-experience", label: "All Research Areas", desc: "Explore therapeutic areas we work across." },
-          { to: "/orlando-clinical-research", label: "Orlando Clinical Research", desc: "Local Central Florida clinical research information." },
-          { to: "/for-sponsors-and-cros", label: "For Sponsors & CROs", desc: "Site capabilities and study operations." },
-          { to: "/for-healthcare-professionals", label: "For Healthcare Professionals", desc: "Refer patients or explore collaboration." },
-          { to: "/patient-resources", label: "Patient Resources", desc: "Guides and checklists for participants." },
-          { to: "/research-glossary", label: "Research Glossary", desc: "Definitions for common clinical research terms." },
-        ]}
-      />
+      <PartnerMarquee />
 
       <Section>
         <div className="grid gap-8 md:grid-cols-5">
