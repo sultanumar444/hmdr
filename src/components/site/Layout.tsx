@@ -18,8 +18,8 @@ const nav: NavEntry[] = [
       {
         heading: "",
         items: [
-          { to: "/about", label: "About", desc: "Dr. Heuer and the HMD Research team." },
-          { to: "/news", label: "Research News", desc: "Latest studies, publications and updates." },
+          { to: "/about", label: "About" },
+          { to: "/news", label: "Research News" },
         ],
       },
     ],
