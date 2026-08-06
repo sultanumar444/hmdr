@@ -70,7 +70,7 @@ function Home() {
             <div className="mb-6 inline-flex items-center rounded-full border border-white/20 bg-white/10 px-3 py-1 text-xs font-medium backdrop-blur">
               Physician-led · {business.city}, {business.regionShort}
             </div>
-            <h1 className="text-4xl font-semibold leading-[1.05] tracking-tight md:text-6xl">
+            <h1 className="text-4xl font-semibold leading-[1.05] tracking-tight text-primary-foreground md:text-6xl">
               Advancing medicine
               <br />
               through <span className="text-secondary">clinical research</span>
