@@ -1,6 +1,20 @@
 // Central site data. Verified details are populated; unverified items are left null
 // so pages can render clear "to be confirmed" states rather than fabricated info.
 
+import healthcareNews from "@/assets/healthcare-news.jpg";
+import participantEducation from "@/assets/participant-education.jpg";
+import researchExperience from "@/assets/research-experience.jpg";
+import openLabelTrials from "@/assets/open-label-trials.jpg";
+import controlledTrials from "@/assets/controlled-trials.jpg";
+import phasesTrials from "@/assets/phases-trials.jpg";
+import modernMedicine from "@/assets/modern-medicine.jpg";
+import whyParticipate from "@/assets/why-participate.jpg";
+import pioneeringTreatments from "@/assets/pioneering-treatments.jpg";
+import vaccineResearch from "@/assets/vaccine-research.jpg";
+import dermatologyResearch from "@/assets/dermatology-research.jpg";
+import endocrinologyResearch from "@/assets/endocrinology-research.jpg";
+import gastroResearch from "@/assets/gastro-research.jpg";
+
 export const business = {
   name: "HMD Research",
   city: "Orlando",
@@ -33,10 +47,19 @@ export const images = {
   legalServices: "https://heuermd.com/wp-content/uploads/2017/07/Heuer-MD-Legal-Services.jpg",
   consultingServices: "https://heuermd.com/wp-content/uploads/2017/07/Heuer-MD-Consulting-Services.jpg",
   regulatoryServices: "https://heuermd.com/wp-content/uploads/2017/07/Heuer-MD-Regulatory-Services.jpg",
-  vaccine: "https://heuermd.com/wp-content/uploads/2016/04/Heuer-MD-Vaccine.jpg",
-  dermatology: "https://heuermd.com/wp-content/uploads/2016/04/Heuer-MD-Dermatology.jpg",
-  endocrinology: "https://heuermd.com/wp-content/uploads/2016/04/Heuer-MD-Endocronology.jpg",
-  gastro: "https://heuermd.com/wp-content/uploads/2016/04/Heuer-MD-Gastro.jpg",
+  vaccine: vaccineResearch,
+  dermatology: dermatologyResearch,
+  endocrinology: endocrinologyResearch,
+  gastro: gastroResearch,
+  healthcareNews,
+  participantEducation,
+  researchExperience,
+  openLabelTrials,
+  controlledTrials,
+  phasesTrials,
+  modernMedicine,
+  whyParticipate,
+  pioneeringTreatments,
 };
 
 export type TrialDetail = {
@@ -324,6 +347,7 @@ export type ResearchCategory = {
   slug: string;
   name: string;
   summary: string;
+  image: string;
   areas: string[];
 };
 
@@ -333,36 +357,42 @@ export const researchCategories: ResearchCategory[] = [
     name: "Dermatology",
     summary:
       "Skin-focused research spanning topical products, prescription therapies and cosmetic investigations.",
+    image: dermatologyResearch,
     areas: ["Acne", "Eczema and atopic dermatitis", "Psoriasis", "Cosmetic and OTC topical products"],
   },
   {
     slug: "respiratory-health",
     name: "Respiratory Health",
     summary: "Studies related to breathing, seasonal respiratory concerns and airway health.",
+    image: healthcareNews,
     areas: ["Seasonal allergy", "Cough and cold", "Asthma-related studies"],
   },
   {
     slug: "endocrinology",
     name: "Endocrinology",
     summary: "Investigations involving hormones, metabolism and endocrine-related conditions.",
+    image: endocrinologyResearch,
     areas: ["Type 2 diabetes", "Thyroid-related studies", "Metabolic health"],
   },
   {
     slug: "gastroenterology",
     name: "Gastroenterology",
     summary: "Studies focused on digestive health and gastrointestinal function.",
+    image: gastroResearch,
     areas: ["Digestive comfort", "IBS-related studies", "Probiotic and dietary research"],
   },
   {
     slug: "internal-medicine",
     name: "Internal Medicine",
     summary: "General adult-health investigations across common conditions and preventive care.",
+    image: researchExperience,
     areas: ["Cardiometabolic health", "General wellness studies"],
   },
   {
     slug: "nutrition",
     name: "Nutrition",
     summary: "Research examining foods, beverages and nutritional interventions.",
+    image: modernMedicine,
     areas: ["Functional foods", "Beverages and hydration", "Macronutrient studies"],
   },
   {
@@ -370,30 +400,35 @@ export const researchCategories: ResearchCategory[] = [
     name: "Dietary Supplements",
     summary:
       "Studies evaluating dietary supplement products, including substantiation for structure/function claims.",
+    image: pioneeringTreatments,
     areas: ["Vitamin and mineral products", "Herbal and botanical products", "Sports nutrition"],
   },
   {
     slug: "pediatrics",
     name: "Pediatrics",
     summary: "Research involving children conducted under appropriate ethical oversight.",
+    image: participantEducation,
     areas: ["Pediatric nutrition", "Pediatric OTC products"],
   },
   {
     slug: "womens-health",
     name: "Women's Health",
     summary: "Studies focused on health concerns that affect women across life stages.",
+    image: whyParticipate,
     areas: ["Menstrual and hormonal health", "Bone and joint health", "General wellness"],
   },
   {
     slug: "anti-infectives",
-    name: "Anti-infectives",
+    name: "Anti-Infectives",
     summary: "Historical experience with products related to bacterial, viral or fungal concerns.",
+    image: vaccineResearch,
     areas: ["Topical antimicrobials", "Systemic anti-infective studies"],
   },
   {
     slug: "muscle-physiology",
     name: "Muscle Physiology",
     summary: "Research examining muscle performance, recovery and physiological response.",
+    image: controlledTrials,
     areas: ["Exercise performance", "Recovery and soreness", "Body composition"],
   },
 ];

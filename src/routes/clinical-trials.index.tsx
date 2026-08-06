@@ -7,6 +7,9 @@ import { currentTrials, images } from "@/lib/site-data";
 import { PartnerMarquee } from "@/components/site/PartnerMarquee";
 import { TrialHighlights } from "@/components/site/TrialHighlights";
 import { FlaskConical, ShieldCheck, HeartPulse, ClipboardCheck, Microscope } from "lucide-react";
+import clinicalResearchHero from "@/assets/clinical-research-hero.jpg";
+import whyParticipate from "@/assets/why-participate.jpg";
+import researchExperience from "@/assets/research-experience.jpg";
 
 export const Route = createFileRoute("/clinical-trials/")({
   head: () => buildHead({
@@ -27,7 +30,7 @@ function ClinicalTrialsIndex() {
           eyebrow="Research"
           title="Clinical Research Trials"
           intro="HMD Research conducts Clinical Trial Research with the purpose of advancing modern medicine."
-          image={images.clinicalTrialHero}
+          image={clinicalResearchHero}
         />
       </Section>
 
@@ -75,8 +78,11 @@ function ClinicalTrialsIndex() {
           <div className="grid gap-8 lg:grid-cols-2 lg:items-center">
             <div className="relative overflow-hidden rounded-xl">
               <img
-                src={images.medicalTeam}
+                src={researchExperience}
                 alt="HMD Research clinical trial team in Orlando"
+                loading="lazy"
+                width={1024}
+                height={640}
                 className="h-64 w-full object-cover md:h-80"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent" />
@@ -168,10 +174,13 @@ function ClinicalTrialsIndex() {
 
       <Section>
         <div className="relative overflow-hidden rounded-2xl bg-primary text-primary-foreground">
-          <div className="absolute inset-0 opacity-20">
+          <div className="absolute inset-0 opacity-25">
             <img
-              src={images.vaccine}
+              src={whyParticipate}
               alt="Clinical research participant support"
+              loading="lazy"
+              width={1024}
+              height={640}
               className="h-full w-full object-cover"
             />
           </div>

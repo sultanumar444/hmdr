@@ -135,7 +135,9 @@ function Home() {
         <p className="mt-3 text-muted-foreground">Stay up to date with recent research and medical news</p>
         <div className="mt-10 grid gap-6 md:grid-cols-3 md:text-left">
           <Link to="/news" className="group overflow-hidden rounded-xl border border-border bg-card shadow-sm transition hover:border-foreground/20 hover:shadow-md">
-            <img src={images.clinicalTrialHero} alt="Clinical research news" className="h-48 w-full object-cover" />
+            <div className="aspect-[16/10] w-full overflow-hidden">
+              <img src={images.healthcareNews} alt="Clinical research news" loading="lazy" width={1024} height={640} className="h-full w-full object-cover transition duration-500 group-hover:scale-105" />
+            </div>
             <div className="p-6">
               <div className="text-xs text-muted-foreground">Research News</div>
               <div className="mt-2 text-lg font-semibold group-hover:text-foreground">Industry & regulatory headlines</div>
@@ -145,7 +147,9 @@ function Home() {
             </div>
           </Link>
           <Link to="/blog" className="group overflow-hidden rounded-xl border border-border bg-card shadow-sm transition hover:border-foreground/20 hover:shadow-md">
-            <img src={images.clinicalTrialHero} alt="Clinical trial insights" className="h-48 w-full object-cover" />
+            <div className="aspect-[16/10] w-full overflow-hidden">
+              <img src={images.participantEducation} alt="Clinical trial participant education" loading="lazy" width={1024} height={640} className="h-full w-full object-cover transition duration-500 group-hover:scale-105" />
+            </div>
             <div className="p-6">
               <div className="text-xs text-muted-foreground">Blog</div>
               <div className="mt-2 text-lg font-semibold group-hover:text-foreground">Participant guides & education</div>
@@ -155,7 +159,9 @@ function Home() {
             </div>
           </Link>
           <Link to="/research-experience" className="group overflow-hidden rounded-xl border border-border bg-card shadow-sm transition hover:border-foreground/20 hover:shadow-md">
-            <img src={images.medicalTeam} alt="HMD Research medical team" className="h-48 w-full object-cover" />
+            <div className="aspect-[16/10] w-full overflow-hidden">
+              <img src={images.researchExperience} alt="HMD Research medical team collaboration" loading="lazy" width={1024} height={640} className="h-full w-full object-cover transition duration-500 group-hover:scale-105" />
+            </div>
             <div className="p-6">
               <div className="text-xs text-muted-foreground">Research</div>
               <div className="mt-2 text-lg font-semibold group-hover:text-foreground">Decades of research experience</div>
@@ -211,8 +217,7 @@ function Home() {
       <Section>
         <h2 className="text-3xl font-semibold tracking-tight text-center">Medical Research</h2>
         <p className="mx-auto mt-3 max-w-2xl text-center text-muted-foreground">
-          Dr. Heuer has had decades of research experience (including more than 100 funded projects)
-          in a broad array of health and medical conditions.
+          Decades of research experience across a broad array of health and medical conditions.
         </p>
         <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
           {[
@@ -222,7 +227,9 @@ function Home() {
             { title: "Gastroenterology", body: "Colon Polyps, Constipation, Crohn's, GERD, Hepatitis, IBS, Ulcerative Colitis", image: images.gastro },
           ].map((c) => (
             <Link to="/research-experience" key={c.title} className="group overflow-hidden rounded-xl border border-border bg-card shadow-sm transition hover:border-foreground/20 hover:shadow-md">
-              <img src={c.image} alt={c.title} className="h-40 w-full object-cover" />
+              <div className="aspect-[4/3] w-full overflow-hidden">
+                <img src={c.image} alt={c.title} loading="lazy" width={1024} height={768} className="h-full w-full object-cover transition duration-500 group-hover:scale-105" />
+              </div>
               <div className="p-5">
                 <div className="text-base font-semibold group-hover:text-foreground">{c.title}</div>
                 <p className="mt-2 text-sm text-muted-foreground">{c.body}</p>
@@ -273,10 +280,22 @@ function Home() {
               key={cat.slug}
               to="/research-experience/$category"
               params={{ category: cat.slug }}
-              className="rounded-xl border border-border bg-card p-5 shadow-sm transition-colors hover:border-foreground/20 hover:shadow-md"
+              className="group overflow-hidden rounded-xl border border-border bg-card shadow-sm transition-colors hover:border-foreground/20 hover:shadow-md"
             >
-              <div className="font-semibold">{cat.name}</div>
-              <p className="mt-2 text-sm text-muted-foreground">{cat.summary}</p>
+              <div className="aspect-[16/9] w-full overflow-hidden">
+                <img
+                  src={cat.image}
+                  alt={cat.name}
+                  loading="lazy"
+                  width={1024}
+                  height={576}
+                  className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+                />
+              </div>
+              <div className="p-5">
+                <div className="font-semibold">{cat.name}</div>
+                <p className="mt-2 text-sm text-muted-foreground">{cat.summary}</p>
+              </div>
             </Link>
           ))}
         </div>
