@@ -5,6 +5,7 @@ import { FAQ, faqJsonLd } from "@/components/site/FAQ";
 import { buildHead } from "@/lib/seo";
 import { jsonLdScript } from "@/components/site/JsonLd";
 import heroBg from "@/assets/hero-bg.jpg";
+import heroResearch from "@/assets/hero-research.jpg";
 import { PartnerMarquee } from "@/components/site/PartnerMarquee";
 import { IndustryNewsTicker } from "@/components/site/IndustryNews";
 import { TrialHighlights } from "@/components/site/TrialHighlights";
