@@ -56,52 +56,64 @@ function Home() {
   return (
     <SiteLayout>
       {/* Hero */}
-      <section className="relative overflow-hidden border-b border-border">
+      <section className="relative overflow-hidden bg-primary">
         <div className="absolute inset-0">
-          <img src={heroBg} alt="" className="h-full w-full object-cover" width={1920} height={1080} />
-          <div className="absolute inset-0 bg-gradient-to-br from-primary/95 via-primary/85 to-primary/70" />
-          <div className="absolute inset-0 bg-black/40" />
+          <img src={heroBg} alt="" className="h-full w-full object-cover opacity-25" width={1920} height={1080} />
+          <div className="absolute inset-0 bg-gradient-to-r from-primary via-primary/95 to-primary/70" />
         </div>
-        <div className="relative mx-auto grid max-w-7xl gap-10 px-4 py-24 md:grid-cols-2 md:items-center md:py-32">
+        {/* soft arc behind the portrait, like a spotlight */}
+        <div className="pointer-events-none absolute -right-40 top-1/2 hidden h-[46rem] w-[46rem] -translate-y-1/2 rounded-full bg-secondary/15 blur-[2px] md:block" />
+        <div className="relative mx-auto grid max-w-7xl gap-12 px-4 py-24 md:grid-cols-[1.1fr_0.9fr] md:items-center md:py-32">
           <div className="text-primary-foreground">
-            <div className="mb-5 inline-flex items-center rounded-full border border-white/20 bg-white/10 px-3 py-1 text-xs font-medium backdrop-blur">
+            <div className="mb-6 inline-flex items-center rounded-full border border-white/20 bg-white/10 px-3 py-1 text-xs font-medium backdrop-blur">
               Physician-led · {business.city}, {business.regionShort}
             </div>
-            <h1 className="text-4xl font-semibold tracking-tight md:text-6xl">
-              Advancing medicine through <span className="text-secondary">clinical research</span>
+            <h1 className="text-4xl font-semibold leading-[1.05] tracking-tight md:text-6xl">
+              Advancing medicine
+              <br />
+              through <span className="text-secondary">clinical research</span>
             </h1>
-            <p className="mt-5 max-w-xl text-lg opacity-90 md:text-xl">
+            <p className="mt-6 max-w-xl text-lg opacity-90">
               {business.tagline}
             </p>
-            <p className="mt-4 max-w-xl opacity-80">
+            <p className="mt-3 max-w-xl opacity-75">
               A physician-owned and professionally managed multi-specialty clinical trials
               research center serving Greater Orlando and Central Florida.
             </p>
-            <div className="mt-8 flex flex-wrap gap-3">
+            <div className="mt-9 flex flex-wrap gap-4">
               <Link
-                to="/clinical-trials"
-                className="inline-flex items-center rounded-md bg-secondary px-5 py-3 text-sm font-semibold text-secondary-foreground shadow-lg hover:opacity-90"
+                to="/current-studies"
+                className="inline-flex items-center rounded-md border border-white/50 px-7 py-3.5 text-sm font-semibold text-primary-foreground shadow-[0_14px_34px_-12px_rgba(0,0,0,0.7)] transition hover:bg-white/10"
               >
-                View Clinical Trials
+                Participate Now
               </Link>
               <Link
                 to="/contact"
-                className="inline-flex items-center rounded-md border border-white/30 bg-white/10 px-5 py-3 text-sm font-semibold text-primary-foreground backdrop-blur hover:bg-white/20"
+                className="inline-flex items-center rounded-md border border-white/50 px-7 py-3.5 text-sm font-semibold text-primary-foreground shadow-[0_14px_34px_-12px_rgba(0,0,0,0.7)] transition hover:bg-white/10"
               >
-                Contact Us
+                Enroll Now
+              </Link>
+              <Link
+                to="/clinical-trials"
+                className="inline-flex items-center rounded-md border border-secondary bg-secondary px-7 py-3.5 text-sm font-semibold text-secondary-foreground shadow-[0_14px_34px_-10px_rgba(0,0,0,0.7)] transition hover:opacity-90"
+              >
+                Join a Study
               </Link>
             </div>
           </div>
           <div className="relative hidden md:block">
-            <div className="absolute -inset-4 rounded-3xl bg-secondary/30 blur-2xl" />
-            <img
-              src={images.doctorPortrait}
-              alt="Dr. Marvin Heuer, M.D."
-              className="relative w-full rounded-2xl border border-white/20 object-cover shadow-2xl"
-            />
+            <div className="absolute -inset-6 rounded-full bg-secondary/25 blur-2xl" />
+            <div className="relative mx-auto aspect-square w-full max-w-md overflow-hidden rounded-full border-4 border-white/20 shadow-[0_30px_70px_-25px_rgba(0,0,0,0.8)]">
+              <img
+                src={images.doctorPortrait}
+                alt="Dr. Marvin Heuer, M.D."
+                className="h-full w-full object-cover"
+              />
+            </div>
           </div>
         </div>
       </section>
+
 
       <IndustryNewsTicker />
 
