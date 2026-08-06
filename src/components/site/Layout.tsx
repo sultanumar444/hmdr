@@ -84,9 +84,9 @@ function MegaPanel({ groups, feature }: { groups: MegaGroup[]; feature?: NonNull
 export function SiteHeader() {
   const [open, setOpen] = useState(false);
   return (
-    <header className="sticky top-0 z-40 bg-primary text-primary-foreground shadow-[0_10px_30px_-12px_rgba(0,0,0,0.45)]">
+    <header className="sticky top-0 z-40 bg-background text-foreground shadow-[0_10px_30px_-12px_rgba(0,0,0,0.12)]">
       {/* Top bar: logo + address + phone + CTA */}
-      <div className="border-b border-white/10">
+      <div className="border-b border-border">
         <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-4 px-4 py-3">
           <Link to="/" className="flex items-center gap-3">
             <span className="inline-flex items-center rounded-xl bg-white px-3 py-1.5 shadow-md">
@@ -97,32 +97,32 @@ export function SiteHeader() {
 
           <div className="hidden items-center gap-6 md:flex">
             <div className="flex items-start gap-2 text-sm">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="mt-0.5 text-secondary">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="mt-0.5 text-primary">
                 <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
                 <circle cx="12" cy="10" r="3" />
               </svg>
               <div className="leading-tight">
                 <div className="font-medium">{business.addressLine1}</div>
-                <div className="opacity-70">{business.cityStateZip}</div>
+                <div className="text-muted-foreground">{business.cityStateZip}</div>
               </div>
             </div>
 
             <div className="flex items-start gap-2 text-sm">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="mt-0.5 text-secondary">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="mt-0.5 text-primary">
                 <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
               </svg>
               <div className="leading-tight">
-                <a href={business.phoneHref!} data-cta="phone-click" className="font-semibold hover:text-secondary">
+                <a href={business.phoneHref!} data-cta="phone-click" className="font-semibold hover:text-primary">
                   {business.phone}
                 </a>
-                <div className="opacity-70">{business.hours.split("·")[0].trim()}</div>
+                <div className="text-muted-foreground">{business.hours.split("·")[0].trim()}</div>
               </div>
             </div>
 
             <Link
               to="/contact"
               data-cta="contact-click"
-              className="whitespace-nowrap rounded-md border border-white/40 bg-white/10 px-5 py-2.5 text-sm font-semibold text-primary-foreground shadow-[0_8px_24px_-10px_rgba(0,0,0,0.6)] backdrop-blur transition hover:bg-white/20"
+              className="whitespace-nowrap rounded-md bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground shadow-[0_8px_24px_-10px_rgba(0,0,0,0.25)] transition hover:bg-primary/90"
             >
               Join a Study
             </Link>
@@ -131,7 +131,7 @@ export function SiteHeader() {
           <button
             aria-label="Menu"
             onClick={() => setOpen(!open)}
-            className="rounded-md border border-white/30 p-2 lg:hidden"
+            className="rounded-md border border-border p-2 text-foreground lg:hidden"
           >
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
               <path d="M3 6h18M3 12h18M3 18h18" />
@@ -141,7 +141,7 @@ export function SiteHeader() {
       </div>
 
       {/* Menu bar */}
-      <div className="bg-primary text-primary-foreground">
+      <div className="bg-background text-foreground">
 
         <div className="relative mx-auto flex max-w-7xl items-center justify-between gap-4 px-4">
           <nav className="hidden items-center gap-1 text-sm lg:flex">
@@ -150,7 +150,7 @@ export function SiteHeader() {
                 <div key={n.label} className="group">
                   <button
                     type="button"
-                    className="inline-flex items-center gap-1 whitespace-nowrap px-3 py-3 font-medium text-primary-foreground/90 hover:text-secondary"
+                    className="inline-flex items-center gap-1 whitespace-nowrap px-3 py-3 font-medium text-foreground/90 hover:text-primary"
                   >
                     {n.label}
                     <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -163,8 +163,8 @@ export function SiteHeader() {
                 <Link
                   key={n.to}
                   to={n.to}
-                  className="whitespace-nowrap px-3 py-3 font-medium text-primary-foreground/90 transition-colors hover:text-secondary"
-                  activeProps={{ className: "whitespace-nowrap px-3 py-3 font-semibold text-secondary" }}
+                  className="whitespace-nowrap px-3 py-3 font-medium text-foreground/90 transition-colors hover:text-primary"
+                  activeProps={{ className: "whitespace-nowrap px-3 py-3 font-semibold text-primary" }}
                 >
                   {n.label}
                 </Link>
@@ -176,7 +176,7 @@ export function SiteHeader() {
             <button
               type="button"
               aria-label="Select language"
-              className="inline-flex items-center gap-1.5 px-3 py-3 text-sm font-medium text-primary-foreground/90 hover:text-secondary"
+              className="inline-flex items-center gap-1.5 px-3 py-3 text-sm font-medium text-foreground/90 hover:text-primary"
             >
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <circle cx="12" cy="12" r="10" />
