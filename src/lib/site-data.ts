@@ -47,10 +47,19 @@ export const images = {
   legalServices: "https://heuermd.com/wp-content/uploads/2017/07/Heuer-MD-Legal-Services.jpg",
   consultingServices: "https://heuermd.com/wp-content/uploads/2017/07/Heuer-MD-Consulting-Services.jpg",
   regulatoryServices: "https://heuermd.com/wp-content/uploads/2017/07/Heuer-MD-Regulatory-Services.jpg",
-  vaccine: "https://heuermd.com/wp-content/uploads/2016/04/Heuer-MD-Vaccine.jpg",
-  dermatology: "https://heuermd.com/wp-content/uploads/2016/04/Heuer-MD-Dermatology.jpg",
-  endocrinology: "https://heuermd.com/wp-content/uploads/2016/04/Heuer-MD-Endocronology.jpg",
-  gastro: "https://heuermd.com/wp-content/uploads/2016/04/Heuer-MD-Gastro.jpg",
+  vaccine: vaccineResearch,
+  dermatology: dermatologyResearch,
+  endocrinology: endocrinologyResearch,
+  gastro: gastroResearch,
+  healthcareNews,
+  participantEducation,
+  researchExperience,
+  openLabelTrials,
+  controlledTrials,
+  phasesTrials,
+  modernMedicine,
+  whyParticipate,
+  pioneeringTreatments,
 };
 
 export type TrialDetail = {
