@@ -34,7 +34,7 @@ export function IndustryNewsTicker() {
         <div className="group relative flex-1 overflow-hidden">
           <div
             className="flex w-max items-center gap-10 whitespace-nowrap group-hover:[animation-play-state:paused]"
-            style={{ animation: "hmd-marquee 140s linear infinite" }}
+            style={{ animation: "hmd-marquee 260s linear infinite" }}
           >
             {[0, 1].map((copy) => (
               <div key={copy} aria-hidden={copy === 1} className="flex items-center gap-10">
