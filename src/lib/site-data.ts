@@ -347,6 +347,7 @@ export type ResearchCategory = {
   slug: string;
   name: string;
   summary: string;
+  image: string;
   areas: string[];
 };
 
