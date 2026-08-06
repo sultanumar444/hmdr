@@ -7,6 +7,9 @@ import { currentTrials, images } from "@/lib/site-data";
 import { PartnerMarquee } from "@/components/site/PartnerMarquee";
 import { TrialHighlights } from "@/components/site/TrialHighlights";
 import { FlaskConical, ShieldCheck, HeartPulse, ClipboardCheck, Microscope } from "lucide-react";
+import clinicalResearchHero from "@/assets/clinical-research-hero.jpg";
+import whyParticipate from "@/assets/why-participate.jpg";
+import researchExperience from "@/assets/research-experience.jpg";
 
 export const Route = createFileRoute("/clinical-trials/")({
   head: () => buildHead({
