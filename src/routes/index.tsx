@@ -217,8 +217,7 @@ function Home() {
       <Section>
         <h2 className="text-3xl font-semibold tracking-tight text-center">Medical Research</h2>
         <p className="mx-auto mt-3 max-w-2xl text-center text-muted-foreground">
-          Dr. Heuer has had decades of research experience (including more than 100 funded projects)
-          in a broad array of health and medical conditions.
+          Decades of research experience across a broad array of health and medical conditions.
         </p>
         <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
           {[
@@ -228,7 +227,9 @@ function Home() {
             { title: "Gastroenterology", body: "Colon Polyps, Constipation, Crohn's, GERD, Hepatitis, IBS, Ulcerative Colitis", image: images.gastro },
           ].map((c) => (
             <Link to="/research-experience" key={c.title} className="group overflow-hidden rounded-xl border border-border bg-card shadow-sm transition hover:border-foreground/20 hover:shadow-md">
-              <img src={c.image} alt={c.title} className="h-40 w-full object-cover" />
+              <div className="aspect-[4/3] w-full overflow-hidden">
+                <img src={c.image} alt={c.title} loading="lazy" width={1024} height={768} className="h-full w-full object-cover transition duration-500 group-hover:scale-105" />
+              </div>
               <div className="p-5">
                 <div className="text-base font-semibold group-hover:text-foreground">{c.title}</div>
                 <p className="mt-2 text-sm text-muted-foreground">{c.body}</p>
