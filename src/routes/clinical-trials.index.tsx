@@ -30,7 +30,7 @@ function ClinicalTrialsIndex() {
           eyebrow="Research"
           title="Clinical Research Trials"
           intro="HMD Research conducts Clinical Trial Research with the purpose of advancing modern medicine."
-          image={images.clinicalTrialHero}
+          image={clinicalResearchHero}
         />
       </Section>
 
