@@ -105,19 +105,20 @@ function Home() {
             </div>
           </div>
           <div className="relative hidden md:block">
-            {/* offset accent frame */}
-            <div className="absolute inset-y-6 -left-4 right-10 rounded-[2rem] border border-secondary/40" />
-            <div className="relative ml-8 overflow-hidden rounded-[2rem] rounded-tl-[6rem] border border-white/15 shadow-[0_35px_80px_-30px_rgba(0,0,0,0.85)]">
+            {/* circular ring accent */}
+            <div className="absolute inset-0 rounded-full border-[1.5px] border-secondary/40" />
+            <div className="absolute inset-3 rounded-full border border-white/10" />
+            <div className="relative mx-auto aspect-square w-full max-w-md overflow-hidden rounded-full border-4 border-white/10 shadow-[0_35px_80px_-30px_rgba(0,0,0,0.85)]">
               <img
                 src={heroResearch}
                 alt="Research coordinator reviewing a study visit with a clinical trial participant"
-                className="aspect-[4/5] w-full object-cover"
+                className="h-full w-full object-cover"
                 width={1024}
                 height={1280}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-primary/60 via-transparent to-transparent" />
             </div>
-            <div className="absolute -bottom-4 left-0 rounded-xl border border-white/15 bg-primary/90 px-5 py-4 text-primary-foreground backdrop-blur shadow-[0_20px_45px_-20px_rgba(0,0,0,0.8)]">
+            <div className="absolute -bottom-2 left-4 rounded-xl border border-white/15 bg-primary/90 px-5 py-4 text-primary-foreground backdrop-blur shadow-[0_20px_45px_-20px_rgba(0,0,0,0.8)]">
               <div className="text-2xl font-semibold text-secondary">Phase I–IV</div>
               <div className="text-xs opacity-80">Multi-specialty trial experience</div>
             </div>
