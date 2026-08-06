@@ -91,9 +91,7 @@ export function SiteHeader() {
       <div className="border-b border-border">
         <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-4 px-4 py-3">
           <Link to="/" className="flex items-center gap-3">
-            <span className="inline-flex items-center rounded-xl bg-white px-3 py-1.5 shadow-md">
-              <img src={images.logo} alt={`${business.name} logo`} className="h-14 w-auto md:h-16" />
-            </span>
+            <img src={images.logo} alt={`${business.name} logo`} className="h-16 w-auto md:h-20" />
             <span className="sr-only">{business.name}</span>
           </Link>
 
@@ -275,7 +273,7 @@ export function SiteFooter() {
     <footer className="mt-24 border-t border-border bg-primary text-primary-foreground">
       <div className="mx-auto grid max-w-7xl gap-8 px-4 py-12 md:grid-cols-4">
         <div>
-          <img src={images.logo} alt={business.name} className="mb-4 h-20 w-auto rounded-lg bg-white p-2 shadow-sm" />
+          <img src={images.logo} alt={business.name} className="mb-4 h-24 w-auto" />
           <p className="text-sm opacity-80">
             Physician-led clinical research and consulting in {business.city}, {business.regionShort}.
           </p>
