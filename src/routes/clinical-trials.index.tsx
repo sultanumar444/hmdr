@@ -78,8 +78,11 @@ function ClinicalTrialsIndex() {
           <div className="grid gap-8 lg:grid-cols-2 lg:items-center">
             <div className="relative overflow-hidden rounded-xl">
               <img
-                src={images.medicalTeam}
+                src={researchExperience}
                 alt="HMD Research clinical trial team in Orlando"
+                loading="lazy"
+                width={1024}
+                height={640}
                 className="h-64 w-full object-cover md:h-80"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent" />
