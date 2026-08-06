@@ -122,7 +122,7 @@ export function SiteHeader() {
               data-cta="contact-click"
               className="whitespace-nowrap rounded-md bg-secondary px-4 py-2.5 text-sm font-semibold text-secondary-foreground shadow-sm hover:opacity-90"
             >
-              Request appointment
+              Join a Study
             </Link>
           </div>
 
@@ -214,7 +214,7 @@ export function SiteHeader() {
               onClick={() => setOpen(false)}
               className="mt-1 inline-block rounded-md bg-secondary px-4 py-2 text-center text-sm font-semibold text-secondary-foreground"
             >
-              Request appointment
+              Join a Study
             </Link>
           </div>
           <nav className="mx-auto flex max-w-7xl flex-col px-4 py-2 text-sm">
