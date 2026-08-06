@@ -16,7 +16,7 @@ const nav: NavEntry[] = [
     label: "About",
     mega: [
       {
-        heading: "About HMD",
+        heading: "",
         items: [
           { to: "/about", label: "About", desc: "Dr. Heuer and the HMD Research team." },
           { to: "/news", label: "Research News", desc: "Latest studies, publications and updates." },
@@ -45,10 +45,12 @@ function MegaPanel({ groups, feature }: { groups: MegaGroup[]; feature?: NonNull
       <div className="rounded-xl border border-border bg-popover p-4 shadow-2xl">
         <div className="space-y-4">
           {groups.map((g) => (
-            <div key={g.heading}>
-              <div className="mb-2 text-xs font-semibold uppercase tracking-widest text-secondary">
-                {g.heading}
-              </div>
+            <div key={g.heading || g.items.map((i) => i.to).join("-")}>
+              {g.heading ? (
+                <div className="mb-2 text-xs font-semibold uppercase tracking-widest text-secondary">
+                  {g.heading}
+                </div>
+              ) : null}
               <ul className="space-y-1.5">
                 {g.items.map((it) => (
                   <li key={it.to}>
@@ -227,10 +229,12 @@ export function SiteHeader() {
                   <summary className="cursor-pointer py-2.5 font-medium text-foreground">{n.label}</summary>
                   <div className="pb-3 pl-3">
                     {n.mega.map((g) => (
-                      <div key={g.heading} className="mt-2">
-                        <div className="text-xs font-semibold uppercase tracking-widest text-secondary">
-                          {g.heading}
-                        </div>
+                      <div key={g.heading || g.items.map((i) => i.to).join("-")} className="mt-2">
+                        {g.heading ? (
+                          <div className="text-xs font-semibold uppercase tracking-widest text-secondary">
+                            {g.heading}
+                          </div>
+                        ) : null}
                         <ul className="mt-1 space-y-1">
                           {g.items.map((it) => (
                             <li key={it.to}>
