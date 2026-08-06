@@ -59,8 +59,9 @@ function Home() {
       {/* Hero */}
       <section className="relative overflow-hidden bg-primary">
         <div className="absolute inset-0">
-          <img src={heroBg} alt="" className="h-full w-full object-cover opacity-25" width={1920} height={1080} />
-          <div className="absolute inset-0 bg-gradient-to-r from-primary via-primary/95 to-primary/70" />
+          <img src={heroBg} alt="" className="h-full w-full object-cover opacity-45" width={1920} height={1080} />
+          <div className="absolute inset-0 bg-gradient-to-r from-primary via-primary/90 to-primary/65" />
+          <div className="absolute inset-0 bg-primary/30" />
         </div>
         {/* soft arc behind the portrait, like a spotlight */}
         <div className="pointer-events-none absolute -right-40 top-1/2 hidden h-[46rem] w-[46rem] -translate-y-1/2 rounded-full bg-secondary/15 blur-[2px] md:block" />
