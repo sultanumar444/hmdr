@@ -81,24 +81,22 @@ function Home() {
               A physician-owned and professionally managed multi-specialty clinical trials
               research center serving Greater Orlando and Central Florida.
             </p>
-            <div className="mt-9 flex flex-wrap gap-4">
+            <div className="mt-9 grid grid-cols-2 gap-4 sm:w-fit">
               <Link
                 to="/current-studies"
-                className="inline-flex items-center rounded-md border border-white/50 px-7 py-3.5 text-sm font-semibold text-primary-foreground shadow-[0_14px_34px_-12px_rgba(0,0,0,0.7)] transition hover:bg-white/10"
+                className="inline-flex items-center justify-center rounded-md border border-white/50 px-7 py-3.5 text-center text-sm font-semibold text-primary-foreground shadow-[0_14px_34px_-12px_rgba(0,0,0,0.7)] transition hover:bg-white/10"
               >
                 Participate Now
               </Link>
               <Link
                 to="/contact"
-                className="inline-flex items-center rounded-md border border-white/50 px-7 py-3.5 text-sm font-semibold text-primary-foreground shadow-[0_14px_34px_-12px_rgba(0,0,0,0.7)] transition hover:bg-white/10"
+                className="inline-flex items-center justify-center rounded-md border border-white/50 px-7 py-3.5 text-center text-sm font-semibold text-primary-foreground shadow-[0_14px_34px_-12px_rgba(0,0,0,0.7)] transition hover:bg-white/10"
               >
                 Enroll Now
               </Link>
-            </div>
-            <div className="mt-4">
               <Link
                 to="/clinical-trials"
-                className="inline-flex items-center rounded-md border border-secondary bg-secondary px-7 py-3.5 text-sm font-semibold text-secondary-foreground shadow-[0_14px_34px_-10px_rgba(0,0,0,0.7)] transition hover:opacity-90"
+                className="col-span-2 inline-flex items-center justify-center rounded-md border border-secondary bg-secondary px-7 py-3.5 text-center text-sm font-semibold text-secondary-foreground shadow-[0_14px_34px_-10px_rgba(0,0,0,0.7)] transition hover:opacity-90"
               >
                 Join a Study
               </Link>
