@@ -97,32 +97,32 @@ export function SiteHeader() {
 
           <div className="hidden items-center gap-6 md:flex">
             <div className="flex items-start gap-2 text-sm">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="mt-0.5 text-secondary">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="mt-0.5 text-primary">
                 <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
                 <circle cx="12" cy="10" r="3" />
               </svg>
               <div className="leading-tight">
                 <div className="font-medium">{business.addressLine1}</div>
-                <div className="opacity-70">{business.cityStateZip}</div>
+                <div className="text-muted-foreground">{business.cityStateZip}</div>
               </div>
             </div>
 
             <div className="flex items-start gap-2 text-sm">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="mt-0.5 text-secondary">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="mt-0.5 text-primary">
                 <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
               </svg>
               <div className="leading-tight">
-                <a href={business.phoneHref!} data-cta="phone-click" className="font-semibold hover:text-secondary">
+                <a href={business.phoneHref!} data-cta="phone-click" className="font-semibold hover:text-primary">
                   {business.phone}
                 </a>
-                <div className="opacity-70">{business.hours.split("·")[0].trim()}</div>
+                <div className="text-muted-foreground">{business.hours.split("·")[0].trim()}</div>
               </div>
             </div>
 
             <Link
               to="/contact"
               data-cta="contact-click"
-              className="whitespace-nowrap rounded-md border border-white/40 bg-white/10 px-5 py-2.5 text-sm font-semibold text-primary-foreground shadow-[0_8px_24px_-10px_rgba(0,0,0,0.6)] backdrop-blur transition hover:bg-white/20"
+              className="whitespace-nowrap rounded-md bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground shadow-[0_8px_24px_-10px_rgba(0,0,0,0.25)] transition hover:bg-primary/90"
             >
               Join a Study
             </Link>
