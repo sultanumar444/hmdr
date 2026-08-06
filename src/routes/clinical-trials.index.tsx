@@ -174,10 +174,13 @@ function ClinicalTrialsIndex() {
 
       <Section>
         <div className="relative overflow-hidden rounded-2xl bg-primary text-primary-foreground">
-          <div className="absolute inset-0 opacity-20">
+          <div className="absolute inset-0 opacity-25">
             <img
-              src={images.vaccine}
+              src={whyParticipate}
               alt="Clinical research participant support"
+              loading="lazy"
+              width={1024}
+              height={640}
               className="h-full w-full object-cover"
             />
           </div>
