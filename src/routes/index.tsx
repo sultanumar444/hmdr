@@ -107,7 +107,7 @@ function Home() {
             {/* circular ring accent */}
             <div className="absolute inset-0 rounded-full border-[1.5px] border-secondary/40" />
             <div className="absolute inset-3 rounded-full border border-white/10" />
-            <div className="relative mx-auto aspect-square w-full max-w-md overflow-hidden rounded-full border-4 border-white/10 shadow-[0_35px_80px_-30px_rgba(0,0,0,0.85)]">
+            <div className="relative mx-auto aspect-square w-full max-w-lg overflow-hidden rounded-full border-4 border-white/10 shadow-[0_35px_80px_-30px_rgba(0,0,0,0.85)]">
               <img
                 src={heroResearch}
                 alt="Research coordinator reviewing a study visit with a clinical trial participant"

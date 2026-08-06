@@ -58,7 +58,7 @@ export function TrialHighlights({
         {cards.map((c) => (
           <div
             key={c.title}
-            className="group rounded-xl border border-border bg-card p-6 transition hover:border-primary/40 hover:shadow-md"
+            className="group rounded-xl border border-border bg-card p-6 shadow-sm transition hover:border-primary/40 hover:shadow-md"
           >
             <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-full bg-primary/10 text-primary transition group-hover:bg-primary group-hover:text-primary-foreground">
               <c.icon className="h-6 w-6" />
