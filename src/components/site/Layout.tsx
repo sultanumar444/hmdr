@@ -141,7 +141,7 @@ export function SiteHeader() {
       </div>
 
       {/* Menu bar */}
-      <div className="bg-primary text-primary-foreground">
+      <div className="bg-background text-foreground">
 
         <div className="relative mx-auto flex max-w-7xl items-center justify-between gap-4 px-4">
           <nav className="hidden items-center gap-1 text-sm lg:flex">
@@ -150,7 +150,7 @@ export function SiteHeader() {
                 <div key={n.label} className="group">
                   <button
                     type="button"
-                    className="inline-flex items-center gap-1 whitespace-nowrap px-3 py-3 font-medium text-primary-foreground/90 hover:text-secondary"
+                    className="inline-flex items-center gap-1 whitespace-nowrap px-3 py-3 font-medium text-foreground/90 hover:text-primary"
                   >
                     {n.label}
                     <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -163,8 +163,8 @@ export function SiteHeader() {
                 <Link
                   key={n.to}
                   to={n.to}
-                  className="whitespace-nowrap px-3 py-3 font-medium text-primary-foreground/90 transition-colors hover:text-secondary"
-                  activeProps={{ className: "whitespace-nowrap px-3 py-3 font-semibold text-secondary" }}
+                  className="whitespace-nowrap px-3 py-3 font-medium text-foreground/90 transition-colors hover:text-primary"
+                  activeProps={{ className: "whitespace-nowrap px-3 py-3 font-semibold text-primary" }}
                 >
                   {n.label}
                 </Link>
@@ -176,7 +176,7 @@ export function SiteHeader() {
             <button
               type="button"
               aria-label="Select language"
-              className="inline-flex items-center gap-1.5 px-3 py-3 text-sm font-medium text-primary-foreground/90 hover:text-secondary"
+              className="inline-flex items-center gap-1.5 px-3 py-3 text-sm font-medium text-foreground/90 hover:text-primary"
             >
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <circle cx="12" cy="12" r="10" />
