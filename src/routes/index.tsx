@@ -134,7 +134,7 @@ function Home() {
         <h2 className="text-3xl font-semibold tracking-tight md:text-4xl">Transforming healthcare</h2>
         <p className="mt-3 text-muted-foreground">Stay up to date with recent research and medical news</p>
         <div className="mt-10 grid gap-6 md:grid-cols-3 md:text-left">
-          <Link to="/news" className="group overflow-hidden rounded-xl border border-border bg-card transition hover:border-foreground/20 hover:shadow-md">
+          <Link to="/news" className="group overflow-hidden rounded-xl border border-border bg-card shadow-sm transition hover:border-foreground/20 hover:shadow-md">
             <img src={images.clinicalTrialHero} alt="Clinical research news" className="h-48 w-full object-cover" />
             <div className="p-6">
               <div className="text-xs text-muted-foreground">Research News</div>
@@ -144,7 +144,7 @@ function Home() {
               </p>
             </div>
           </Link>
-          <Link to="/blog" className="group overflow-hidden rounded-xl border border-border bg-card transition hover:border-foreground/20 hover:shadow-md">
+          <Link to="/blog" className="group overflow-hidden rounded-xl border border-border bg-card shadow-sm transition hover:border-foreground/20 hover:shadow-md">
             <img src={images.clinicalTrialHero} alt="Clinical trial insights" className="h-48 w-full object-cover" />
             <div className="p-6">
               <div className="text-xs text-muted-foreground">Blog</div>
@@ -154,7 +154,7 @@ function Home() {
               </p>
             </div>
           </Link>
-          <Link to="/research-experience" className="group overflow-hidden rounded-xl border border-border bg-card transition hover:border-foreground/20 hover:shadow-md">
+          <Link to="/research-experience" className="group overflow-hidden rounded-xl border border-border bg-card shadow-sm transition hover:border-foreground/20 hover:shadow-md">
             <img src={images.medicalTeam} alt="HMD Research medical team" className="h-48 w-full object-cover" />
             <div className="p-6">
               <div className="text-xs text-muted-foreground">Research</div>
@@ -195,7 +195,7 @@ function Home() {
         </div>
         <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {currentTrials.slice(0, 3).map((t) => (
-            <Link to="/clinical-trials" key={t.name} className="group overflow-hidden rounded-xl border border-border bg-card transition hover:border-foreground/20 hover:shadow-md">
+            <Link to="/clinical-trials" key={t.name} className="group overflow-hidden rounded-xl border border-border bg-card shadow-sm transition hover:border-foreground/20 hover:shadow-md">
               <div className="aspect-[4/3] w-full overflow-hidden">
                 <img src={t.image} alt={t.name} className="h-full w-full object-cover transition group-hover:scale-105" />
               </div>
@@ -221,7 +221,7 @@ function Home() {
             { title: "Endocrinology", body: "Type 1 and 2 Diabetes, Insulin Resistance", image: images.endocrinology },
             { title: "Gastroenterology", body: "Colon Polyps, Constipation, Crohn's, GERD, Hepatitis, IBS, Ulcerative Colitis", image: images.gastro },
           ].map((c) => (
-            <Link to="/research-experience" key={c.title} className="group overflow-hidden rounded-xl border border-border bg-card transition hover:border-foreground/20 hover:shadow-md">
+            <Link to="/research-experience" key={c.title} className="group overflow-hidden rounded-xl border border-border bg-card shadow-sm transition hover:border-foreground/20 hover:shadow-md">
               <img src={c.image} alt={c.title} className="h-40 w-full object-cover" />
               <div className="p-5">
                 <div className="text-base font-semibold group-hover:text-foreground">{c.title}</div>
@@ -273,7 +273,7 @@ function Home() {
               key={cat.slug}
               to="/research-experience/$category"
               params={{ category: cat.slug }}
-              className="rounded-xl border border-border bg-card p-5 transition-colors hover:border-foreground/20"
+              className="rounded-xl border border-border bg-card p-5 shadow-sm transition-colors hover:border-foreground/20 hover:shadow-md"
             >
               <div className="font-semibold">{cat.name}</div>
               <p className="mt-2 text-sm text-muted-foreground">{cat.summary}</p>
