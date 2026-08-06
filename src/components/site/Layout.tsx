@@ -84,9 +84,9 @@ function MegaPanel({ groups, feature }: { groups: MegaGroup[]; feature?: NonNull
 export function SiteHeader() {
   const [open, setOpen] = useState(false);
   return (
-    <header className="sticky top-0 z-40 bg-primary text-primary-foreground shadow-[0_10px_30px_-12px_rgba(0,0,0,0.45)]">
+    <header className="sticky top-0 z-40 bg-background text-foreground shadow-[0_10px_30px_-12px_rgba(0,0,0,0.12)]">
       {/* Top bar: logo + address + phone + CTA */}
-      <div className="border-b border-white/10">
+      <div className="border-b border-border">
         <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-4 px-4 py-3">
           <Link to="/" className="flex items-center gap-3">
             <span className="inline-flex items-center rounded-xl bg-white px-3 py-1.5 shadow-md">
