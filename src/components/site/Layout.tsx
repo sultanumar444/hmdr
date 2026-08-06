@@ -91,7 +91,7 @@ export function SiteHeader() {
       <div className="border-b border-border">
         <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-4 px-4 py-3">
           <Link to="/" className="flex items-center gap-3">
-            <img src={images.logo} alt={`${business.name} logo`} className="h-16 w-auto md:h-20" />
+            <img src={images.logo} alt={`${business.name} logo`} className="h-20 w-auto md:h-24" />
             <span className="sr-only">{business.name}</span>
           </Link>
 
