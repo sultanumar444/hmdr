@@ -280,10 +280,22 @@ function Home() {
               key={cat.slug}
               to="/research-experience/$category"
               params={{ category: cat.slug }}
-              className="rounded-xl border border-border bg-card p-5 shadow-sm transition-colors hover:border-foreground/20 hover:shadow-md"
+              className="group overflow-hidden rounded-xl border border-border bg-card shadow-sm transition-colors hover:border-foreground/20 hover:shadow-md"
             >
-              <div className="font-semibold">{cat.name}</div>
-              <p className="mt-2 text-sm text-muted-foreground">{cat.summary}</p>
+              <div className="aspect-[16/9] w-full overflow-hidden">
+                <img
+                  src={cat.image}
+                  alt={cat.name}
+                  loading="lazy"
+                  width={1024}
+                  height={576}
+                  className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+                />
+              </div>
+              <div className="p-5">
+                <div className="font-semibold">{cat.name}</div>
+                <p className="mt-2 text-sm text-muted-foreground">{cat.summary}</p>
+              </div>
             </Link>
           ))}
         </div>
