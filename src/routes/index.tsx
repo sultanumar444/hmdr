@@ -93,6 +93,8 @@ function Home() {
               >
                 Enroll Now
               </Link>
+            </div>
+            <div className="mt-4">
               <Link
                 to="/clinical-trials"
                 className="inline-flex items-center rounded-md border border-secondary bg-secondary px-7 py-3.5 text-sm font-semibold text-secondary-foreground shadow-[0_14px_34px_-10px_rgba(0,0,0,0.7)] transition hover:opacity-90"
@@ -102,15 +104,24 @@ function Home() {
             </div>
           </div>
           <div className="relative hidden md:block">
-            <div className="absolute -inset-6 rounded-full bg-secondary/25 blur-2xl" />
-            <div className="relative mx-auto aspect-square w-full max-w-md overflow-hidden rounded-full border-4 border-white/20 shadow-[0_30px_70px_-25px_rgba(0,0,0,0.8)]">
+            {/* offset accent frame */}
+            <div className="absolute inset-y-6 -left-4 right-10 rounded-[2rem] border border-secondary/40" />
+            <div className="relative ml-8 overflow-hidden rounded-[2rem] rounded-tl-[6rem] border border-white/15 shadow-[0_35px_80px_-30px_rgba(0,0,0,0.85)]">
               <img
-                src={images.doctorPortrait}
-                alt="Dr. Marvin Heuer, M.D."
-                className="h-full w-full object-cover"
+                src={heroResearch}
+                alt="Research coordinator reviewing a study visit with a clinical trial participant"
+                className="aspect-[4/5] w-full object-cover"
+                width={1024}
+                height={1280}
               />
+              <div className="absolute inset-0 bg-gradient-to-t from-primary/60 via-transparent to-transparent" />
+            </div>
+            <div className="absolute -bottom-4 left-0 rounded-xl border border-white/15 bg-primary/90 px-5 py-4 text-primary-foreground backdrop-blur shadow-[0_20px_45px_-20px_rgba(0,0,0,0.8)]">
+              <div className="text-2xl font-semibold text-secondary">Phase I–IV</div>
+              <div className="text-xs opacity-80">Multi-specialty trial experience</div>
             </div>
           </div>
+
         </div>
       </section>
 
