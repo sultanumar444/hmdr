@@ -1,6 +1,20 @@
 // Central site data. Verified details are populated; unverified items are left null
 // so pages can render clear "to be confirmed" states rather than fabricated info.
 
+import healthcareNews from "@/assets/healthcare-news.jpg";
+import participantEducation from "@/assets/participant-education.jpg";
+import researchExperience from "@/assets/research-experience.jpg";
+import openLabelTrials from "@/assets/open-label-trials.jpg";
+import controlledTrials from "@/assets/controlled-trials.jpg";
+import phasesTrials from "@/assets/phases-trials.jpg";
+import modernMedicine from "@/assets/modern-medicine.jpg";
+import whyParticipate from "@/assets/why-participate.jpg";
+import pioneeringTreatments from "@/assets/pioneering-treatments.jpg";
+import vaccineResearch from "@/assets/vaccine-research.jpg";
+import dermatologyResearch from "@/assets/dermatology-research.jpg";
+import endocrinologyResearch from "@/assets/endocrinology-research.jpg";
+import gastroResearch from "@/assets/gastro-research.jpg";
+
 export const business = {
   name: "HMD Research",
   city: "Orlando",
