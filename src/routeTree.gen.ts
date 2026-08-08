@@ -25,6 +25,7 @@ import { Route as ForSponsorsAndCrosRouteImport } from './routes/for-sponsors-an
 import { Route as ForHealthcareProfessionalsRouteImport } from './routes/for-healthcare-professionals'
 import { Route as ForAttorneysRouteImport } from './routes/for-attorneys'
 import { Route as ExpertWitnessServicesRouteImport } from './routes/expert-witness-services'
+import { Route as EnrollNowRouteImport } from './routes/enroll-now'
 import { Route as CurrentStudiesRouteImport } from './routes/current-studies'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as ClinicalTrialsRouteImport } from './routes/clinical-trials'
@@ -128,6 +129,11 @@ const ForAttorneysRoute = ForAttorneysRouteImport.update({
 const ExpertWitnessServicesRoute = ExpertWitnessServicesRouteImport.update({
   id: '/expert-witness-services',
   path: '/expert-witness-services',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EnrollNowRoute = EnrollNowRouteImport.update({
+  id: '/enroll-now',
+  path: '/enroll-now',
   getParentRoute: () => rootRouteImport,
 } as any)
 const CurrentStudiesRoute = CurrentStudiesRouteImport.update({
@@ -263,6 +269,7 @@ export interface FileRoutesByFullPath {
   '/clinical-trials': typeof ClinicalTrialsRouteWithChildren
   '/contact': typeof ContactRoute
   '/current-studies': typeof CurrentStudiesRoute
+  '/enroll-now': typeof EnrollNowRoute
   '/expert-witness-services': typeof ExpertWitnessServicesRoute
   '/for-attorneys': typeof ForAttorneysRoute
   '/for-healthcare-professionals': typeof ForHealthcareProfessionalsRoute
@@ -302,6 +309,7 @@ export interface FileRoutesByTo {
   '/accessibility': typeof AccessibilityRoute
   '/contact': typeof ContactRoute
   '/current-studies': typeof CurrentStudiesRoute
+  '/enroll-now': typeof EnrollNowRoute
   '/expert-witness-services': typeof ExpertWitnessServicesRoute
   '/for-attorneys': typeof ForAttorneysRoute
   '/for-healthcare-professionals': typeof ForHealthcareProfessionalsRoute
@@ -342,6 +350,7 @@ export interface FileRoutesById {
   '/clinical-trials': typeof ClinicalTrialsRouteWithChildren
   '/contact': typeof ContactRoute
   '/current-studies': typeof CurrentStudiesRoute
+  '/enroll-now': typeof EnrollNowRoute
   '/expert-witness-services': typeof ExpertWitnessServicesRoute
   '/for-attorneys': typeof ForAttorneysRoute
   '/for-healthcare-professionals': typeof ForHealthcareProfessionalsRoute
@@ -385,6 +394,7 @@ export interface FileRouteTypes {
     | '/clinical-trials'
     | '/contact'
     | '/current-studies'
+    | '/enroll-now'
     | '/expert-witness-services'
     | '/for-attorneys'
     | '/for-healthcare-professionals'
@@ -424,6 +434,7 @@ export interface FileRouteTypes {
     | '/accessibility'
     | '/contact'
     | '/current-studies'
+    | '/enroll-now'
     | '/expert-witness-services'
     | '/for-attorneys'
     | '/for-healthcare-professionals'
@@ -463,6 +474,7 @@ export interface FileRouteTypes {
     | '/clinical-trials'
     | '/contact'
     | '/current-studies'
+    | '/enroll-now'
     | '/expert-witness-services'
     | '/for-attorneys'
     | '/for-healthcare-professionals'
@@ -505,6 +517,7 @@ export interface RootRouteChildren {
   ClinicalTrialsRoute: typeof ClinicalTrialsRouteWithChildren
   ContactRoute: typeof ContactRoute
   CurrentStudiesRoute: typeof CurrentStudiesRoute
+  EnrollNowRoute: typeof EnrollNowRoute
   ExpertWitnessServicesRoute: typeof ExpertWitnessServicesRoute
   ForAttorneysRoute: typeof ForAttorneysRoute
   ForHealthcareProfessionalsRoute: typeof ForHealthcareProfessionalsRoute
@@ -635,6 +648,13 @@ declare module '@tanstack/react-router' {
       path: '/expert-witness-services'
       fullPath: '/expert-witness-services'
       preLoaderRoute: typeof ExpertWitnessServicesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/enroll-now': {
+      id: '/enroll-now'
+      path: '/enroll-now'
+      fullPath: '/enroll-now'
+      preLoaderRoute: typeof EnrollNowRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/current-studies': {
@@ -893,6 +913,7 @@ const rootRouteChildren: RootRouteChildren = {
   ClinicalTrialsRoute: ClinicalTrialsRouteWithChildren,
   ContactRoute: ContactRoute,
   CurrentStudiesRoute: CurrentStudiesRoute,
+  EnrollNowRoute: EnrollNowRoute,
   ExpertWitnessServicesRoute: ExpertWitnessServicesRoute,
   ForAttorneysRoute: ForAttorneysRoute,
   ForHealthcareProfessionalsRoute: ForHealthcareProfessionalsRoute,
@@ -913,13 +934,3 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}
