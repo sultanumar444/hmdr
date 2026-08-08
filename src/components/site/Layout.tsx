@@ -20,7 +20,8 @@ const nav: NavEntry[] = [
         items: [
           { to: "/about", label: "About" },
           { to: "/news", label: "Research News" },
-        ],
+          { to: "/faq", label: "FAQ" },
+
       },
     ],
   },

@@ -25,6 +25,7 @@ import { Route as LocationsRouteImport } from './routes/locations'
 import { Route as ForSponsorsAndCrosRouteImport } from './routes/for-sponsors-and-cros'
 import { Route as ForHealthcareProfessionalsRouteImport } from './routes/for-healthcare-professionals'
 import { Route as ForAttorneysRouteImport } from './routes/for-attorneys'
+import { Route as FaqRouteImport } from './routes/faq'
 import { Route as ExpertWitnessServicesRouteImport } from './routes/expert-witness-services'
 import { Route as EnrollNowRouteImport } from './routes/enroll-now'
 import { Route as CurrentStudiesRouteImport } from './routes/current-studies'
@@ -130,6 +131,11 @@ const ForHealthcareProfessionalsRoute =
 const ForAttorneysRoute = ForAttorneysRouteImport.update({
   id: '/for-attorneys',
   path: '/for-attorneys',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FaqRoute = FaqRouteImport.update({
+  id: '/faq',
+  path: '/faq',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ExpertWitnessServicesRoute = ExpertWitnessServicesRouteImport.update({
@@ -277,6 +283,7 @@ export interface FileRoutesByFullPath {
   '/current-studies': typeof CurrentStudiesRoute
   '/enroll-now': typeof EnrollNowRoute
   '/expert-witness-services': typeof ExpertWitnessServicesRoute
+  '/faq': typeof FaqRoute
   '/for-attorneys': typeof ForAttorneysRoute
   '/for-healthcare-professionals': typeof ForHealthcareProfessionalsRoute
   '/for-sponsors-and-cros': typeof ForSponsorsAndCrosRoute
@@ -318,6 +325,7 @@ export interface FileRoutesByTo {
   '/current-studies': typeof CurrentStudiesRoute
   '/enroll-now': typeof EnrollNowRoute
   '/expert-witness-services': typeof ExpertWitnessServicesRoute
+  '/faq': typeof FaqRoute
   '/for-attorneys': typeof ForAttorneysRoute
   '/for-healthcare-professionals': typeof ForHealthcareProfessionalsRoute
   '/for-sponsors-and-cros': typeof ForSponsorsAndCrosRoute
@@ -360,6 +368,7 @@ export interface FileRoutesById {
   '/current-studies': typeof CurrentStudiesRoute
   '/enroll-now': typeof EnrollNowRoute
   '/expert-witness-services': typeof ExpertWitnessServicesRoute
+  '/faq': typeof FaqRoute
   '/for-attorneys': typeof ForAttorneysRoute
   '/for-healthcare-professionals': typeof ForHealthcareProfessionalsRoute
   '/for-sponsors-and-cros': typeof ForSponsorsAndCrosRoute
@@ -405,6 +414,7 @@ export interface FileRouteTypes {
     | '/current-studies'
     | '/enroll-now'
     | '/expert-witness-services'
+    | '/faq'
     | '/for-attorneys'
     | '/for-healthcare-professionals'
     | '/for-sponsors-and-cros'
@@ -446,6 +456,7 @@ export interface FileRouteTypes {
     | '/current-studies'
     | '/enroll-now'
     | '/expert-witness-services'
+    | '/faq'
     | '/for-attorneys'
     | '/for-healthcare-professionals'
     | '/for-sponsors-and-cros'
@@ -487,6 +498,7 @@ export interface FileRouteTypes {
     | '/current-studies'
     | '/enroll-now'
     | '/expert-witness-services'
+    | '/faq'
     | '/for-attorneys'
     | '/for-healthcare-professionals'
     | '/for-sponsors-and-cros'
@@ -531,6 +543,7 @@ export interface RootRouteChildren {
   CurrentStudiesRoute: typeof CurrentStudiesRoute
   EnrollNowRoute: typeof EnrollNowRoute
   ExpertWitnessServicesRoute: typeof ExpertWitnessServicesRoute
+  FaqRoute: typeof FaqRoute
   ForAttorneysRoute: typeof ForAttorneysRoute
   ForHealthcareProfessionalsRoute: typeof ForHealthcareProfessionalsRoute
   ForSponsorsAndCrosRoute: typeof ForSponsorsAndCrosRoute
@@ -661,6 +674,13 @@ declare module '@tanstack/react-router' {
       path: '/for-attorneys'
       fullPath: '/for-attorneys'
       preLoaderRoute: typeof ForAttorneysRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/faq': {
+      id: '/faq'
+      path: '/faq'
+      fullPath: '/faq'
+      preLoaderRoute: typeof FaqRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/expert-witness-services': {
@@ -935,6 +955,7 @@ const rootRouteChildren: RootRouteChildren = {
   CurrentStudiesRoute: CurrentStudiesRoute,
   EnrollNowRoute: EnrollNowRoute,
   ExpertWitnessServicesRoute: ExpertWitnessServicesRoute,
+  FaqRoute: FaqRoute,
   ForAttorneysRoute: ForAttorneysRoute,
   ForHealthcareProfessionalsRoute: ForHealthcareProfessionalsRoute,
   ForSponsorsAndCrosRoute: ForSponsorsAndCrosRoute,
