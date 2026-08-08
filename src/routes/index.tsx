@@ -246,8 +246,8 @@ function Home() {
 
       {/* Team image + About */}
       <Section>
-        <div className="grid gap-10 md:grid-cols-2 md:items-center">
-          <img src={images.medicalTeam} alt="HMD Research medical team" className="rounded-2xl border border-border shadow-md" />
+        <div className="grid gap-10 md:grid-cols-[1.15fr_0.85fr] md:items-center">
+          <img src={images.medicalTeam} alt="HMD Research medical team" className="w-full rounded-2xl border border-border shadow-md" />
           <div>
             <div className="text-xs font-medium uppercase tracking-widest text-muted-foreground">About Us</div>
             <h2 className="mt-3 text-3xl font-semibold tracking-tight">
