@@ -16,6 +16,7 @@ import { Route as ResearchExperienceRouteImport } from './routes/research-experi
 import { Route as ProductsRouteImport } from './routes/products'
 import { Route as PrivacyPolicyRouteImport } from './routes/privacy-policy'
 import { Route as PatientResourcesRouteImport } from './routes/patient-resources'
+import { Route as ParticipateNowRouteImport } from './routes/participate-now'
 import { Route as OurInvestigatorsRouteImport } from './routes/our-investigators'
 import { Route as OrlandoClinicalResearchRouteImport } from './routes/orlando-clinical-research'
 import { Route as NewsRouteImport } from './routes/news'
@@ -83,6 +84,11 @@ const PrivacyPolicyRoute = PrivacyPolicyRouteImport.update({
 const PatientResourcesRoute = PatientResourcesRouteImport.update({
   id: '/patient-resources',
   path: '/patient-resources',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ParticipateNowRoute = ParticipateNowRouteImport.update({
+  id: '/participate-now',
+  path: '/participate-now',
   getParentRoute: () => rootRouteImport,
 } as any)
 const OurInvestigatorsRoute = OurInvestigatorsRouteImport.update({
@@ -279,6 +285,7 @@ export interface FileRoutesByFullPath {
   '/news': typeof NewsRoute
   '/orlando-clinical-research': typeof OrlandoClinicalResearchRoute
   '/our-investigators': typeof OurInvestigatorsRoute
+  '/participate-now': typeof ParticipateNowRoute
   '/patient-resources': typeof PatientResourcesRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/products': typeof ProductsRouteWithChildren
@@ -319,6 +326,7 @@ export interface FileRoutesByTo {
   '/news': typeof NewsRoute
   '/orlando-clinical-research': typeof OrlandoClinicalResearchRoute
   '/our-investigators': typeof OurInvestigatorsRoute
+  '/participate-now': typeof ParticipateNowRoute
   '/patient-resources': typeof PatientResourcesRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/research-glossary': typeof ResearchGlossaryRoute
@@ -360,6 +368,7 @@ export interface FileRoutesById {
   '/news': typeof NewsRoute
   '/orlando-clinical-research': typeof OrlandoClinicalResearchRoute
   '/our-investigators': typeof OurInvestigatorsRoute
+  '/participate-now': typeof ParticipateNowRoute
   '/patient-resources': typeof PatientResourcesRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/products': typeof ProductsRouteWithChildren
@@ -404,6 +413,7 @@ export interface FileRouteTypes {
     | '/news'
     | '/orlando-clinical-research'
     | '/our-investigators'
+    | '/participate-now'
     | '/patient-resources'
     | '/privacy-policy'
     | '/products'
@@ -444,6 +454,7 @@ export interface FileRouteTypes {
     | '/news'
     | '/orlando-clinical-research'
     | '/our-investigators'
+    | '/participate-now'
     | '/patient-resources'
     | '/privacy-policy'
     | '/research-glossary'
@@ -484,6 +495,7 @@ export interface FileRouteTypes {
     | '/news'
     | '/orlando-clinical-research'
     | '/our-investigators'
+    | '/participate-now'
     | '/patient-resources'
     | '/privacy-policy'
     | '/products'
@@ -527,6 +539,7 @@ export interface RootRouteChildren {
   NewsRoute: typeof NewsRoute
   OrlandoClinicalResearchRoute: typeof OrlandoClinicalResearchRoute
   OurInvestigatorsRoute: typeof OurInvestigatorsRoute
+  ParticipateNowRoute: typeof ParticipateNowRoute
   PatientResourcesRoute: typeof PatientResourcesRoute
   PrivacyPolicyRoute: typeof PrivacyPolicyRoute
   ProductsRoute: typeof ProductsRouteWithChildren
@@ -585,6 +598,13 @@ declare module '@tanstack/react-router' {
       path: '/patient-resources'
       fullPath: '/patient-resources'
       preLoaderRoute: typeof PatientResourcesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/participate-now': {
+      id: '/participate-now'
+      path: '/participate-now'
+      fullPath: '/participate-now'
+      preLoaderRoute: typeof ParticipateNowRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/our-investigators': {
@@ -923,6 +943,7 @@ const rootRouteChildren: RootRouteChildren = {
   NewsRoute: NewsRoute,
   OrlandoClinicalResearchRoute: OrlandoClinicalResearchRoute,
   OurInvestigatorsRoute: OurInvestigatorsRoute,
+  ParticipateNowRoute: ParticipateNowRoute,
   PatientResourcesRoute: PatientResourcesRoute,
   PrivacyPolicyRoute: PrivacyPolicyRoute,
   ProductsRoute: ProductsRouteWithChildren,
