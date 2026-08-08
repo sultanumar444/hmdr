@@ -16,6 +16,7 @@ import { Route as ResearchExperienceRouteImport } from './routes/research-experi
 import { Route as ProductsRouteImport } from './routes/products'
 import { Route as PrivacyPolicyRouteImport } from './routes/privacy-policy'
 import { Route as PatientResourcesRouteImport } from './routes/patient-resources'
+import { Route as ParticipateNowRouteImport } from './routes/participate-now'
 import { Route as OurInvestigatorsRouteImport } from './routes/our-investigators'
 import { Route as OrlandoClinicalResearchRouteImport } from './routes/orlando-clinical-research'
 import { Route as NewsRouteImport } from './routes/news'
@@ -24,7 +25,9 @@ import { Route as LocationsRouteImport } from './routes/locations'
 import { Route as ForSponsorsAndCrosRouteImport } from './routes/for-sponsors-and-cros'
 import { Route as ForHealthcareProfessionalsRouteImport } from './routes/for-healthcare-professionals'
 import { Route as ForAttorneysRouteImport } from './routes/for-attorneys'
+import { Route as FaqRouteImport } from './routes/faq'
 import { Route as ExpertWitnessServicesRouteImport } from './routes/expert-witness-services'
+import { Route as EnrollNowRouteImport } from './routes/enroll-now'
 import { Route as CurrentStudiesRouteImport } from './routes/current-studies'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as ClinicalTrialsRouteImport } from './routes/clinical-trials'
@@ -84,6 +87,11 @@ const PatientResourcesRoute = PatientResourcesRouteImport.update({
   path: '/patient-resources',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ParticipateNowRoute = ParticipateNowRouteImport.update({
+  id: '/participate-now',
+  path: '/participate-now',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const OurInvestigatorsRoute = OurInvestigatorsRouteImport.update({
   id: '/our-investigators',
   path: '/our-investigators',
@@ -125,9 +133,19 @@ const ForAttorneysRoute = ForAttorneysRouteImport.update({
   path: '/for-attorneys',
   getParentRoute: () => rootRouteImport,
 } as any)
+const FaqRoute = FaqRouteImport.update({
+  id: '/faq',
+  path: '/faq',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ExpertWitnessServicesRoute = ExpertWitnessServicesRouteImport.update({
   id: '/expert-witness-services',
   path: '/expert-witness-services',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EnrollNowRoute = EnrollNowRouteImport.update({
+  id: '/enroll-now',
+  path: '/enroll-now',
   getParentRoute: () => rootRouteImport,
 } as any)
 const CurrentStudiesRoute = CurrentStudiesRouteImport.update({
@@ -263,7 +281,9 @@ export interface FileRoutesByFullPath {
   '/clinical-trials': typeof ClinicalTrialsRouteWithChildren
   '/contact': typeof ContactRoute
   '/current-studies': typeof CurrentStudiesRoute
+  '/enroll-now': typeof EnrollNowRoute
   '/expert-witness-services': typeof ExpertWitnessServicesRoute
+  '/faq': typeof FaqRoute
   '/for-attorneys': typeof ForAttorneysRoute
   '/for-healthcare-professionals': typeof ForHealthcareProfessionalsRoute
   '/for-sponsors-and-cros': typeof ForSponsorsAndCrosRoute
@@ -272,6 +292,7 @@ export interface FileRoutesByFullPath {
   '/news': typeof NewsRoute
   '/orlando-clinical-research': typeof OrlandoClinicalResearchRoute
   '/our-investigators': typeof OurInvestigatorsRoute
+  '/participate-now': typeof ParticipateNowRoute
   '/patient-resources': typeof PatientResourcesRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/products': typeof ProductsRouteWithChildren
@@ -302,7 +323,9 @@ export interface FileRoutesByTo {
   '/accessibility': typeof AccessibilityRoute
   '/contact': typeof ContactRoute
   '/current-studies': typeof CurrentStudiesRoute
+  '/enroll-now': typeof EnrollNowRoute
   '/expert-witness-services': typeof ExpertWitnessServicesRoute
+  '/faq': typeof FaqRoute
   '/for-attorneys': typeof ForAttorneysRoute
   '/for-healthcare-professionals': typeof ForHealthcareProfessionalsRoute
   '/for-sponsors-and-cros': typeof ForSponsorsAndCrosRoute
@@ -311,6 +334,7 @@ export interface FileRoutesByTo {
   '/news': typeof NewsRoute
   '/orlando-clinical-research': typeof OrlandoClinicalResearchRoute
   '/our-investigators': typeof OurInvestigatorsRoute
+  '/participate-now': typeof ParticipateNowRoute
   '/patient-resources': typeof PatientResourcesRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/research-glossary': typeof ResearchGlossaryRoute
@@ -342,7 +366,9 @@ export interface FileRoutesById {
   '/clinical-trials': typeof ClinicalTrialsRouteWithChildren
   '/contact': typeof ContactRoute
   '/current-studies': typeof CurrentStudiesRoute
+  '/enroll-now': typeof EnrollNowRoute
   '/expert-witness-services': typeof ExpertWitnessServicesRoute
+  '/faq': typeof FaqRoute
   '/for-attorneys': typeof ForAttorneysRoute
   '/for-healthcare-professionals': typeof ForHealthcareProfessionalsRoute
   '/for-sponsors-and-cros': typeof ForSponsorsAndCrosRoute
@@ -351,6 +377,7 @@ export interface FileRoutesById {
   '/news': typeof NewsRoute
   '/orlando-clinical-research': typeof OrlandoClinicalResearchRoute
   '/our-investigators': typeof OurInvestigatorsRoute
+  '/participate-now': typeof ParticipateNowRoute
   '/patient-resources': typeof PatientResourcesRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/products': typeof ProductsRouteWithChildren
@@ -385,7 +412,9 @@ export interface FileRouteTypes {
     | '/clinical-trials'
     | '/contact'
     | '/current-studies'
+    | '/enroll-now'
     | '/expert-witness-services'
+    | '/faq'
     | '/for-attorneys'
     | '/for-healthcare-professionals'
     | '/for-sponsors-and-cros'
@@ -394,6 +423,7 @@ export interface FileRouteTypes {
     | '/news'
     | '/orlando-clinical-research'
     | '/our-investigators'
+    | '/participate-now'
     | '/patient-resources'
     | '/privacy-policy'
     | '/products'
@@ -424,7 +454,9 @@ export interface FileRouteTypes {
     | '/accessibility'
     | '/contact'
     | '/current-studies'
+    | '/enroll-now'
     | '/expert-witness-services'
+    | '/faq'
     | '/for-attorneys'
     | '/for-healthcare-professionals'
     | '/for-sponsors-and-cros'
@@ -433,6 +465,7 @@ export interface FileRouteTypes {
     | '/news'
     | '/orlando-clinical-research'
     | '/our-investigators'
+    | '/participate-now'
     | '/patient-resources'
     | '/privacy-policy'
     | '/research-glossary'
@@ -463,7 +496,9 @@ export interface FileRouteTypes {
     | '/clinical-trials'
     | '/contact'
     | '/current-studies'
+    | '/enroll-now'
     | '/expert-witness-services'
+    | '/faq'
     | '/for-attorneys'
     | '/for-healthcare-professionals'
     | '/for-sponsors-and-cros'
@@ -472,6 +507,7 @@ export interface FileRouteTypes {
     | '/news'
     | '/orlando-clinical-research'
     | '/our-investigators'
+    | '/participate-now'
     | '/patient-resources'
     | '/privacy-policy'
     | '/products'
@@ -505,7 +541,9 @@ export interface RootRouteChildren {
   ClinicalTrialsRoute: typeof ClinicalTrialsRouteWithChildren
   ContactRoute: typeof ContactRoute
   CurrentStudiesRoute: typeof CurrentStudiesRoute
+  EnrollNowRoute: typeof EnrollNowRoute
   ExpertWitnessServicesRoute: typeof ExpertWitnessServicesRoute
+  FaqRoute: typeof FaqRoute
   ForAttorneysRoute: typeof ForAttorneysRoute
   ForHealthcareProfessionalsRoute: typeof ForHealthcareProfessionalsRoute
   ForSponsorsAndCrosRoute: typeof ForSponsorsAndCrosRoute
@@ -514,6 +552,7 @@ export interface RootRouteChildren {
   NewsRoute: typeof NewsRoute
   OrlandoClinicalResearchRoute: typeof OrlandoClinicalResearchRoute
   OurInvestigatorsRoute: typeof OurInvestigatorsRoute
+  ParticipateNowRoute: typeof ParticipateNowRoute
   PatientResourcesRoute: typeof PatientResourcesRoute
   PrivacyPolicyRoute: typeof PrivacyPolicyRoute
   ProductsRoute: typeof ProductsRouteWithChildren
@@ -574,6 +613,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PatientResourcesRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/participate-now': {
+      id: '/participate-now'
+      path: '/participate-now'
+      fullPath: '/participate-now'
+      preLoaderRoute: typeof ParticipateNowRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/our-investigators': {
       id: '/our-investigators'
       path: '/our-investigators'
@@ -630,11 +676,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ForAttorneysRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/faq': {
+      id: '/faq'
+      path: '/faq'
+      fullPath: '/faq'
+      preLoaderRoute: typeof FaqRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/expert-witness-services': {
       id: '/expert-witness-services'
       path: '/expert-witness-services'
       fullPath: '/expert-witness-services'
       preLoaderRoute: typeof ExpertWitnessServicesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/enroll-now': {
+      id: '/enroll-now'
+      path: '/enroll-now'
+      fullPath: '/enroll-now'
+      preLoaderRoute: typeof EnrollNowRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/current-studies': {
@@ -893,7 +953,9 @@ const rootRouteChildren: RootRouteChildren = {
   ClinicalTrialsRoute: ClinicalTrialsRouteWithChildren,
   ContactRoute: ContactRoute,
   CurrentStudiesRoute: CurrentStudiesRoute,
+  EnrollNowRoute: EnrollNowRoute,
   ExpertWitnessServicesRoute: ExpertWitnessServicesRoute,
+  FaqRoute: FaqRoute,
   ForAttorneysRoute: ForAttorneysRoute,
   ForHealthcareProfessionalsRoute: ForHealthcareProfessionalsRoute,
   ForSponsorsAndCrosRoute: ForSponsorsAndCrosRoute,
@@ -902,6 +964,7 @@ const rootRouteChildren: RootRouteChildren = {
   NewsRoute: NewsRoute,
   OrlandoClinicalResearchRoute: OrlandoClinicalResearchRoute,
   OurInvestigatorsRoute: OurInvestigatorsRoute,
+  ParticipateNowRoute: ParticipateNowRoute,
   PatientResourcesRoute: PatientResourcesRoute,
   PrivacyPolicyRoute: PrivacyPolicyRoute,
   ProductsRoute: ProductsRouteWithChildren,
@@ -913,13 +976,3 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}

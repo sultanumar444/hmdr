@@ -20,8 +20,10 @@ const nav: NavEntry[] = [
         items: [
           { to: "/about", label: "About" },
           { to: "/news", label: "Research News" },
+          { to: "/faq", label: "FAQ" },
         ],
       },
+
     ],
   },
   { to: "/clinical-trials", label: "Clinical Trials" },
@@ -120,7 +122,7 @@ export function SiteHeader() {
             </div>
 
             <Link
-              to="/contact"
+              to="/enroll-now"
               data-cta="contact-click"
               className="whitespace-nowrap rounded-md bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground shadow-[0_8px_24px_-10px_rgba(0,0,0,0.25)] transition hover:bg-primary/90"
             >
@@ -213,7 +215,7 @@ export function SiteHeader() {
             <div className="text-foreground">{business.addressLine1}, {business.cityStateZip}</div>
             <a href={business.phoneHref!} className="font-semibold text-primary">{business.phone}</a>
             <Link
-              to="/contact"
+              to="/enroll-now"
               onClick={() => setOpen(false)}
               className="mt-1 inline-block rounded-md bg-secondary px-4 py-2 text-center text-sm font-semibold text-secondary-foreground"
             >
