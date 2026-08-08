@@ -84,19 +84,19 @@ function Home() {
             </p>
             <div className="mt-9 grid grid-cols-2 gap-4 sm:w-fit">
               <Link
-                to="/current-studies"
+                to="/participate-now"
                 className="inline-flex items-center justify-center rounded-md border border-white/50 px-7 py-3.5 text-center text-sm font-semibold text-primary-foreground shadow-[0_14px_34px_-12px_rgba(0,0,0,0.7)] transition hover:bg-white/10"
               >
                 Participate Now
               </Link>
               <Link
-                to="/contact"
+                to="/enroll-now"
                 className="inline-flex items-center justify-center rounded-md border border-white/50 px-7 py-3.5 text-center text-sm font-semibold text-primary-foreground shadow-[0_14px_34px_-12px_rgba(0,0,0,0.7)] transition hover:bg-white/10"
               >
                 Enroll Now
               </Link>
               <Link
-                to="/clinical-trials"
+                to="/enroll-now"
                 className="col-span-2 inline-flex items-center justify-center rounded-md border border-secondary bg-secondary px-7 py-3.5 text-center text-sm font-semibold text-secondary-foreground shadow-[0_14px_34px_-10px_rgba(0,0,0,0.7)] transition hover:opacity-90"
               >
                 Join a Study
