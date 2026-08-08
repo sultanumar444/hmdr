@@ -21,8 +21,9 @@ const nav: NavEntry[] = [
           { to: "/about", label: "About" },
           { to: "/news", label: "Research News" },
           { to: "/faq", label: "FAQ" },
-
+        ],
       },
+
     ],
   },
   { to: "/clinical-trials", label: "Clinical Trials" },
